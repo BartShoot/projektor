@@ -19,24 +19,16 @@ public class City {
     @OneToMany(mappedBy = "city", fetch = FetchType.LAZY)
     private List<Cinema> cinemas;
 
-    @Formula("(SELECT COUNT(*) FROM cinemas WHERE city_id = id)")
+    @Formula("(SELECT COUNT(c.id) FROM cinemas as c WHERE c.city_id = id)")
     private Integer cinemaCount;
 
     protected City() {
         this.name = "";
     }
 
-    public City(String name, Integer cinemaCount) {
-        this.name = name;
-        this.cinemaCount = cinemaCount;
-        this.cinemas = new ArrayList<>();
-    }
-
-    public City(Integer id, String name, Integer cinemaCount) {
-        this.id = id;
+    public City(String name) {
         this.name = name;
         this.cinemas = new ArrayList<>();
-        this.cinemaCount = cinemaCount;
     }
 
     public Integer getId() {
@@ -61,5 +53,12 @@ public class City {
 
     public void setCinemas(List<Cinema> cinemas) {
         this.cinemas = cinemas;
+    }
+
+    public void addCinema(Cinema cinema) {
+        if (this.cinemas == null) {
+            this.cinemas = new ArrayList<>();
+        }
+        this.cinemas.add(cinema);
     }
 }

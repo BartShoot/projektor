@@ -20,11 +20,31 @@ public class Movie {
 
     // TODO: check if i want cities
 
-    @Formula("(SELECT COUNT(*) FROM showings WHERE movie_id = id)")
+    @Formula("(SELECT COUNT(s.id) FROM showings as s WHERE s.movie_id = id)")
     private Integer showingsCount;
 
     public Movie() {
 
     }
 
+    public Movie(String name, Integer durationMinutes){
+        this.title = name;
+        this.durationMinutes = durationMinutes;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Integer getDurationMinutes() {
+        return durationMinutes;
+    }
+
+    public List<Showing> getShowings() {
+        return showings;
+    }
 }

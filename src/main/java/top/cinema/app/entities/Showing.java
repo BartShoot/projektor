@@ -26,5 +26,26 @@ public class Showing {
 
     }
 
+    public Showing(Cinema cinema, Movie movie, LocalDateTime showingTime) {
+        this.cinema = cinema;
+        this.movie = movie;
+        this.showingTime = showingTime;
+    }
 
+
+    public Integer getId() {
+        return id;
+    }
+
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public Cinema getCinema() {
+        return cinema;
+    }
+
+    public LocalDateTime getShowingTime() {
+        return showingTime;
+    }
 }

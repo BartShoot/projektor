@@ -3,8 +3,58 @@
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
-    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd ">
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
+    <changeSet author="bartshoot" id="init database model">
+        <createSequence incrementBy="50" sequenceName="cinemas_seq" startValue="1"/>
+        <createTable tableName="cinemas">
+            <column autoIncrement="true" name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="cinemasPK"/>
+            </column>
+            <column name="cinema_chain" type="SMALLINT"/>
+            <column name="location" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="city_id" type="INTEGER"/>
+        </createTable>
+
+        <createSequence incrementBy="50" sequenceName="cities_seq" startValue="1"/>
+        <createTable tableName="cities">
+            <column autoIncrement="true" name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="citiesPK"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+
+        <createSequence incrementBy="50" sequenceName="movies_seq" startValue="1"/>
+        <createTable tableName="movies">
+            <column autoIncrement="true" name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="moviesPK"/>
+            </column>
+            <column name="duration_minutes" type="INTEGER"/>
+            <column name="title" type="VARCHAR(255)"/>
+        </createTable>
+
+        <createSequence incrementBy="50" sequenceName="showings_seq" startValue="1"/>
+        <createTable tableName="showings">
+            <column autoIncrement="true" name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="showingsPK"/>
+            </column>
+            <column name="showing_time" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="cinema_id" type="INTEGER"/>
+            <column name="movie_id" type="INTEGER"/>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="movie_id" baseTableName="showings"
+                                 constraintName="FK4jdrys6tdhcsfspbtw6kvo4h9" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="movies"
+                                 validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="cinema_id" baseTableName="showings"
+                                 constraintName="FK6latwj93msye2nu98toacjfy" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cinemas"
+                                 validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="city_id" baseTableName="cinemas"
+                                 constraintName="FKd5qi30k4wfq2j9icy5mmsix1d" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cities"
+                                 validate="true"/>
+    </changeSet>
 </databaseChangeLog>

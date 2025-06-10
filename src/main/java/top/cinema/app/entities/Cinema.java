@@ -28,11 +28,44 @@ public class Cinema {
     @OneToMany(mappedBy = "cinema", fetch = FetchType.LAZY)
     private List<Showing> showings;
 
-    @Formula("(SELECT COUNT(*) FROM showings WHERE cinema_id = id)")
+    @Formula("(SELECT COUNT(s.id) FROM showings as s WHERE s.cinema_id = id)")
     private Integer showingCounts;
-
 
     public Cinema() {
     }
 
+    public Cinema(String name, String address, CinemaChain cinemaChain, City city) {
+        this.name = name;
+        this.location = address;
+        this.cinemaChain = cinemaChain;
+        this.city = city;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public CinemaChain getCinemaChain() {
+        return cinemaChain;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public List<Showing> getShowings() {
+        return showings;
+    }
+
+    public Integer getShowingCounts() {
+        return showingCounts;
+    }
+
+    public Integer getId() {
+        return id;
+    }
 }
