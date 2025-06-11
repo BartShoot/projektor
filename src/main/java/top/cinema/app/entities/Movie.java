@@ -2,6 +2,7 @@ package top.cinema.app.entities;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.Formula;
+import top.cinema.app.dto.MovieFront;
 
 import java.util.List;
 
@@ -27,9 +28,17 @@ public class Movie {
 
     }
 
-    public Movie(String name, Integer durationMinutes){
+    public Movie(String name, Integer durationMinutes) {
         this.title = name;
         this.durationMinutes = durationMinutes;
+    }
+
+    public MovieFront toFront() {
+        return new MovieFront(id, title, durationMinutes);
+    }
+
+    public MovieFront toFrontWithShowings() {
+        return new MovieFront(id, title, durationMinutes, showings.stream().map(Showing::toFront).toList());
     }
 
     public Integer getId() {

@@ -1,6 +1,7 @@
 package top.cinema.app.entities;
 
 import jakarta.persistence.*;
+import top.cinema.app.dto.ShowingFront;
 
 import java.time.LocalDateTime;
 
@@ -23,13 +24,20 @@ public class Showing {
     private LocalDateTime showingTime;
 
     public Showing() {
-
     }
 
     public Showing(Cinema cinema, Movie movie, LocalDateTime showingTime) {
         this.cinema = cinema;
         this.movie = movie;
         this.showingTime = showingTime;
+    }
+
+    public ShowingFront toFront() {
+        return new ShowingFront(id, movie.toFront(), null, showingTime);
+    }
+
+    public ShowingFront toFrontWithCinema() {
+        return new ShowingFront(id, movie.toFront(), cinema.toFrontWithCity(), showingTime);
     }
 
 

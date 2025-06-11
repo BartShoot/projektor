@@ -2,6 +2,7 @@ package top.cinema.app.entities;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.Formula;
+import top.cinema.app.dto.CityFront;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ public class City {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    private final String name;
+    private String name;
 
     @OneToMany(mappedBy = "city", fetch = FetchType.LAZY)
     private List<Cinema> cinemas;
@@ -23,12 +24,20 @@ public class City {
     private Integer cinemaCount;
 
     protected City() {
-        this.name = "";
+
     }
 
     public City(String name) {
         this.name = name;
         this.cinemas = new ArrayList<>();
+    }
+
+    public CityFront toFront() {
+        return new CityFront(id, name, cinemaCount);
+    }
+
+    public CityFront toFrontWithCinemas() {
+        return new CityFront(id, name, cinemaCount, cinemas.stream().map(Cinema::toFrontWithCity).toList());
     }
 
     public Integer getId() {

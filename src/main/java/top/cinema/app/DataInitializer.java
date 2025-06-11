@@ -41,11 +41,11 @@ public class DataInitializer implements CommandLineRunner {
         log.info("Starting data initialization...");
 
         if (cityRepository.count() == 0) {
+            initializeCinemasAndShowings();
             initializeCities();
         } else {
             log.info("City data already exists. Skipping initialization.");
         }
-            initializeCinemasAndShowings();
         log.info("Data initialization completed.");
     }
 

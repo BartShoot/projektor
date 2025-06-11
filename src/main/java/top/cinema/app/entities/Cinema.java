@@ -3,6 +3,7 @@ package top.cinema.app.entities;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.Formula;
+import top.cinema.app.dto.CinemaFront;
 import top.cinema.app.model.CinemaChain;
 
 import java.util.List;
@@ -39,6 +40,21 @@ public class Cinema {
         this.location = address;
         this.cinemaChain = cinemaChain;
         this.city = city;
+    }
+
+    public CinemaFront toFront() {
+        return new CinemaFront(id, name, location, cinemaChain, null, showingCounts,
+                null);
+    }
+
+    public CinemaFront toFrontWithCity() {
+        return new CinemaFront(id, name, location, cinemaChain, city.toFront(), showingCounts,
+                null);
+    }
+
+    public CinemaFront toFrontWithShowing() {
+        return new CinemaFront(id, name, location, cinemaChain, null, null,
+                showings.stream().map(Showing::toFront).toList());
     }
 
     public String getName() {
