@@ -1,0 +1,4717 @@
+{
+  "result": [
+    {
+      "showingGroups": [
+        {
+          "date": "2025-06-13T00:00:00",
+          "datePrefix": "Jutro",
+          "pricingTypes": [],
+          "sessions": [
+            {
+              "sessionId": "64156",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64156",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T10:00:00",
+              "endTime": "2025-06-13T12:35:00",
+              "showTimeWithTimeZone": "2025-06-13T10:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 4",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63873",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63873",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T10:30:00",
+              "endTime": "2025-06-13T13:05:00",
+              "showTimeWithTimeZone": "2025-06-13T10:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62390",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62390",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T11:30:00",
+              "endTime": "2025-06-13T14:05:00",
+              "showTimeWithTimeZone": "2025-06-13T11:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64061",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64061",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T12:30:00",
+              "endTime": "2025-06-13T15:05:00",
+              "showTimeWithTimeZone": "2025-06-13T12:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62403",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62403",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T13:20:00",
+              "endTime": "2025-06-13T15:55:00",
+              "showTimeWithTimeZone": "2025-06-13T13:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64093",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64093",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T14:20:00",
+              "endTime": "2025-06-13T16:55:00",
+              "showTimeWithTimeZone": "2025-06-13T14:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64058",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64058",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T15:20:00",
+              "endTime": "2025-06-13T17:55:00",
+              "showTimeWithTimeZone": "2025-06-13T15:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62401",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62401",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T16:10:00",
+              "endTime": "2025-06-13T18:45:00",
+              "showTimeWithTimeZone": "2025-06-13T16:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62391",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62391",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T17:10:00",
+              "endTime": "2025-06-13T19:45:00",
+              "showTimeWithTimeZone": "2025-06-13T17:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64060",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64060",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T18:10:00",
+              "endTime": "2025-06-13T20:45:00",
+              "showTimeWithTimeZone": "2025-06-13T18:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62402",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62402",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T19:00:00",
+              "endTime": "2025-06-13T21:35:00",
+              "showTimeWithTimeZone": "2025-06-13T19:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64030",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64030",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T19:30:00",
+              "endTime": "2025-06-13T22:05:00",
+              "showTimeWithTimeZone": "2025-06-13T19:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 8",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62392",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62392",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T20:00:00",
+              "endTime": "2025-06-13T22:35:00",
+              "showTimeWithTimeZone": "2025-06-13T20:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64059",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64059",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-13T21:00:00",
+              "endTime": "2025-06-13T23:35:00",
+              "showTimeWithTimeZone": "2025-06-13T21:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            }
+          ]
+        },
+        {
+          "date": "2025-06-14T00:00:00",
+          "datePrefix": "",
+          "pricingTypes": [],
+          "sessions": [
+            {
+              "sessionId": "64168",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64168",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T10:00:00",
+              "endTime": "2025-06-14T12:35:00",
+              "showTimeWithTimeZone": "2025-06-14T10:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 4",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62408",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62408",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T10:30:00",
+              "endTime": "2025-06-14T13:05:00",
+              "showTimeWithTimeZone": "2025-06-14T10:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62394",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62394",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T11:30:00",
+              "endTime": "2025-06-14T14:05:00",
+              "showTimeWithTimeZone": "2025-06-14T11:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64075",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64075",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T12:30:00",
+              "endTime": "2025-06-14T15:05:00",
+              "showTimeWithTimeZone": "2025-06-14T12:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62406",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62406",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T13:20:00",
+              "endTime": "2025-06-14T15:55:00",
+              "showTimeWithTimeZone": "2025-06-14T13:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64102",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64102",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T14:20:00",
+              "endTime": "2025-06-14T16:55:00",
+              "showTimeWithTimeZone": "2025-06-14T14:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64073",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64073",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T15:20:00",
+              "endTime": "2025-06-14T17:55:00",
+              "showTimeWithTimeZone": "2025-06-14T15:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62405",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62405",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T16:10:00",
+              "endTime": "2025-06-14T18:45:00",
+              "showTimeWithTimeZone": "2025-06-14T16:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62396",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62396",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T17:10:00",
+              "endTime": "2025-06-14T19:45:00",
+              "showTimeWithTimeZone": "2025-06-14T17:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64077",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64077",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T18:10:00",
+              "endTime": "2025-06-14T20:45:00",
+              "showTimeWithTimeZone": "2025-06-14T18:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62407",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62407",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T19:00:00",
+              "endTime": "2025-06-14T21:35:00",
+              "showTimeWithTimeZone": "2025-06-14T19:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64043",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64043",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T19:30:00",
+              "endTime": "2025-06-14T22:05:00",
+              "showTimeWithTimeZone": "2025-06-14T19:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 8",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64104",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64104",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T20:00:00",
+              "endTime": "2025-06-14T22:35:00",
+              "showTimeWithTimeZone": "2025-06-14T20:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64076",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64076",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-14T21:00:00",
+              "endTime": "2025-06-14T23:35:00",
+              "showTimeWithTimeZone": "2025-06-14T21:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            }
+          ]
+        },
+        {
+          "date": "2025-06-15T00:00:00",
+          "datePrefix": "",
+          "pricingTypes": [],
+          "sessions": [
+            {
+              "sessionId": "64165",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64165",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T10:00:00",
+              "endTime": "2025-06-15T12:35:00",
+              "showTimeWithTimeZone": "2025-06-15T10:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 4",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62399",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62399",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T10:30:00",
+              "endTime": "2025-06-15T13:05:00",
+              "showTimeWithTimeZone": "2025-06-15T10:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62387",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62387",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T11:30:00",
+              "endTime": "2025-06-15T14:05:00",
+              "showTimeWithTimeZone": "2025-06-15T11:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64071",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64071",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T12:30:00",
+              "endTime": "2025-06-15T15:05:00",
+              "showTimeWithTimeZone": "2025-06-15T12:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63879",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63879",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T13:20:00",
+              "endTime": "2025-06-15T15:55:00",
+              "showTimeWithTimeZone": "2025-06-15T13:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62388",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62388",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T14:20:00",
+              "endTime": "2025-06-15T16:55:00",
+              "showTimeWithTimeZone": "2025-06-15T14:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "62398",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/62398",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T16:10:00",
+              "endTime": "2025-06-15T18:45:00",
+              "showTimeWithTimeZone": "2025-06-15T16:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64101",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64101",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T17:10:00",
+              "endTime": "2025-06-15T19:45:00",
+              "showTimeWithTimeZone": "2025-06-15T17:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64040",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64040",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T18:00:00",
+              "endTime": "2025-06-15T20:35:00",
+              "showTimeWithTimeZone": "2025-06-15T18:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 8",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63878",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63878",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T19:00:00",
+              "endTime": "2025-06-15T21:35:00",
+              "showTimeWithTimeZone": "2025-06-15T19:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63906",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63906",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T19:30:00",
+              "endTime": "2025-06-15T22:05:00",
+              "showTimeWithTimeZone": "2025-06-15T19:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 1",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64100",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64100",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T20:00:00",
+              "endTime": "2025-06-15T22:35:00",
+              "showTimeWithTimeZone": "2025-06-15T20:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64038",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64038",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-15T20:50:00",
+              "endTime": "2025-06-15T23:25:00",
+              "showTimeWithTimeZone": "2025-06-15T20:50:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 8",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            }
+          ]
+        },
+        {
+          "date": "2025-06-16T00:00:00",
+          "datePrefix": "",
+          "pricingTypes": [],
+          "sessions": [
+            {
+              "sessionId": "64054",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64054",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T10:00:00",
+              "endTime": "2025-06-16T12:35:00",
+              "showTimeWithTimeZone": "2025-06-16T10:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63870",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63870",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T10:30:00",
+              "endTime": "2025-06-16T13:05:00",
+              "showTimeWithTimeZone": "2025-06-16T10:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64026",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64026",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T11:30:00",
+              "endTime": "2025-06-16T14:05:00",
+              "showTimeWithTimeZone": "2025-06-16T11:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 8",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64089",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64089",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T12:30:00",
+              "endTime": "2025-06-16T15:05:00",
+              "showTimeWithTimeZone": "2025-06-16T12:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63871",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63871",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T13:20:00",
+              "endTime": "2025-06-16T15:55:00",
+              "showTimeWithTimeZone": "2025-06-16T13:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64025",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64025",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T14:20:00",
+              "endTime": "2025-06-16T16:55:00",
+              "showTimeWithTimeZone": "2025-06-16T14:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 8",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64092",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64092",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T15:20:00",
+              "endTime": "2025-06-16T17:55:00",
+              "showTimeWithTimeZone": "2025-06-16T15:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63872",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63872",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T16:10:00",
+              "endTime": "2025-06-16T18:45:00",
+              "showTimeWithTimeZone": "2025-06-16T16:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64027",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64027",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T17:10:00",
+              "endTime": "2025-06-16T19:45:00",
+              "showTimeWithTimeZone": "2025-06-16T17:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 8",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64090",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64090",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T18:10:00",
+              "endTime": "2025-06-16T20:45:00",
+              "showTimeWithTimeZone": "2025-06-16T18:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63869",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63869",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T19:00:00",
+              "endTime": "2025-06-16T21:35:00",
+              "showTimeWithTimeZone": "2025-06-16T19:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63894",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63894",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T19:30:00",
+              "endTime": "2025-06-16T22:05:00",
+              "showTimeWithTimeZone": "2025-06-16T19:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 1",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64091",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64091",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-16T21:00:00",
+              "endTime": "2025-06-16T23:35:00",
+              "showTimeWithTimeZone": "2025-06-16T21:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            }
+          ]
+        },
+        {
+          "date": "2025-06-17T00:00:00",
+          "datePrefix": "",
+          "pricingTypes": [],
+          "sessions": [
+            {
+              "sessionId": "64177",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64177",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T10:05:00",
+              "endTime": "2025-06-17T12:40:00",
+              "showTimeWithTimeZone": "2025-06-17T10:05:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 4",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64111",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64111",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T10:30:00",
+              "endTime": "2025-06-17T13:05:00",
+              "showTimeWithTimeZone": "2025-06-17T10:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63887",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63887",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T11:30:00",
+              "endTime": "2025-06-17T14:05:00",
+              "showTimeWithTimeZone": "2025-06-17T11:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64087",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64087",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T12:30:00",
+              "endTime": "2025-06-17T15:05:00",
+              "showTimeWithTimeZone": "2025-06-17T12:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64112",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64112",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T13:20:00",
+              "endTime": "2025-06-17T15:55:00",
+              "showTimeWithTimeZone": "2025-06-17T13:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63886",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63886",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T14:20:00",
+              "endTime": "2025-06-17T16:55:00",
+              "showTimeWithTimeZone": "2025-06-17T14:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64084",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64084",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T15:20:00",
+              "endTime": "2025-06-17T17:55:00",
+              "showTimeWithTimeZone": "2025-06-17T15:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64110",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64110",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T16:10:00",
+              "endTime": "2025-06-17T18:45:00",
+              "showTimeWithTimeZone": "2025-06-17T16:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63888",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63888",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T17:10:00",
+              "endTime": "2025-06-17T19:45:00",
+              "showTimeWithTimeZone": "2025-06-17T17:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64086",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64086",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T18:10:00",
+              "endTime": "2025-06-17T20:45:00",
+              "showTimeWithTimeZone": "2025-06-17T18:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64049",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64049",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T19:30:00",
+              "endTime": "2025-06-17T22:05:00",
+              "showTimeWithTimeZone": "2025-06-17T19:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 8",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63889",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63889",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T20:00:00",
+              "endTime": "2025-06-17T22:35:00",
+              "showTimeWithTimeZone": "2025-06-17T20:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64085",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64085",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-17T21:00:00",
+              "endTime": "2025-06-17T23:35:00",
+              "showTimeWithTimeZone": "2025-06-17T21:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 2",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            }
+          ]
+        },
+        {
+          "date": "2025-06-18T00:00:00",
+          "datePrefix": "",
+          "pricingTypes": [],
+          "sessions": [
+            {
+              "sessionId": "63916",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63916",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T10:00:00",
+              "endTime": "2025-06-18T12:35:00",
+              "showTimeWithTimeZone": "2025-06-18T10:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 1",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64046",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64046",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T11:00:00",
+              "endTime": "2025-06-18T13:35:00",
+              "showTimeWithTimeZone": "2025-06-18T11:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 8",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64108",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64108",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T11:30:00",
+              "endTime": "2025-06-18T14:05:00",
+              "showTimeWithTimeZone": "2025-06-18T11:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63883",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63883",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T12:30:00",
+              "endTime": "2025-06-18T15:05:00",
+              "showTimeWithTimeZone": "2025-06-18T12:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64173",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64173",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T13:20:00",
+              "endTime": "2025-06-18T15:55:00",
+              "showTimeWithTimeZone": "2025-06-18T13:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 4",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64107",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64107",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T14:20:00",
+              "endTime": "2025-06-18T16:55:00",
+              "showTimeWithTimeZone": "2025-06-18T14:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63881",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63881",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T15:20:00",
+              "endTime": "2025-06-18T17:55:00",
+              "showTimeWithTimeZone": "2025-06-18T15:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64175",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64175",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T16:10:00",
+              "endTime": "2025-06-18T18:45:00",
+              "showTimeWithTimeZone": "2025-06-18T16:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 4",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64105",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64105",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T17:10:00",
+              "endTime": "2025-06-18T19:45:00",
+              "showTimeWithTimeZone": "2025-06-18T17:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63885",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63885",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T18:10:00",
+              "endTime": "2025-06-18T20:45:00",
+              "showTimeWithTimeZone": "2025-06-18T18:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64048",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64048",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T19:30:00",
+              "endTime": "2025-06-18T22:05:00",
+              "showTimeWithTimeZone": "2025-06-18T19:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 8",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64109",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64109",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T20:00:00",
+              "endTime": "2025-06-18T22:35:00",
+              "showTimeWithTimeZone": "2025-06-18T20:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63882",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63882",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-18T21:00:00",
+              "endTime": "2025-06-18T23:35:00",
+              "showTimeWithTimeZone": "2025-06-18T21:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            }
+          ]
+        },
+        {
+          "date": "2025-06-19T00:00:00",
+          "datePrefix": "",
+          "pricingTypes": [],
+          "sessions": [
+            {
+              "sessionId": "64159",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64159",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-19T10:00:00",
+              "endTime": "2025-06-19T12:35:00",
+              "showTimeWithTimeZone": "2025-06-19T10:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 4",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63876",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63876",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-19T10:30:00",
+              "endTime": "2025-06-19T13:05:00",
+              "showTimeWithTimeZone": "2025-06-19T10:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64098",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64098",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-19T12:30:00",
+              "endTime": "2025-06-19T15:05:00",
+              "showTimeWithTimeZone": "2025-06-19T12:30:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63875",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63875",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-19T13:20:00",
+              "endTime": "2025-06-19T15:55:00",
+              "showTimeWithTimeZone": "2025-06-19T13:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64097",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64097",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-19T15:20:00",
+              "endTime": "2025-06-19T17:55:00",
+              "showTimeWithTimeZone": "2025-06-19T15:20:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63874",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63874",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-19T16:10:00",
+              "endTime": "2025-06-19T18:45:00",
+              "showTimeWithTimeZone": "2025-06-19T16:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63902",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63902",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-19T17:10:00",
+              "endTime": "2025-06-19T19:45:00",
+              "showTimeWithTimeZone": "2025-06-19T17:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 1",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64096",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64096",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-19T18:10:00",
+              "endTime": "2025-06-19T20:45:00",
+              "showTimeWithTimeZone": "2025-06-19T18:10:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63877",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63877",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-19T19:00:00",
+              "endTime": "2025-06-19T21:35:00",
+              "showTimeWithTimeZone": "2025-06-19T19:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Projektor laserowy",
+                  "shortName": "Projektor laserowy",
+                  "value": "Projektor laserowy",
+                  "description": "Projektor laserowy",
+                  "attributeType": "Session_Special",
+                  "color": "#FFA500",
+                  "iconName": null
+                },
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "DUBBING",
+                  "shortName": "DUBBING",
+                  "value": "DUBBING",
+                  "description": "DUBBING",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 9",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "63900",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/63900",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-19T20:00:00",
+              "endTime": "2025-06-19T22:35:00",
+              "showTimeWithTimeZone": "2025-06-19T20:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 1",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            },
+            {
+              "sessionId": "64095",
+              "bookingUrl": "/rezerwacja-biletow/podsumowanie/0035/HO00002008/64095",
+              "formattedPrice": null,
+              "isPriceVisible": false,
+              "duration": 125,
+              "startTime": "2025-06-19T21:00:00",
+              "endTime": "2025-06-19T23:35:00",
+              "showTimeWithTimeZone": "2025-06-19T21:00:00+02:00",
+              "isSoldOut": false,
+              "color": null,
+              "isMidnightSession": false,
+              "isBookingAvailable": true,
+              "attributes": [
+                {
+                  "name": "Rodzinny seans",
+                  "shortName": "",
+                  "value": "Rodzinny seans",
+                  "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+                  "attributeType": "Movie",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "NAPISY",
+                  "shortName": "NAPISY",
+                  "value": "NAPISY",
+                  "description": "NAPISY",
+                  "attributeType": "Language",
+                  "color": "",
+                  "iconName": null
+                },
+                {
+                  "name": "2D",
+                  "shortName": "2D",
+                  "value": "2D",
+                  "description": "",
+                  "attributeType": "Session",
+                  "color": "",
+                  "iconName": null
+                }
+              ],
+              "screenName": "Sala 3",
+              "sessionPricingDisplayStatus": 0,
+              "wheelchairSeatAvailability": 1
+            }
+          ]
+        }
+      ],
+      "filmId": "HO00002008",
+      "certificate": {
+        "name": null,
+        "description": null,
+        "src": null
+      },
+      "secondaryCertificates": [],
+      "filmUrl": "https://multikino.pl/filmy/jak-wytresowac-smoka",
+      "filmAttributes": [
+        {
+          "name": "Rodzinny seans",
+          "shortName": "",
+          "value": "Rodzinny seans",
+          "description": "<span>Najlepsze filmy familijne dla całej rodziny.</span>",
+          "attributeType": "Movie",
+          "color": "",
+          "iconName": null
+        }
+      ],
+      "posterImageSrc": "https://multikino.pl/-/media/multikino/images/film-and-events/2025/jak-wytresowac-smoka/jak-wytresowac-smoka-plakat-online.jpg?rev=38afade880df49a196e792806de70f8c",
+      "cast": "Mason Thames, Gerard Butler, Nico Parker, Nick Frost",
+      "releaseDate": "2025-06-13T00:00:00",
+      "runningTime": 125,
+      "isDurationUnknown": false,
+      "synopsisShort": "Na wyspie Berk, gdzie wikingowie i smoki są zaciekłymi wrogami od pokoleń mieszka Czkawka. Pomysłowy, ale niedoceniony syn wodza, Czkawka przeciwstawia się wielowiekowej tradycji, kiedy zaprzyjaźnia się ze Szczerbatkiem. Ich nieprawdopodobna więź ujawnia prawdziwą naturę smoków, podważając fundamenty społeczeństwa Wikingów.",
+      "filmTitle": "Jak wytresować smoka",
+      "hasSessions": true,
+      "hasTrailer": true,
+      "embargoMessage": "Nie możesz się doczekać? Ustaw przypomnienie, a my damy Ci znać, gdy tylko bilety trafią do sprzedaży.",
+      "embargoEndDate": null,
+      "embargoLevel": null,
+      "priceMessage": "Kup bilet online i zapłać mniej!",
+      "alternativeCertificate": {
+        "name": null,
+        "description": null,
+        "src": null
+      },
+      "panelImageUrl": "https://multikino.pl/-/media/multikino/images/film-and-events/2025/jak-wytresowac-smoka/jak-wytresowac-smoka-kadr.jpg?rev=04991397110b40d2a76e44be796259ed",
+      "filmStatus": 1,
+      "trailers": [],
+      "director": "Dean DeBlois",
+      "distributor": "UIP",
+      "movieXchangeCode": "b82b7852-f124-4a51-9b0b-0c007dc24a98",
+      "crossCountryMovieXchangeId": "",
+      "originalTitle": "",
+      "showingInCinemas": [
+        "0003",
+        "0004",
+        "0005",
+        "0006",
+        "0007",
+        "0008",
+        "0010",
+        "0011",
+        "0013",
+        "0014",
+        "0015",
+        "0016",
+        "0023",
+        "0024",
+        "0025",
+        "0026",
+        "0027",
+        "0028",
+        "0029",
+        "0030",
+        "0031",
+        "0033",
+        "0034",
+        "0035",
+        "0036",
+        "0037",
+        "0038",
+        "0039",
+        "0040",
+        "0041",
+        "0042",
+        "0043",
+        "0044",
+        "0045",
+        "0046",
+        "0047",
+        "0048",
+        "0050",
+        "0051",
+        "0052",
+        "0053"
+      ],
+      "genres": [
+        "przygodowy",
+        "animowany",
+        "familijny"
+      ],
+      "sessionAttributes": []
+    }
+  ],
+  "responseCode": 0,
+  "errorMessage": null
+}

@@ -1,0 +1,597 @@
+{
+  "body": {
+    "films": [
+      {
+        "id": "7004s2r",
+        "name": "Ballerina. Z uniwersum Johna Wicka",
+        "length": 125,
+        "posterLink": "https://www.cinema-city.pl/xmedia-cw/repo/feats/posters/7004S2R.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=9Bf3q0XMzCs",
+        "link": "https://www.cinema-city.pl/filmy/ballerina-z-uniwersum-johna-wicka/7004s2r",
+        "weight": 0,
+        "releaseYear": "2025",
+        "releaseDate": "2025-06-06T00:00:00",
+        "attributeIds": [
+          "15-plus",
+          "2d",
+          "action",
+          "first-subbed-lang-pl",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      {
+        "id": "7281s2r",
+        "name": "Fenicki układ",
+        "length": 105,
+        "posterLink": "https://www.cinema-city.pl/xmedia-cw/repo/feats/posters/7281S2R.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=aEsDXNNGwTA",
+        "link": "https://www.cinema-city.pl/filmy/fenicki-uklad/7281s2r",
+        "weight": 0,
+        "releaseYear": "2025",
+        "releaseDate": "2025-06-06T00:00:00",
+        "attributeIds": [
+          "2d",
+          "comedy",
+          "drama",
+          "first-subbed-lang-pl",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      {
+        "id": "7249s2r",
+        "name": "Frendo",
+        "length": 96,
+        "posterLink": "https://www.cinema-city.pl/xmedia-cw/repo/feats/posters/7249S2R.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=saqIx70Bcug",
+        "link": "https://www.cinema-city.pl/filmy/frendo/7249s2r",
+        "weight": 0,
+        "releaseYear": "2025",
+        "releaseDate": "2025-05-30T00:00:00",
+        "attributeIds": [
+          "2d",
+          "first-subbed-lang-pl",
+          "horror",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      {
+        "id": "7343s2r",
+        "name": "Guns Up",
+        "length": 91,
+        "posterLink": "https://www.cinema-city.pl/xmedia-cw/repo/feats/posters/7343S2R.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=oKJAGbBmIBo",
+        "link": "https://www.cinema-city.pl/filmy/guns-up/7343s2r",
+        "weight": 0,
+        "releaseYear": "2025",
+        "releaseDate": "2025-05-30T00:00:00",
+        "attributeIds": [
+          "2d",
+          "action",
+          "comedy",
+          "first-subbed-lang-pl",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      {
+        "id": "6987d2r",
+        "name": "Lilo & Stich",
+        "length": 108,
+        "posterLink": "https://www.cinema-city.pl/xmedia-cw/repo/feats/posters/6987D2R.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=HLHVxIUqr3c",
+        "link": "https://www.cinema-city.pl/filmy/lilo-stich/6987d2r",
+        "weight": 0,
+        "releaseYear": "2025",
+        "releaseDate": "2025-05-23T00:00:00",
+        "attributeIds": [
+          "2d",
+          "3d",
+          "adventure",
+          "comedy",
+          "dubbed",
+          "dubbed-lang-pl",
+          "first-subbed-lang-pl",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      {
+        "id": "6966s2r",
+        "name": "Mission: Impossible The Final Reckoning",
+        "length": 169,
+        "posterLink": "https://www.cinema-city.pl/xmedia-cw/repo/feats/posters/6966S2R.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=_Pe2pMz9UwI",
+        "link": "https://www.cinema-city.pl/filmy/mission-impossible-the-final-reckoning/6966s2r",
+        "weight": 0,
+        "releaseYear": "2025",
+        "releaseDate": "2025-05-23T00:00:00",
+        "attributeIds": [
+          "2d",
+          "action",
+          "first-subbed-lang-pl",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      {
+        "id": "7377s2r",
+        "name": "Mulholland Drive",
+        "length": 146,
+        "posterLink": "https://www.cinema-city.pl/xmedia-cw/repo/feats/posters/7377S2R.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=Sd4D-iT_oXw",
+        "link": "https://www.cinema-city.pl/filmy/mulholland-drive/7377s2r",
+        "weight": 0,
+        "releaseYear": "2001",
+        "releaseDate": "2025-06-06T00:00:00",
+        "attributeIds": [
+          "2d",
+          "drama",
+          "first-subbed-lang-pl",
+          "na",
+          "original-lang-en",
+          "subbed",
+          "thriller"
+        ]
+      },
+      {
+        "id": "1874o2r",
+        "name": "Ostatnia rodzina",
+        "length": 122,
+        "posterLink": "https://www.cinema-city.pl/xmedia-cw/repo/feats/posters/1874O2R.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=Z4CewIh5W1Y",
+        "link": "https://www.cinema-city.pl/filmy/ostatnia-rodzina/1874o2r",
+        "weight": 0,
+        "releaseYear": "2016",
+        "releaseDate": "2025-04-16T00:00:00",
+        "attributeIds": [
+          "2d",
+          "biography",
+          "na",
+          "original",
+          "original-lang-pl"
+        ]
+      },
+      {
+        "id": "7124s2r",
+        "name": "Oszukać przeznaczenie: Więzy krwi",
+        "length": 109,
+        "posterLink": "https://www.cinema-city.pl/xmedia-cw/repo/feats/posters/7124S2R.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=zCsEQ-buT-4",
+        "link": "https://www.cinema-city.pl/filmy/oszukac-przeznaczenie-wiezy-krwi/7124s2r",
+        "weight": 0,
+        "releaseYear": "2024",
+        "releaseDate": "2025-05-16T00:00:00",
+        "attributeIds": [
+          "2d",
+          "first-subbed-lang-pl",
+          "horror",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "768263",
+        "filmId": "7281s2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T18:40:00",
+        "attributeIds": [
+          "2d",
+          "comedy",
+          "drama",
+          "first-subbed-lang-pl",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/768263?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/768263",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/768263?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "768263",
+        "soldOut": false,
+        "availabilityRatio": 0.9694,
+        "auditorium": "Sala 1",
+        "auditoriumTinyName": "S01"
+      },
+      {
+        "id": "771536",
+        "filmId": "7004s2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T18:40:00",
+        "attributeIds": [
+          "15-plus",
+          "2d",
+          "action",
+          "first-subbed-lang-pl",
+          "original-lang-en",
+          "subbed"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/771536?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/771536",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/771536?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "771536",
+        "soldOut": false,
+        "availabilityRatio": 0.9522,
+        "auditorium": "Sala 8",
+        "auditoriumTinyName": "S08"
+      },
+      {
+        "id": "685279",
+        "filmId": "1874o2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T19:00:00",
+        "attributeIds": [
+          "2d",
+          "biography",
+          "na",
+          "original",
+          "original-lang-pl"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/685279?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/685279",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/685279?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "685279",
+        "soldOut": false,
+        "availabilityRatio": 1.0,
+        "auditorium": "Sala 3",
+        "auditoriumTinyName": "S03"
+      },
+      {
+        "id": "769958",
+        "filmId": "7249s2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T19:40:00",
+        "attributeIds": [
+          "2d",
+          "first-subbed-lang-pl",
+          "horror",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/769958?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/769958",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/769958?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "769958",
+        "soldOut": false,
+        "availabilityRatio": 0.9765,
+        "auditorium": "Sala 4",
+        "auditoriumTinyName": "S04"
+      },
+      {
+        "id": "768385",
+        "filmId": "7377s2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T20:00:00",
+        "attributeIds": [
+          "2d",
+          "drama",
+          "first-subbed-lang-pl",
+          "na",
+          "original-lang-en",
+          "subbed",
+          "thriller"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/768385?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/768385",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/768385?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "768385",
+        "soldOut": false,
+        "availabilityRatio": 0.9371,
+        "auditorium": "Sala 2",
+        "auditoriumTinyName": "S02"
+      },
+      {
+        "id": "770310",
+        "filmId": "7004s2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T20:30:00",
+        "attributeIds": [
+          "15-plus",
+          "2d",
+          "action",
+          "first-subbed-lang-pl",
+          "original-lang-en",
+          "subbed"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/770310?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/770310",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/770310?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "770310",
+        "soldOut": false,
+        "availabilityRatio": 1.0,
+        "auditorium": "Sala 5",
+        "auditoriumTinyName": "S05"
+      },
+      {
+        "id": "770674",
+        "filmId": "6966s2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T20:30:00",
+        "attributeIds": [
+          "2d",
+          "action",
+          "first-subbed-lang-pl",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/770674?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/770674",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/770674?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "770674",
+        "soldOut": false,
+        "availabilityRatio": 1.0,
+        "auditorium": "Sala 6",
+        "auditoriumTinyName": "S06"
+      },
+      {
+        "id": "770969",
+        "filmId": "6987d2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T20:50:00",
+        "attributeIds": [
+          "2d",
+          "adventure",
+          "comedy",
+          "first-subbed-lang-pl",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/770969?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/770969",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/770969?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "770969",
+        "soldOut": false,
+        "availabilityRatio": 1.0,
+        "auditorium": "Sala 7",
+        "auditoriumTinyName": "S07"
+      },
+      {
+        "id": "768269",
+        "filmId": "7281s2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T21:10:00",
+        "attributeIds": [
+          "2d",
+          "comedy",
+          "drama",
+          "first-subbed-lang-pl",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/768269?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/768269",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/768269?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "768269",
+        "soldOut": false,
+        "availabilityRatio": 1.0,
+        "auditorium": "Sala 1",
+        "auditoriumTinyName": "S01"
+      },
+      {
+        "id": "769017",
+        "filmId": "7124s2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T21:40:00",
+        "attributeIds": [
+          "2d",
+          "first-subbed-lang-pl",
+          "horror",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/769017?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/769017",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/769017?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "769017",
+        "soldOut": false,
+        "availabilityRatio": 0.9837,
+        "auditorium": "Sala 3",
+        "auditoriumTinyName": "S03"
+      },
+      {
+        "id": "771539",
+        "filmId": "7004s2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T21:40:00",
+        "attributeIds": [
+          "15-plus",
+          "2d",
+          "action",
+          "first-subbed-lang-pl",
+          "original-lang-en",
+          "subbed"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/771539?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/771539",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/771539?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "771539",
+        "soldOut": false,
+        "availabilityRatio": 1.0,
+        "auditorium": "Sala 8",
+        "auditoriumTinyName": "S08"
+      },
+      {
+        "id": "769964",
+        "filmId": "7343s2r",
+        "cinemaId": "1092",
+        "businessDay": "2025-06-12",
+        "eventDateTime": "2025-06-12T22:00:00",
+        "attributeIds": [
+          "2d",
+          "action",
+          "comedy",
+          "first-subbed-lang-pl",
+          "na",
+          "original-lang-en",
+          "subbed"
+        ],
+        "bookingLink": "https://tickets.cinema-city.pl/api/order/769964?lang=pl",
+        "compositeBookingLink": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinema-city.pl/api/order/769964",
+            "params": {
+              "lang": "pl-PL"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinema-city.pl/api/order/769964?lang=pl",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinema-city.pl/booking"
+        },
+        "presentationCode": "769964",
+        "soldOut": false,
+        "availabilityRatio": 1.0,
+        "auditorium": "Sala 4",
+        "auditoriumTinyName": "S04"
+      }
+    ]
+  }
+}

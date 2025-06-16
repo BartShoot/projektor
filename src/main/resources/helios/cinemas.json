@@ -1,0 +1,1952 @@
+{
+  "status": 200,
+  "data": [
+    {
+      "name": "Be\u0142chat\u00f3w Helios",
+      "id": 6,
+      "sourceId": "2c4b802a-5e94-4a96-a899-6fe92fb4bf13",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 839,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Belchatow\/GALERIA_OLIMPIA",
+      "contact": {
+        "bookingIndividual": "44 715 95 60 (61)",
+        "bookingGroup": "722 382 314"
+      },
+      "location": {
+        "province": "\u0142\u00f3dzkie",
+        "city": "Be\u0142chat\u00f3w",
+        "street": "ul. Kolejowa 6",
+        "latitude": 51.35339,
+        "longitude": 19.376086
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-51.JPG",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-51.JPG",
+        "meta": {
+          "name": "IMG_8502.JPG",
+          "size": 1297033,
+          "width": 2000,
+          "height": 1333,
+          "extension": "JPG",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Bia\u0142ystok Helios Jurowiecka",
+      "id": 43,
+      "sourceId": "5c699a45-d219-4f4e-90f4-4aac0ca44a88",
+      "header": "Helios Jurowiecka",
+      "slug": "kino-helios-jurowiecka",
+      "screensNumber": 6,
+      "seatsNumber": 973,
+      "seatsForDisabledNumber": 12,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Bialystok\/JUROWIECKA",
+      "contact": {
+        "bookingIndividual": "85 871 01 13",
+        "bookingGroup": "85 871 01 14"
+      },
+      "location": {
+        "province": "podlaskie",
+        "city": "Bia\u0142ystok",
+        "street": "ul. Jurowiecka 1",
+        "latitude": 53.136558,
+        "longitude": 23.162576
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-jurowiecka\/kino-helios-jurowiecka-962.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-jurowiecka\/kino-helios-jurowiecka-962.jpg",
+        "meta": {
+          "name": "kino-helios-jurowiecka-962.jpg",
+          "size": 662541,
+          "width": 1600,
+          "height": 1088,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Bia\u0142ystok Helios Bia\u0142a",
+      "id": 10,
+      "sourceId": "d516a0dd-b0ab-4e15-85b2-0286eaf6dde6",
+      "header": "Helios Bia\u0142a",
+      "slug": "kino-helios-biala",
+      "screensNumber": 8,
+      "seatsNumber": 1686,
+      "seatsForDisabledNumber": 16,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Bialystok\/BIALA",
+      "contact": {
+        "bookingIndividual": "85 710 81 90",
+        "bookingGroup": "85 710 91 72"
+      },
+      "location": {
+        "province": "podlaskie",
+        "city": "Bia\u0142ystok",
+        "street": "ul. Czes\u0142awa Mi\u0142osza 2",
+        "latitude": 53.122457,
+        "longitude": 23.177418
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-biala\/kino-helios-biala-750.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-biala\/kino-helios-biala-750.jpg",
+        "meta": {
+          "name": "kino-helios-biala-750.jpg",
+          "size": 560843,
+          "width": 1956,
+          "height": 1331,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Bia\u0142ystok Helios Alfa",
+      "id": 37,
+      "sourceId": "3e616682-1048-46d8-954d-a2c8de8e7ee4",
+      "header": "Helios Alfa",
+      "slug": "kino-helios-alfa",
+      "screensNumber": 7,
+      "seatsNumber": 1265,
+      "seatsForDisabledNumber": 14,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Bialystok\/ALFA",
+      "contact": {
+        "bookingIndividual": "85 741 13 56",
+        "bookingGroup": "85 741 13 65 wew.21"
+      },
+      "location": {
+        "province": "podlaskie",
+        "city": "Bia\u0142ystok",
+        "street": "ul. \u015awi\u0119toja\u0144ska 15",
+        "latitude": 53.125749,
+        "longitude": 23.169145
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-alfa\/kino-helios-alfa-708.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-alfa\/kino-helios-alfa-708.jpg",
+        "meta": {
+          "name": "kino-helios-alfa-708.jpg",
+          "size": 156753,
+          "width": 768,
+          "height": 523,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Bielsko-Bia\u0142a Helios",
+      "id": 36,
+      "sourceId": "cb932ba4-3dfd-4946-b3fd-1687603f78f7",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 7,
+      "seatsNumber": 1547,
+      "seatsForDisabledNumber": 16,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/BielskoBiala\/SFERA",
+      "contact": {
+        "bookingIndividual": "33 498 70 15",
+        "bookingGroup": "33 498 70 12"
+      },
+      "location": {
+        "province": "\u015bl\u0105skie",
+        "city": "Bielsko-Bia\u0142a",
+        "street": "ul. Mostowa 5",
+        "latitude": 49.827349,
+        "longitude": 19.049722
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-627.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-627.jpg",
+        "meta": {
+          "name": "kino-helios-627.jpg",
+          "size": 608432,
+          "width": 2413,
+          "height": 1641,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Bydgoszcz Helios",
+      "id": 9,
+      "sourceId": "8acb28a0-2e4b-4beb-a13a-bb97e17085cc",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 7,
+      "seatsNumber": 1110,
+      "seatsForDisabledNumber": 14,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Bydgoszcz\/POMORSKA",
+      "contact": {
+        "bookingIndividual": "52 581 00 63",
+        "bookingGroup": "722 382 316, 52 581 00 63"
+      },
+      "location": {
+        "province": "kujawsko-pomorskie",
+        "city": "Bydgoszcz",
+        "street": "ul. Fordo\u0144ska 141",
+        "latitude": 53.125868,
+        "longitude": 18.067264
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-855.JPG",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-855.JPG",
+        "meta": {
+          "name": "001.JPG",
+          "size": 391065,
+          "width": 1200,
+          "height": 800,
+          "extension": "JPG",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "D\u0105browa G\u00f3rnicza Helios",
+      "id": 24,
+      "sourceId": "d61fc6d9-bac1-44f0-a34a-00868e694c9b",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 825,
+      "seatsForDisabledNumber": 10,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/DabrowaGornicza\/POGORIA",
+      "contact": {
+        "bookingIndividual": "32 262 32 18",
+        "bookingGroup": "32 262 32 19"
+      },
+      "location": {
+        "province": "\u015bl\u0105skie",
+        "city": "D\u0105browa G\u00f3rnicza",
+        "street": "ul. Jana III Sobieskiego 6",
+        "latitude": 50.327165,
+        "longitude": 19.183798
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-717.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-717.jpg",
+        "meta": {
+          "name": "kino-helios-717.jpg",
+          "size": 1165035,
+          "width": 2315,
+          "height": 1575,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Gda\u0144sk Helios Alfa",
+      "id": 20,
+      "sourceId": "2a4de3f6-6e21-4aec-9bd3-351668d49750",
+      "header": "Helios Alfa",
+      "slug": "kino-helios-alfa",
+      "screensNumber": 8,
+      "seatsNumber": 1712,
+      "seatsForDisabledNumber": 17,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Gdansk\/ALFA",
+      "contact": {
+        "bookingIndividual": "58 767 99 99",
+        "bookingGroup": "58 767 99 82"
+      },
+      "location": {
+        "province": "pomorskie",
+        "city": "Gda\u0144sk",
+        "street": "ul. Ko\u0142obrzeska 41c",
+        "latitude": 54.404438,
+        "longitude": 18.588231
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-alfa\/kino-helios-alfa-547.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-alfa\/kino-helios-alfa-547.jpg",
+        "meta": {
+          "name": "kino-helios-alfa-547.jpg",
+          "size": 260207,
+          "width": 960,
+          "height": 653,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Gda\u0144sk Helios Metropolia",
+      "id": 18,
+      "sourceId": "d09e2607-693f-479f-8deb-59a18add40eb",
+      "header": "Helios Metropolia",
+      "slug": "kino-helios-metropolia",
+      "screensNumber": 7,
+      "seatsNumber": 1074,
+      "seatsForDisabledNumber": 14,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Gdansk\/GALERIA_METROPOLIA",
+      "contact": {
+        "bookingIndividual": "58 731 13 98",
+        "bookingGroup": "58 731 13 97"
+      },
+      "location": {
+        "province": "pomorskie",
+        "city": "Gda\u0144sk",
+        "street": "ul. Kili\u0144skiego 4 ",
+        "latitude": 54.383003,
+        "longitude": 18.605256
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-metropolia\/kino-helios-metropolia-126.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-metropolia\/kino-helios-metropolia-126.jpg",
+        "meta": {
+          "name": "kino-helios-metropolia-126.jpg",
+          "size": 693647,
+          "width": 1772,
+          "height": 1206,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Gda\u0144sk Helios Forum",
+      "id": 13,
+      "sourceId": "60cfe883-55aa-4e28-be7f-233f589a34cb",
+      "header": "Helios Forum",
+      "slug": "kino-helios-forum",
+      "screensNumber": 9,
+      "seatsNumber": 1092,
+      "seatsForDisabledNumber": 18,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Gdansk\/FORUM",
+      "contact": {
+        "bookingIndividual": "58 732 96 07",
+        "bookingGroup": "58 732 96 06, 722 382 348"
+      },
+      "location": {
+        "province": "pomorskie",
+        "city": "Gda\u0144sk",
+        "street": "Targ Sienny 7",
+        "latitude": 54.349381,
+        "longitude": 18.643519
+      },
+      "mainPhoto": {
+        "filePath": "kino\/gdansk-kino-helios-forum\/gdansk-kino-helios-forum-451.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/gdansk-kino-helios-forum\/gdansk-kino-helios-forum-451.jpg",
+        "meta": {
+          "name": "gdansk-kino-helios-forum-451.jpg",
+          "size": 404312,
+          "width": 1562,
+          "height": 1063,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Gdynia Helios",
+      "id": 23,
+      "sourceId": "0bdb21cd-cf7d-4efb-829f-d1913a666b83",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 6,
+      "seatsNumber": 1236,
+      "seatsForDisabledNumber": 12,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Gdynia\/OBIEKT_WOLNOSTOJACY",
+      "contact": {
+        "bookingIndividual": "58 779 00 03",
+        "bookingGroup": "58 779 00 01"
+      },
+      "location": {
+        "province": "pomorskie",
+        "city": "Gdynia",
+        "street": "ul. Kazimierza G\u00f3rskiego 2",
+        "latitude": 54.504902,
+        "longitude": 18.532143
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-659.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-659.jpg",
+        "meta": {
+          "name": "kino-helios-659.jpg",
+          "size": 494428,
+          "width": 1593,
+          "height": 1084,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Gniezno Helios",
+      "id": 42,
+      "sourceId": "2129a02f-c5cc-4da2-9293-daacd11c07ca",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 3,
+      "seatsNumber": 309,
+      "seatsForDisabledNumber": 3,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Gniezno\/GALERIA_GNIEZNO",
+      "contact": {
+        "bookingIndividual": "61 426 66 19",
+        "bookingGroup": "61 426 66 39"
+      },
+      "location": {
+        "province": "wielkopolskie",
+        "city": "Gniezno",
+        "street": "ul. Pa\u0142ucka 2",
+        "latitude": 52.560964,
+        "longitude": 17.612513
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-66.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-66.jpg",
+        "meta": {
+          "name": "kino-helios-66.jpg",
+          "size": 536887,
+          "width": 1955,
+          "height": 1330,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Gorz\u00f3w Wielkopolski Helios",
+      "id": 46,
+      "sourceId": "6f51c391-4d6d-4aeb-bf78-6c61b676865f",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 1024,
+      "seatsForDisabledNumber": 10,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/GorzowWielkopolski\/GALERIA_ASKANA",
+      "contact": {
+        "bookingIndividual": "95 737 27 37",
+        "bookingGroup": "95 737 27 39, 722 382 344"
+      },
+      "location": {
+        "province": "lubuskie",
+        "city": "Gorz\u00f3w Wielkopolski",
+        "street": "al. Konstytucji 3-go Maja 102",
+        "latitude": 52.73114,
+        "longitude": 15.224744
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-210.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-210.jpg",
+        "meta": {
+          "name": "kino-helios-210.jpg",
+          "size": 603443,
+          "width": 1956,
+          "height": 1331,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Grudzi\u0105dz Helios",
+      "id": 19,
+      "sourceId": "7f651f6f-9068-410f-96a0-e5b6f1545aed",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 1295,
+      "seatsForDisabledNumber": 10,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Grudziadz\/GALERIA_ALFA",
+      "contact": {
+        "bookingIndividual": "56 643 12 12",
+        "bookingGroup": "56 6431213 w. 21, 797 012 638"
+      },
+      "location": {
+        "province": "kujawsko-pomorskie",
+        "city": "Grudzi\u0105dz",
+        "street": "ul. Che\u0142mi\u0144ska 4",
+        "latitude": 53.484428,
+        "longitude": 18.747582
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-923.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-923.jpg",
+        "meta": {
+          "name": "kino-helios-923.jpg",
+          "size": 559275,
+          "width": 1948,
+          "height": 1325,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Jelenia G\u00f3ra Helios",
+      "id": 16,
+      "sourceId": "88c70097-4f24-49b5-bd35-c752e3543d4e",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 891,
+      "seatsForDisabledNumber": 10,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/JeleniaGora\/GALERIA_SUDECKA",
+      "contact": {
+        "bookingIndividual": "75 718 64 19",
+        "bookingGroup": "75 765 74 78"
+      },
+      "location": {
+        "province": "dolno\u015bl\u0105skie",
+        "city": "Jelenia G\u00f3ra",
+        "street": "al. Jana Paw\u0142a II 51",
+        "latitude": 50.922308,
+        "longitude": 15.763399
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-46.JPG",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-46.JPG",
+        "meta": {
+          "name": "IMG_8151.JPG",
+          "size": 979643,
+          "width": 2000,
+          "height": 1333,
+          "extension": "JPG",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Kalisz Helios",
+      "id": 29,
+      "sourceId": "99d1a365-3dad-4c9b-a9e9-6e6177630708",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 7,
+      "seatsNumber": 1442,
+      "seatsForDisabledNumber": 14,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Kalisz\/OBIEKT_WOLNOSTOJACY",
+      "contact": {
+        "bookingIndividual": "62 761 18 71",
+        "bookingGroup": "62 761 18 72"
+      },
+      "location": {
+        "province": "wielkopolskie",
+        "city": "Kalisz",
+        "street": "ul. G\u00f3rno\u015bl\u0105ska 82",
+        "latitude": 51.744527,
+        "longitude": 18.070502
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-992.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-992.jpg",
+        "meta": {
+          "name": "kino-helios-992.jpg",
+          "size": 1051863,
+          "width": 2834,
+          "height": 1928,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Katowice Helios",
+      "id": 2,
+      "sourceId": "b661164e-04d4-41af-bdca-0f9a745c3898",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 8,
+      "seatsNumber": 1129,
+      "seatsForDisabledNumber": 16,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Katowice\/Libero",
+      "contact": {
+        "bookingIndividual": "32 721 20 72",
+        "bookingGroup": "32 721 20 71"
+      },
+      "location": {
+        "province": "\u015bl\u0105skie",
+        "city": "Katowice",
+        "street": "Ul. Ko\u015bciuszki 229",
+        "latitude": 50.223904,
+        "longitude": 18.987786
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-464.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-464.jpg",
+        "meta": {
+          "name": "kino-helios-464.jpg",
+          "size": 278002,
+          "width": 1126,
+          "height": 766,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "K\u0119dzierzyn-Ko\u017ale Helios",
+      "id": 48,
+      "sourceId": "cf760fa9-32ba-4541-ae07-ef14532a911d",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 857,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/KedzierzynKozle\/ODRZANSKIE_OGRODY",
+      "contact": {
+        "bookingIndividual": "77 545 83 36",
+        "bookingGroup": "77 545 83 38"
+      },
+      "location": {
+        "province": "opolskie",
+        "city": "K\u0119dzierzyn-Ko\u017ale",
+        "street": "Al. Armii Krajowej 38",
+        "latitude": 50.342219,
+        "longitude": 18.191086
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-433.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-433.jpg",
+        "meta": {
+          "name": "kino-helios-433.jpg",
+          "size": 759312,
+          "width": 1600,
+          "height": 1088,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Kielce Helios",
+      "id": 40,
+      "sourceId": "d01162e6-31a4-41b9-97cd-1ef7707522fe",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 7,
+      "seatsNumber": 1452,
+      "seatsForDisabledNumber": 22,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Kielce\/ECHO",
+      "contact": {
+        "bookingIndividual": "41 332 13 30",
+        "bookingGroup": "41 332 13 42"
+      },
+      "location": {
+        "province": "\u015bwietokrzyskie",
+        "city": "Kielce",
+        "street": "ul. \u015awi\u0119tokrzyska 20",
+        "latitude": 50.880437,
+        "longitude": 20.647754
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-10.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-10.jpg",
+        "meta": {
+          "name": "kino-helios-10.jpg",
+          "size": 1216354,
+          "width": 3404,
+          "height": 2316,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Konin Helios",
+      "id": 31,
+      "sourceId": "0fe6ba65-dc83-49c1-8f01-bef8675b9927",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 933,
+      "seatsForDisabledNumber": 10,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Konin\/GALERIA_NAD_JEZIOREM",
+      "contact": {
+        "bookingIndividual": "63 242 00 33",
+        "bookingGroup": "+48 516 779 156"
+      },
+      "location": {
+        "province": "wielkopolskie",
+        "city": "Konin",
+        "street": "ul. Paderewskiego 8",
+        "latitude": 52.23848,
+        "longitude": 18.259979
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-28.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-28.jpg",
+        "meta": {
+          "name": "kino-helios-28.jpg",
+          "size": 417593,
+          "width": 1600,
+          "height": 1088,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Koszalin Helios",
+      "id": 54,
+      "sourceId": "4b58d474-bf12-405f-b76d-f1f88cae2b07",
+      "header": "Helios",
+      "slug": "kino-helios-galeria-emka",
+      "screensNumber": 6,
+      "seatsNumber": 910,
+      "seatsForDisabledNumber": 12,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Koszalin\/HeliosKoszalin",
+      "contact": {
+        "bookingIndividual": "94 711 01 69",
+        "bookingGroup": "94 711 01 68"
+      },
+      "location": {
+        "province": "zachodniopomorskie",
+        "city": "Koszalin",
+        "street": "ul. Jana Paw\u0142a II 20",
+        "latitude": 54.207717,
+        "longitude": 16.185954
+      },
+      "mainPhoto": {
+        "filePath": "kino\/helios-koszalin-galeria-emka\/a731e36d965e402bca59111f3bec50d8.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/helios-koszalin-galeria-emka\/a731e36d965e402bca59111f3bec50d8.jpg",
+        "meta": {
+          "name": "a731e36d965e402bca59111f3bec50d8.jpg",
+          "size": 640977,
+          "width": 1739,
+          "height": 1183,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Krosno Helios",
+      "id": 34,
+      "sourceId": "be832e9d-5b79-47ef-a0b0-1b465349ce89",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 816,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Krosno\/VIVO",
+      "contact": {
+        "bookingIndividual": "13 495 12 52",
+        "bookingGroup": "13 495 12 51"
+      },
+      "location": {
+        "province": "podkarpackie",
+        "city": "Krosno",
+        "street": "ul.Bieszczadzka 29",
+        "latitude": 49.677475,
+        "longitude": 21.776047
+      },
+      "mainPhoto": {
+        "filePath": "kino\/krosno-kino-helios\/kino-helios-17877-34.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/krosno-kino-helios\/kino-helios-17877-34.jpg",
+        "meta": {
+          "name": "kino-helios-17877-34.jpg",
+          "size": 431196,
+          "width": 1755,
+          "height": 1194,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Legionowo Helios",
+      "id": 15,
+      "sourceId": "326a5265-593c-4457-a85e-c79e8574a5b6",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 619,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Legionowo\/Helios_Legionowo",
+      "contact": {
+        "bookingIndividual": "22 206 38 12",
+        "bookingGroup": "509 226 920"
+      },
+      "location": {
+        "province": "mazowieckie",
+        "city": "Legionowo",
+        "street": "J\u00f3zefa Pi\u0142sudskiego 31C",
+        "latitude": 52.396568,
+        "longitude": 20.932827
+      },
+      "mainPhoto": {
+        "filePath": "kino\/legionowo-kino-helios\/legionowo-kino-helios-851.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/legionowo-kino-helios\/legionowo-kino-helios-851.jpg",
+        "meta": {
+          "name": "legionowo-kino-helios-851.jpg",
+          "size": 240693,
+          "width": 1077,
+          "height": 733,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Legnica Helios",
+      "id": 5,
+      "sourceId": "34b23726-7c53-483b-a0e5-13dfca6075ba",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 1086,
+      "seatsForDisabledNumber": 6,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Legnica\/GALERIA_PIASTOW",
+      "contact": {
+        "bookingIndividual": "76 862 02 00",
+        "bookingGroup": "76 862 02 00"
+      },
+      "location": {
+        "province": "dolno\u015bl\u0105skie",
+        "city": "Legnica",
+        "street": "ul. Naj\u015bwi\u0119tszej Marii Panny 9",
+        "latitude": 51.210865,
+        "longitude": 16.163681
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-166.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-166.jpg",
+        "meta": {
+          "name": "kino-helios-166.jpg",
+          "size": 780025,
+          "width": 1600,
+          "height": 1088,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Lubin Helios",
+      "id": 27,
+      "sourceId": "71192dbe-94ef-43c0-9079-ae7c9747a2f4",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 1037,
+      "seatsForDisabledNumber": 10,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Lubin\/GALERIA_CUPRUM_ARENA",
+      "contact": {
+        "bookingIndividual": "76 724 97 97",
+        "bookingGroup": "76 724 97 92"
+      },
+      "location": {
+        "province": "dolno\u015bl\u0105skie",
+        "city": "Lubin",
+        "street": "ul. Genera\u0142a W\u0142adys\u0142awa Sikorskiego 20",
+        "latitude": 51.394022,
+        "longitude": 16.205798
+      },
+      "mainPhoto": {
+        "filePath": "kino\/lubin-kino-helios\/lubin-kino-helios-290.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/lubin-kino-helios\/lubin-kino-helios-290.jpg",
+        "meta": {
+          "name": "lubin-kino-helios-290.jpg",
+          "size": 311784,
+          "width": 1323,
+          "height": 900,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "\u0141\u00f3d\u017a Helios",
+      "id": 7,
+      "sourceId": "46055d88-5f34-44a0-9584-b041caa71e26",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 9,
+      "seatsNumber": 1598,
+      "seatsForDisabledNumber": 18,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Lodz\/SUKCESJA",
+      "contact": {
+        "bookingIndividual": "42 299 92 70",
+        "bookingGroup": "42 299 92 71"
+      },
+      "location": {
+        "province": "\u0142\u00f3dzkie",
+        "city": "\u0141\u00f3d\u017a",
+        "street": "Al. Politechniki 1",
+        "latitude": 51.749311,
+        "longitude": 19.448353
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-312.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-312.jpg",
+        "meta": {
+          "name": "kino-helios-312.jpg",
+          "size": 195860,
+          "width": 960,
+          "height": 653,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "\u0141om\u017ca Helios",
+      "id": 53,
+      "sourceId": "46b9b050-9ba9-4817-9bd8-96ccfc68f1b8",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 632,
+      "seatsForDisabledNumber": 5,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Lomza\/Lomza",
+      "contact": {
+        "bookingIndividual": "86 224 14 08",
+        "bookingGroup": "86 224 14 07"
+      },
+      "location": {
+        "province": "podlaskie",
+        "city": "\u0141om\u017ca",
+        "street": "al. Legion\u00f3w 46",
+        "latitude": 53.172971,
+        "longitude": 22.066986
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-79.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-79.jpg",
+        "meta": {
+          "name": "kino-helios-79.jpg",
+          "size": 358912,
+          "width": 1094,
+          "height": 744,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Nowy S\u0105cz Helios",
+      "id": 3,
+      "sourceId": "223cd021-5821-481a-9d04-31511fb44042",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 1095,
+      "seatsForDisabledNumber": 10,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/NowySacz\/OBIEKT_WOLNOSTOJACY",
+      "contact": {
+        "bookingIndividual": "18 440 11 86",
+        "bookingGroup": "18 440 11 73"
+      },
+      "location": {
+        "province": "ma\u0142opolskie",
+        "city": "Nowy S\u0105cz",
+        "street": "ul. Lwowska 80",
+        "latitude": 49.624136,
+        "longitude": 20.706627
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-468.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-468.jpg",
+        "meta": {
+          "name": "kino-helios-468.jpg",
+          "size": 629542,
+          "width": 1600,
+          "height": 1088,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Olsztyn Helios",
+      "id": 33,
+      "sourceId": "6f3ef265-ef99-48e9-84f4-ed862badb756",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 8,
+      "seatsNumber": 1713,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Olsztyn\/ALFA_CENTRUM",
+      "contact": {
+        "bookingIndividual": "89 535 20 00",
+        "bookingGroup": "722 382 341, 89 535 20 30"
+      },
+      "location": {
+        "province": "warmi\u0144sko-mazurskie",
+        "city": "Olsztyn",
+        "street": "Al. Pi\u0142sudskiego 16",
+        "latitude": 53.777262,
+        "longitude": 20.483205
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-996.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-996.jpg",
+        "meta": {
+          "name": "kino-helios-996.jpg",
+          "size": 915261,
+          "width": 1959,
+          "height": 1333,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Opole Helios Solaris",
+      "id": 1,
+      "sourceId": "d01e6010-d098-4899-951b-a7b7208df75a",
+      "header": "Helios Solaris",
+      "slug": "kino-helios-solaris",
+      "screensNumber": 6,
+      "seatsNumber": 1247,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Opole\/GALERIA_SOLARIS",
+      "contact": {
+        "bookingIndividual": "77 40 25 030",
+        "bookingGroup": "722 382 345"
+      },
+      "location": {
+        "province": "opolskie",
+        "city": "Opole",
+        "street": "Pl. Kopernika 17",
+        "latitude": 50.670482,
+        "longitude": 17.926158
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-solaris\/kino-helios-solaris-864.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-solaris\/kino-helios-solaris-864.jpg",
+        "meta": {
+          "name": "kino-helios-solaris-864.jpg",
+          "size": 277342,
+          "width": 960,
+          "height": 653,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Opole Helios Karolinka",
+      "id": 51,
+      "sourceId": "ec0ba789-c70b-42e7-8adf-8c9595888672",
+      "header": "Helios Karolinka",
+      "slug": "kino-helios-karolinka",
+      "screensNumber": 6,
+      "seatsNumber": 925,
+      "seatsForDisabledNumber": 12,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Opole\/Karolinka",
+      "contact": {
+        "bookingIndividual": "77 543 01 29",
+        "bookingGroup": "573 988 956"
+      },
+      "location": {
+        "province": "opolskie",
+        "city": "Opole",
+        "street": "Wroc\u0142awska 152\/154",
+        "latitude": 50.681788,
+        "longitude": 17.884332
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-karolinka\/kino-helios-karolinka-189.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-karolinka\/kino-helios-karolinka-189.jpg",
+        "meta": {
+          "name": "kino-helios-karolinka-189.jpg",
+          "size": 217559,
+          "width": 960,
+          "height": 653,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Ostr\u00f3w Wielkopolski Helios",
+      "id": 52,
+      "sourceId": "1a433348-f89c-4b18-bfa4-4332e3bbf0c8",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 689,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/OstrowWielkopolski\/HeliosOstrowWielkopolski",
+      "contact": {
+        "bookingIndividual": "62 590 25 29",
+        "bookingGroup": "62 590 25 28"
+      },
+      "location": {
+        "province": "wielkopolskie",
+        "city": "Ostr\u00f3w Wielkopolski",
+        "street": "ul. Kaliska 120",
+        "latitude": 51.659615,
+        "longitude": 17.84865
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-80.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-80.jpg",
+        "meta": {
+          "name": "kino-helios-80.jpg",
+          "size": 203031,
+          "width": 960,
+          "height": 653,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Pabianice Helios",
+      "id": 39,
+      "sourceId": "540264b4-46d6-47a2-9c1b-519c0056bf47",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 610,
+      "seatsForDisabledNumber": 4,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Pabianice\/Helios_Pabianice",
+      "contact": {
+        "bookingIndividual": "42 288 19 78",
+        "bookingGroup": "42 288 19 77"
+      },
+      "location": {
+        "province": "\u0142\u00f3dzkie",
+        "city": "Pabianice",
+        "street": "ul. Grobelna 8",
+        "latitude": 51.660829,
+        "longitude": 19.358537
+      },
+      "mainPhoto": {
+        "filePath": "kino\/pabianice-kino-helios\/pabianice-kino-helios-141.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/pabianice-kino-helios\/pabianice-kino-helios-141.jpg",
+        "meta": {
+          "name": "pabianice-kino-helios-141.jpg",
+          "size": 347532,
+          "width": 1281,
+          "height": 872,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Pi\u0142a Helios",
+      "id": 44,
+      "sourceId": "ee94a20b-e818-43f3-bb84-ec970b336a22",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 549,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Pila\/GALERIA_KASZTANOWA",
+      "contact": {
+        "bookingIndividual": "67 349 14 16",
+        "bookingGroup": "67 349 14 17"
+      },
+      "location": {
+        "province": "wielkopolskie",
+        "city": "Pi\u0142a",
+        "street": "al. Powsta\u0144c\u00f3w Wlkp. 99 ",
+        "latitude": 53.158757,
+        "longitude": 16.75688
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-213.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-213.jpg",
+        "meta": {
+          "name": "kino-helios-213.jpg",
+          "size": 456521,
+          "width": 1536,
+          "height": 1044,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Piotrk\u00f3w Trybunalski Helios",
+      "id": 28,
+      "sourceId": "8f7c0839-2917-4cb9-bc3b-399d704c1323",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 1069,
+      "seatsForDisabledNumber": 10,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/PiotrkowTrybunalski\/GALERIA_FOCUS",
+      "contact": {
+        "bookingIndividual": "44 715 91 55",
+        "bookingGroup": "44 715 91 54"
+      },
+      "location": {
+        "province": "\u0142\u00f3dzkie",
+        "city": "Piotrk\u00f3w Trybunalski",
+        "street": "ul. S\u0142owackiego 123",
+        "latitude": 51.41121,
+        "longitude": 19.667236
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-397.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-397.jpg",
+        "meta": {
+          "name": "kino-helios-397.jpg",
+          "size": 300352,
+          "width": 1600,
+          "height": 1088,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "P\u0142ock Helios",
+      "id": 22,
+      "sourceId": "4623d4a3-d0be-49d8-82d8-ef16a67a848c",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 934,
+      "seatsForDisabledNumber": 10,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Plock\/GALERIA_WISlA",
+      "contact": {
+        "bookingIndividual": "24 363 34 45",
+        "bookingGroup": "24 363 34 47"
+      },
+      "location": {
+        "province": "mazowieckie",
+        "city": "P\u0142ock",
+        "street": "ul. Wyszogrodzka 144",
+        "latitude": 52.534998,
+        "longitude": 19.75708
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-938.jpeg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-938.jpeg",
+        "meta": {
+          "name": "Plock_4.jpg.jpeg",
+          "size": 4215193,
+          "width": 2420,
+          "height": 1816,
+          "extension": "jpeg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Pozna\u0144 Helios",
+      "id": 25,
+      "sourceId": "815face9-2a1d-4c62-9b2f-a361574b79a2",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 8,
+      "seatsNumber": 1374,
+      "seatsForDisabledNumber": 16,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Poznan\/GALERIA_POSNANIA",
+      "contact": {
+        "bookingIndividual": "61 622 72 97",
+        "bookingGroup": "61 622 72 96"
+      },
+      "location": {
+        "province": "wielkopolskie",
+        "city": "Pozna\u0144",
+        "street": "ul. Pleszewska 1",
+        "latitude": 52.397362,
+        "longitude": 16.956183
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-927.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-927.jpg",
+        "meta": {
+          "name": "kino-T75_6631.jpg",
+          "size": 1325815,
+          "width": 1600,
+          "height": 1068,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Przemy\u015bl Helios",
+      "id": 17,
+      "sourceId": "19a14011-0e44-43cd-9d12-8e8a16e9d744",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 578,
+      "seatsForDisabledNumber": 6,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Przemysl\/GALERIA_SANOWA",
+      "contact": {
+        "bookingIndividual": "16 733 16 02",
+        "bookingGroup": "16 733 16 03"
+      },
+      "location": {
+        "province": "podkarpackie",
+        "city": "Przemy\u015bl",
+        "street": "Wojciecha Brudzewskiego 1",
+        "latitude": 49.790658,
+        "longitude": 22.781051
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-81.JPG",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-81.JPG",
+        "meta": {
+          "name": "0097.JPG",
+          "size": 789392,
+          "width": 2000,
+          "height": 1333,
+          "extension": "JPG",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Radom Helios",
+      "id": 11,
+      "sourceId": "287fc8f4-7bee-49b4-afcd-b22b52e520b9",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 1014,
+      "seatsForDisabledNumber": 10,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Radom\/OBIEKT_WOLNOSTOJACY",
+      "contact": {
+        "bookingIndividual": "48 362 80 50",
+        "bookingGroup": "48 340 07 89"
+      },
+      "location": {
+        "province": "mazowieckie",
+        "city": "Radom",
+        "street": "ul. Poniatowskiego 5",
+        "latitude": 51.390611,
+        "longitude": 21.151959
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-258.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-258.jpg",
+        "meta": {
+          "name": "_DSC6669.jpg",
+          "size": 707934,
+          "width": 2000,
+          "height": 1333,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Rzesz\u00f3w Powsta\u0144c\u00f3w W-wy",
+      "id": 35,
+      "sourceId": "4bd64bf0-b2be-478f-8339-3d217773fe7b",
+      "header": "Powsta\u0144c\u00f3w W-wy",
+      "slug": "kino-helios-powstancow",
+      "screensNumber": 4,
+      "seatsNumber": 1202,
+      "seatsForDisabledNumber": 0,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Rzeszow\/OBIEKT_WOLNOSTOJACY",
+      "contact": {
+        "bookingIndividual": "695 120 844",
+        "bookingGroup": "695 120 844"
+      },
+      "location": {
+        "province": "podkarpackie",
+        "city": "Rzesz\u00f3w",
+        "street": "al. Powsta\u0144c\u00f3w Warszawy 14",
+        "latitude": 50.019234,
+        "longitude": 21.990741
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-powstancow\/kino-helios-powstancow-775.JPG",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-powstancow\/kino-helios-powstancow-775.JPG",
+        "meta": {
+          "name": "IMG_6338.JPG",
+          "size": 1566906,
+          "width": 2000,
+          "height": 1333,
+          "extension": "JPG",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Rzesz\u00f3w Galeria Rzesz\u00f3w",
+      "id": 49,
+      "sourceId": "409eac78-9718-4fa3-b590-d1e1fb60892d",
+      "header": "Galeria Rzesz\u00f3w",
+      "slug": "kino-helios-galeria",
+      "screensNumber": 6,
+      "seatsNumber": 1177,
+      "seatsForDisabledNumber": 12,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Rzeszow\/GALERIA_RZESZOW",
+      "contact": {
+        "bookingIndividual": "695 120 842",
+        "bookingGroup": "722 382 336"
+      },
+      "location": {
+        "province": "podkarpackie",
+        "city": "Rzesz\u00f3w",
+        "street": "Al. Pi\u0142sudskiego 44 ",
+        "latitude": 50.041957,
+        "longitude": 21.998118
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-galeria\/kino-helios-galeria-21.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-galeria\/kino-helios-galeria-21.jpg",
+        "meta": {
+          "name": "Helios Dream (35).jpg",
+          "size": 627092,
+          "width": 2000,
+          "height": 1333,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Siedlce Helios",
+      "id": 32,
+      "sourceId": "1da497b7-59af-476d-ac2b-246493650f7e",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 5,
+      "seatsNumber": 1033,
+      "seatsForDisabledNumber": 10,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Siedlce\/OBIEKT_WOLNOSTOJACY",
+      "contact": {
+        "bookingIndividual": "25 786 35 81",
+        "bookingGroup": "25 786 35 82"
+      },
+      "location": {
+        "province": "mazowieckie",
+        "city": "Siedlce",
+        "street": "ul. Pi\u0142sudskiego 74",
+        "latitude": 52.16792,
+        "longitude": 22.269607
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-679.JPG",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-679.JPG",
+        "meta": {
+          "name": "DSC03971.JPG",
+          "size": 654466,
+          "width": 2000,
+          "height": 1125,
+          "extension": "JPG",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Sosnowiec Helios",
+      "id": 21,
+      "sourceId": "880f2a3a-e9e8-447c-95ca-72c49ca38a1e",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 1084,
+      "seatsForDisabledNumber": 6,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Sosnowiec\/OBIEKT_WOLNOSTOJACY",
+      "contact": {
+        "bookingIndividual": "32 363 14 14",
+        "bookingGroup": "32 290 69 99"
+      },
+      "location": {
+        "province": "\u015bl\u0105skie",
+        "city": "Sosnowiec",
+        "street": "ul. Modrzejowska 32b",
+        "latitude": 50.275576,
+        "longitude": 19.131947
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-279.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-279.jpg",
+        "meta": {
+          "name": "dream 2.jpg",
+          "size": 730428,
+          "width": 2000,
+          "height": 972,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Stalowa Wola Helios",
+      "id": 12,
+      "sourceId": "01375340-d1ba-41d0-a00f-37c8acff6e7a",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 658,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/StalowaWola\/VIVO_Stalowa_Wola",
+      "contact": {
+        "bookingIndividual": "15 306 11 38",
+        "bookingGroup": "15 306 11 37"
+      },
+      "location": {
+        "province": "podkarpackie",
+        "city": "Stalowa Wola",
+        "street": "ul. Chopina 42",
+        "latitude": 50.58448,
+        "longitude": 22.064197
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-902.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-902.jpg",
+        "meta": {
+          "name": "Kino_Stalowa-Wola.jpg",
+          "size": 229559,
+          "width": 1200,
+          "height": 800,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Starachowice Helios",
+      "id": 4,
+      "sourceId": "9906f18b-ed73-41d8-a35e-bfcda930b2d3",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 637,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Starachowice\/GALARDIA",
+      "contact": {
+        "bookingIndividual": "41 273 11 22",
+        "bookingGroup": "41 273 17 73"
+      },
+      "location": {
+        "province": "\u015bwietokrzyskie",
+        "city": "Starachowice",
+        "street": "Ks. Kardyna\u0142a S. Wyszy\u0144skiego 14",
+        "latitude": 51.035752,
+        "longitude": 21.087319
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-346.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-346.jpg",
+        "meta": {
+          "name": "IMG_20240212_215635511_MFNR.jpg",
+          "size": 1115666,
+          "width": 2000,
+          "height": 1505,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Szczecin Helios CHR Kupiec",
+      "id": 45,
+      "sourceId": "3e60a454-c438-4c9b-b24f-7c6feff3b5ed",
+      "header": "Helios CHR Kupiec",
+      "slug": "kino-helios-chr-kupiec",
+      "screensNumber": 4,
+      "seatsNumber": 1114,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Szczecin\/KUPIEC",
+      "contact": {
+        "bookingIndividual": "91 485 12 36",
+        "bookingGroup": "91 485 12 37; 722 382 337"
+      },
+      "location": {
+        "province": "zachodniopomorskie",
+        "city": "Szczecin",
+        "street": "ul. Boles\u0142awa Krzywoustego 9\/10",
+        "latitude": 53.426736,
+        "longitude": 14.542279
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-chr-kupiec\/kino-helios-chr-kupiec-35.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-chr-kupiec\/kino-helios-chr-kupiec-35.jpg",
+        "meta": {
+          "name": "kino-helios-chr-kupiec-35.jpg",
+          "size": 2166092,
+          "width": 3802,
+          "height": 2586,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Szczecin Helios Outlet Park",
+      "id": 47,
+      "sourceId": "b898bbed-7ab6-428f-a57b-26d6b6e6a04b",
+      "header": "Helios Outlet Park",
+      "slug": "helios-outlet-park",
+      "screensNumber": 7,
+      "seatsNumber": 1400,
+      "seatsForDisabledNumber": 14,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Szczecin\/OUTLET_PARK",
+      "contact": {
+        "bookingIndividual": "91 810 67 60",
+        "bookingGroup": "691 406 004"
+      },
+      "location": {
+        "province": "zachodniopomorskie",
+        "city": "Szczecin",
+        "street": "ul. A.Struga 42",
+        "latitude": 53.38144,
+        "longitude": 14.67068
+      },
+      "mainPhoto": {
+        "filePath": "kino\/helios-outlet-park\/helios-outlet-park-354.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/helios-outlet-park\/helios-outlet-park-354.jpg",
+        "meta": {
+          "name": "Sz_6.jpg",
+          "size": 2450902,
+          "width": 1200,
+          "height": 800,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Tczew Helios",
+      "id": 30,
+      "sourceId": "58fbf23b-c605-4185-b1e9-6a3c5d7878ce",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 754,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Tczew\/GALERIA_KOCIEWSKA",
+      "contact": {
+        "bookingIndividual": "58 777 26 16",
+        "bookingGroup": "58 777 26 15"
+      },
+      "location": {
+        "province": "pomorskie",
+        "city": "Tczew",
+        "street": "ul. Pomorska 1",
+        "latitude": 54.096199,
+        "longitude": 18.786965
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-759.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-759.jpg",
+        "meta": {
+          "name": "Tczew 3.jpg",
+          "size": 910735,
+          "width": 1200,
+          "height": 897,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Tomasz\u00f3w Mazowiecki Helios",
+      "id": 38,
+      "sourceId": "22c9c999-41fc-4637-834d-a34f9286e296",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 754,
+      "seatsForDisabledNumber": 12,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/TomaszowMazowiecki\/OBIEKT_WOLNOSTOJACY",
+      "contact": {
+        "bookingIndividual": "44 737 01 47",
+        "bookingGroup": "519 143 975"
+      },
+      "location": {
+        "province": "\u0142\u00f3dzkie",
+        "city": "Tomasz\u00f3w Mazowiecki",
+        "street": "ul. Warszawska 1 ",
+        "latitude": 51.534865,
+        "longitude": 20.007052
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-219.png",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-219.png",
+        "meta": {
+          "name": "Tomaszow2.png",
+          "size": 1706923,
+          "width": 1200,
+          "height": 900,
+          "extension": "png",
+          "mime_type": "image\/png"
+        }
+      }
+    },
+    {
+      "name": "Warszawa Helios Blue City",
+      "id": 26,
+      "sourceId": "4ca060df-c4f2-4157-8905-bf46527aae58",
+      "header": "Helios Blue City",
+      "slug": "kino-helios-blue-city",
+      "screensNumber": 8,
+      "seatsNumber": 879,
+      "seatsForDisabledNumber": 12,
+      "fanpageUrl": null,
+      "isDream": true,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Warszawa\/BLUE_CITY",
+      "contact": {
+        "bookingIndividual": "22 206 38 19",
+        "bookingGroup": "22 206 38 18"
+      },
+      "location": {
+        "province": "mazowieckie",
+        "city": "Warszawa",
+        "street": "Aleje Jerozolimskie 179",
+        "latitude": 52.212657,
+        "longitude": 20.955732
+      },
+      "mainPhoto": {
+        "filePath": "kino\/warszawa-helios-blue-city\/08de3178f15cd00fbdbade02bc391ffd.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/warszawa-helios-blue-city\/08de3178f15cd00fbdbade02bc391ffd.jpg",
+        "meta": {
+          "name": "08de3178f15cd00fbdbade02bc391ffd.jpg",
+          "size": 1052216,
+          "width": 3028,
+          "height": 1120,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Wo\u0142omin Helios",
+      "id": 14,
+      "sourceId": "4ff96e13-2d06-484d-be4c-870603e3c6a8",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 593,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Wolomin\/OBIEKT_WOLNOSTOJACY",
+      "contact": {
+        "bookingIndividual": "22 212 54 16",
+        "bookingGroup": "22 212 54 15"
+      },
+      "location": {
+        "province": "mazowieckie",
+        "city": "Wo\u0142omin",
+        "street": "ul. Geodet\u00f3w 2",
+        "latitude": 52.356279,
+        "longitude": 21.256595
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-849.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-849.jpg",
+        "meta": {
+          "name": "Wolomin_3.jpg",
+          "size": 2186470,
+          "width": 1200,
+          "height": 938,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Wroc\u0142aw Helios Magnolia",
+      "id": 41,
+      "sourceId": "c21c6e3b-874c-4432-b44e-a155ec9102cd",
+      "header": "Helios Magnolia",
+      "slug": "kino-helios-magnolia",
+      "screensNumber": 7,
+      "seatsNumber": 1117,
+      "seatsForDisabledNumber": 14,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Wroclaw\/MAGNOLIA_PARK",
+      "contact": {
+        "bookingIndividual": "71 355 53 55",
+        "bookingGroup": "722 382 334"
+      },
+      "location": {
+        "province": "dolno\u015bl\u0105skie",
+        "city": "Wroc\u0142aw",
+        "street": "Ul. Legnicka 58",
+        "latitude": 51.11818,
+        "longitude": 16.98719
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-magnolia\/kino-helios-magnolia-695.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-magnolia\/kino-helios-magnolia-695.jpg",
+        "meta": {
+          "name": "Wr1.jpg",
+          "size": 381117,
+          "width": 1200,
+          "height": 800,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    },
+    {
+      "name": "Wroc\u0142aw Helios Aleja Bielany",
+      "id": 8,
+      "sourceId": "7582cee7-2815-4897-8715-e90a5b99d2e4",
+      "header": "Helios Aleja Bielany",
+      "slug": "kino-helios-aleja-bielany",
+      "screensNumber": 8,
+      "seatsNumber": 1378,
+      "seatsForDisabledNumber": 16,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Wroclaw\/BIELANY",
+      "contact": {
+        "bookingIndividual": "71 712 10 40",
+        "bookingGroup": "502 832 697"
+      },
+      "location": {
+        "province": "dolno\u015bl\u0105skie",
+        "city": "Wroc\u0142aw",
+        "street": "ul.Czekoladowa 7-9, Bielany Wroc\u0142awskie",
+        "latitude": 51.048879,
+        "longitude": 16.960007
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios-aleja-bielany\/kino-helios-aleja-bielany-39.png",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios-aleja-bielany\/kino-helios-aleja-bielany-39.png",
+        "meta": {
+          "name": "2.png",
+          "size": 1566662,
+          "width": 1200,
+          "height": 900,
+          "extension": "png",
+          "mime_type": "image\/png"
+        }
+      }
+    },
+    {
+      "name": "\u017bory Helios",
+      "id": 50,
+      "sourceId": "d116bcc0-8675-41d8-b0b0-3e7155df9ffc",
+      "header": "Helios",
+      "slug": "kino-helios",
+      "screensNumber": 4,
+      "seatsNumber": 681,
+      "seatsForDisabledNumber": 8,
+      "fanpageUrl": null,
+      "isDream": false,
+      "adsPrefix": "\/75224259\/AGORA-IN\/Helios\/Zory\/HeliosZory",
+      "contact": {
+        "bookingIndividual": "32 750 60 26",
+        "bookingGroup": "32 750 60 25"
+      },
+      "location": {
+        "province": "\u015bl\u0105skie",
+        "city": "\u017bory",
+        "street": "ul. Katowicka 10",
+        "latitude": 50.045279,
+        "longitude": 18.703084
+      },
+      "mainPhoto": {
+        "filePath": "kino\/kino-helios\/kino-helios-400.jpg",
+        "url": "https:\/\/img.helios.pl\/pliki\/kino\/kino-helios\/kino-helios-400.jpg",
+        "meta": {
+          "name": "Zory_2.jpg",
+          "size": 418891,
+          "width": 1200,
+          "height": 800,
+          "extension": "jpg",
+          "mime_type": "image\/jpeg"
+        }
+      }
+    }
+  ],
+  "meta": {
+    "totalCount": 54
+  }
+}
