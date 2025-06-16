@@ -1,6 +1,5 @@
 package top.cinema.app.fetching.helios.model;
 
-import java.util.List;
 import java.util.Map;
 
 public record ShowingsDataPayloadDto(
@@ -8,4 +7,5 @@ public record ShowingsDataPayloadDto(
         Map<String, MovieDetailsDto> movies,
         Map<String, EventDetailsDto> events,
         PriceListContainerDto priceList
-) {}
+) {
+}

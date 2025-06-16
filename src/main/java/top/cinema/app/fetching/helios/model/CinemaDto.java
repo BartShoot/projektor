@@ -1,6 +1,6 @@
 package top.cinema.app.fetching.helios.model;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.List;
 
 public record CinemaDto(
         String name,
@@ -17,4 +17,5 @@ public record CinemaDto(
         ContactDto contact,
         LocationDto location,
         MainPhotoDto mainPhoto
-) {}
+) {
+}

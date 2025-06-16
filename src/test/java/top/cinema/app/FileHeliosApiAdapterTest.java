@@ -32,7 +32,7 @@ class FileHeliosApiAdapterTest {
         assertFalse(cinemasRootDto.data().isEmpty(), "Cinema data list should not be empty");
 
         // Basic check on the first cinema
-        CinemaDto firstCinema = cinemasRootDto.data().get(0);
+        CinemaDto firstCinema = cinemasRootDto.data().getFirst();
         assertNotNull(firstCinema.name(), "First cinema name should not be null");
         assertNotNull(firstCinema.location(), "First cinema location should not be null");
         assertNotNull(firstCinema.location().city(), "First cinema city should not be null");
@@ -47,7 +47,7 @@ class FileHeliosApiAdapterTest {
         } catch (Exception e) {
             fail("Deserialization of showings.json failed: " + e.getMessage(), e);
         }
-        showingsRootDto.data().movies().forEach((key, it) -> System.out.println(it.title()));
+        showingsRootDto.data().movies().forEach((_, it) -> System.out.println(it.title()));
 
         assertNotNull(showingsRootDto, "ShowingsRootDto should not be null");
         assertEquals(200, showingsRootDto.status(), "Status should be 200");

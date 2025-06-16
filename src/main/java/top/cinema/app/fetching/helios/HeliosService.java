@@ -1,5 +1,6 @@
 package top.cinema.app.fetching.helios;
 
+import org.springframework.stereotype.Service;
 import top.cinema.app.fetching.helios.api.HeliosApiPort;
 import top.cinema.app.fetching.helios.model.*;
 
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@Service
 public class HeliosService {
 
     private final HeliosApiPort heliosApiPort;
