@@ -2,11 +2,13 @@ package top.cinema.app.fetching.helios.api;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.stereotype.Service;
 import top.cinema.app.fetching.helios.model.CinemasRootDto;
 import top.cinema.app.fetching.helios.model.ShowingsRootDto;
 
 import java.io.InputStream;
 
+@Service
 public class HeliosApiAdapter implements HeliosApiPort {
 
     private final ObjectMapper objectMapper;
