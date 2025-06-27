@@ -9,6 +9,9 @@ import top.cinema.app.dao.CinemaRepository;
 import top.cinema.app.dao.CityRepository;
 import top.cinema.app.dao.MovieRepository;
 import top.cinema.app.dao.ShowingRepository;
+import top.cinema.app.fetching.cinemacity.api.CinemaCityApiPort;
+import top.cinema.app.fetching.helios.api.HeliosApiPort;
+import top.cinema.app.fetching.multikino.api.MultikinoApiPort;
 import top.cinema.app.service.CitySaver;
 
 @Component
@@ -16,18 +19,10 @@ public class DataInitializer implements CommandLineRunner {
 
     private static final Logger log = LoggerFactory.getLogger(DataInitializer.class);
 
-    private final CityRepository cityRepository;
-    private final MovieRepository movieRepository;
-    private final CinemaRepository cinemaRepository;
-    private final ShowingRepository showingRepository;
     private final CitySaver citySaver;
 
-    public DataInitializer(CityRepository cityRepository, MovieRepository movieRepository, CinemaRepository cinemaRepository, ShowingRepository showingRepository, CitySaver citySaver) {
-        this.cityRepository = cityRepository;
-        this.movieRepository = movieRepository;
-        this.cinemaRepository = cinemaRepository;
-        this.showingRepository = showingRepository;
-        this.citySaver = citySaver;
+    public DataInitializer(HeliosApiPort heliosApiPort, CinemaCityApiPort cinemaCityApiPort, MultikinoApiPort multikinoApiPort, CityRepository cityRepository) {
+        this.citySaver = new CitySaver(heliosApiPort, cinemaCityApiPort, multikinoApiPort, cityRepository);
     }
 
     @Override
