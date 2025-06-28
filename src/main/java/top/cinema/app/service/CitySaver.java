@@ -14,6 +14,7 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Set;
+import jakarta.annotation.PostConstruct;
 import java.util.stream.Collectors;
 
 @Component
@@ -22,20 +23,29 @@ public class CitySaver {
     private final CinemaCityApiPort cinemaCityApiPort;
     private final MultikinoApiPort multikinoApiPort;
     private final CityRepository cityDAO;
-    private final Set<String> cityWhitelist;
+    private Set<String> cityWhitelist;
+    private final org.springframework.core.io.ResourceLoader resourceLoader;
 
-    public CitySaver(HeliosApiPort heliosApiPort, CinemaCityApiPort cinemaCityApiPort, MultikinoApiPort multikinoApiPort, CityRepository cityDAO) {
+    public CitySaver(HeliosApiPort heliosApiPort, CinemaCityApiPort cinemaCityApiPort, MultikinoApiPort multikinoApiPort, CityRepository cityDAO, org.springframework.core.io.ResourceLoader resourceLoader) {
         this.heliosApiPort = heliosApiPort;
         this.cinemaCityApiPort = cinemaCityApiPort;
         this.multikinoApiPort = multikinoApiPort;
         this.cityDAO = cityDAO;
-        this.cityWhitelist = loadCityWhitelist();
+        this.resourceLoader = resourceLoader;
+        this.cityWhitelist = new HashSet<>(); // Initialize to avoid NullPointerException before @PostConstruct
+    }
+
+    @PostConstruct
+    public void init() {
+        this.cityWhitelist.addAll(loadCityWhitelist());
     }
 
     private Set<String> loadCityWhitelist() {
-        try (var inputStream = getClass().getResourceAsStream("/multikino/cities_whitelist.txt");
-             var reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
-            return reader.lines().collect(Collectors.toSet());
+        try {
+            org.springframework.core.io.Resource resource = resourceLoader.getResource("classpath:/multikino/cities_whitelist.txt");
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8))) {
+                return reader.lines().collect(Collectors.toSet());
+            }
         } catch (Exception e) {
             throw new RuntimeException("Failed to load city whitelist", e);
         }
@@ -73,5 +83,9 @@ public class CitySaver {
             }
         });
         consoleOut.flush();
+    }
+
+    public Set<String> getCityWhitelist() {
+        return cityWhitelist;
     }
 }
