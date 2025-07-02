@@ -63,4 +63,10 @@
             <column name="original_title" type="VARCHAR(255)"/>
         </addColumn>
     </changeSet>
+
+    <changeSet author="gemini" id="add external_id to cinemas">
+        <addColumn tableName="cinemas">
+            <column name="external_id" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

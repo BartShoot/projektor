@@ -20,6 +20,8 @@ public class Cinema {
 
     private String location;
 
+    private String externalId;
+
     private CinemaChain cinemaChain;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -35,20 +37,29 @@ public class Cinema {
     public Cinema() {
     }
 
-    public Cinema(String name, String address, CinemaChain cinemaChain, City city) {
+    public Cinema(String name, String address, String externalId, CinemaChain cinemaChain, City city) {
         this.name = name;
         this.location = address;
+        this.externalId = externalId;
         this.cinemaChain = cinemaChain;
         this.city = city;
     }
 
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
     public CinemaFront toFront() {
-        return new CinemaFront(id, name, location, cinemaChain, null, showingCounts,
+        return new CinemaFront(id, name, location, externalId, cinemaChain, null, showingCounts,
                 null);
     }
 
     public CinemaFront toFrontWithCity() {
-        return new CinemaFront(id, name, location, cinemaChain, city.toFront(), showingCounts,
+        return new CinemaFront(id, name, location, externalId, cinemaChain, city.toFront(), showingCounts,
                 null);
     }
 
