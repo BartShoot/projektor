@@ -14,6 +14,7 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String title;
+    private String originalTitle;
     private Integer durationMinutes;
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
@@ -30,6 +31,13 @@ public class Movie {
 
     public Movie(String name, Integer durationMinutes) {
         this.title = name;
+        this.originalTitle = name;
+        this.durationMinutes = durationMinutes;
+    }
+
+    public Movie(String title, String originalTitle, Integer durationMinutes) {
+        this.title = title;
+        this.originalTitle = originalTitle;
         this.durationMinutes = durationMinutes;
     }
 
@@ -47,6 +55,10 @@ public class Movie {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getOriginalTitle() {
+        return originalTitle;
     }
 
     public Integer getDurationMinutes() {

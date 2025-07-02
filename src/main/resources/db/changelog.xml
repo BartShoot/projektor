@@ -57,4 +57,10 @@
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cities"
                                  validate="true"/>
     </changeSet>
+
+    <changeSet author="gemini" id="add original_title to movies">
+        <addColumn tableName="movies">
+            <column name="original_title" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

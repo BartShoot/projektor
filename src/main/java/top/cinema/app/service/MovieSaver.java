@@ -9,6 +9,9 @@ import top.cinema.app.fetching.cinemacity.api.CinemaCityApiPort;
 import top.cinema.app.fetching.helios.api.HeliosApiPort;
 import top.cinema.app.fetching.multikino.api.MultikinoApiPort;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+
 @Service
 public class MovieSaver {
 
@@ -29,12 +32,19 @@ public class MovieSaver {
     public void processMovies() {
         log.info("Processing movies...");
 
+        Set<String> normalizedTitles = movieRepository.findAll().stream()
+                .map(movie -> TitleNormalizer.normalize(movie.getOriginalTitle()))
+                .collect(Collectors.toSet());
+
         // Helios
         var heliosShowings = heliosApiPort.fetchShowingsData();
         heliosShowings.data().movies().values().forEach(heliosMovie -> {
-            if (movieRepository.findByTitle(heliosMovie.title()).isEmpty()) {
-                Movie movie = new Movie(heliosMovie.title(), heliosMovie.duration());
+            String titleToNormalize = heliosMovie.titleOriginal() != null ? heliosMovie.titleOriginal() : heliosMovie.title();
+            String normalizedTitle = TitleNormalizer.normalize(titleToNormalize);
+            if (!normalizedTitles.contains(normalizedTitle)) {
+                Movie movie = new Movie(heliosMovie.title(), heliosMovie.titleOriginal(), heliosMovie.duration());
                 movieRepository.save(movie);
+                normalizedTitles.add(normalizedTitle);
                 log.info("Saved Helios movie: {}", heliosMovie.title());
             }
         });
@@ -42,9 +52,11 @@ public class MovieSaver {
         // Cinema City
         var cinemaCityMovies = cinemaCityApiPort.fetchMoviesData();
         cinemaCityMovies.body().movies().forEach(cinemaCityMovie -> {
-            if (movieRepository.findByTitle(cinemaCityMovie.title()).isEmpty()) {
+            String normalizedTitle = TitleNormalizer.normalize(cinemaCityMovie.title());
+            if (!normalizedTitles.contains(normalizedTitle)) {
                 Movie movie = new Movie(cinemaCityMovie.title(), cinemaCityMovie.durationMinutes());
                 movieRepository.save(movie);
+                normalizedTitles.add(normalizedTitle);
                 log.info("Saved Cinema City movie: {}", cinemaCityMovie.title());
             }
         });
@@ -52,9 +64,13 @@ public class MovieSaver {
         // Multikino
         var multikinoMovies = multikinoApiPort.fetchMoviesData();
         multikinoMovies.movies().forEach(multikinoMovie -> {
-            if (movieRepository.findByTitle(multikinoMovie.filmTitle()).isEmpty()) {
-                Movie movie = new Movie(multikinoMovie.filmTitle(), multikinoMovie.runningTime());
+            String titleToNormalize = multikinoMovie.originalTitle() != null ? multikinoMovie.originalTitle() : multikinoMovie.filmTitle();
+            String normalizedTitle = TitleNormalizer.normalize(titleToNormalize);
+            if (!normalizedTitles.contains(normalizedTitle)) {
+                Movie movie = new Movie(multikinoMovie.filmTitle(), multikinoMovie.originalTitle(),
+                        multikinoMovie.runningTime());
                 movieRepository.save(movie);
+                normalizedTitles.add(normalizedTitle);
                 log.info("Saved Multikino movie: {}", multikinoMovie.filmTitle());
             }
         });
