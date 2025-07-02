@@ -3,13 +3,12 @@ package top.cinema.app;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.springframework.beans.factory.annotation.Autowired;
-import top.cinema.app.dao.CinemaRepository;
-import top.cinema.app.dao.CityRepository;
 import top.cinema.app.service.CinemaSaver;
 import top.cinema.app.service.CitySaver;
+import top.cinema.app.service.MovieSaver;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -18,15 +17,13 @@ public class DataInitializer implements CommandLineRunner {
 
     private final CitySaver citySaver;
     private final CinemaSaver cinemaSaver;
-    private final CinemaRepository cinemaRepository;
-    private final CityRepository cityRepository;
+    private final MovieSaver movieSaver;
 
     @Autowired
-    public DataInitializer(CitySaver citySaver, CinemaSaver cinemaSaver, CinemaRepository cinemaRepository, CityRepository cityRepository) {
+    public DataInitializer(CitySaver citySaver, CinemaSaver cinemaSaver, MovieSaver movieSaver) {
         this.citySaver = citySaver;
         this.cinemaSaver = cinemaSaver;
-        this.cinemaRepository = cinemaRepository;
-        this.cityRepository = cityRepository;
+        this.movieSaver = movieSaver;
     }
 
     @Override
@@ -34,6 +31,7 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
         citySaver.processCities();
         cinemaSaver.processCinemas();
+        movieSaver.processMovies();
     }
 
 }
