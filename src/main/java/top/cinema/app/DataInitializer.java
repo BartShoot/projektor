@@ -13,8 +13,6 @@ import top.cinema.app.service.MovieSaver;
 @Component
 public class DataInitializer implements CommandLineRunner {
 
-    private static final Logger log = LoggerFactory.getLogger(DataInitializer.class);
-
     private final CitySaver citySaver;
     private final CinemaSaver cinemaSaver;
     private final MovieSaver movieSaver;
@@ -28,7 +26,7 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     @Transactional
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         citySaver.processCities();
         cinemaSaver.processCinemas();
         movieSaver.processMovies();
