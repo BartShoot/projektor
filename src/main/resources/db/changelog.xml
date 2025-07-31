@@ -69,4 +69,20 @@
             <column name="external_id" type="VARCHAR(255)"/>
         </addColumn>
     </changeSet>
+
+
+    <changeSet author="bartshoot" id="add external ids and normalized title">
+        <addColumn tableName="movies">
+            <column name="cinema_city_id" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="helios_id" type="INTEGER"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="multikino_id" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="normalized_title" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

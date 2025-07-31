@@ -14,8 +14,12 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String title;
+    private String normalizedTitle;
     private String originalTitle;
     private Integer durationMinutes;
+    private String cinemaCityId;
+    private Integer heliosId;
+    private String multikinoId;
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
     private List<Showing> showings;
@@ -29,14 +33,16 @@ public class Movie {
 
     }
 
-    public Movie(String name, Integer durationMinutes) {
+    public Movie(String name, String normalizedTitle, Integer durationMinutes) {
         this.title = name;
+        this.normalizedTitle = normalizedTitle;
         this.originalTitle = name;
         this.durationMinutes = durationMinutes;
     }
 
-    public Movie(String title, String originalTitle, Integer durationMinutes) {
+    public Movie(String title, String normalizedTitle, String originalTitle, Integer durationMinutes) {
         this.title = title;
+        this.normalizedTitle = normalizedTitle;
         this.originalTitle = originalTitle;
         this.durationMinutes = durationMinutes;
     }
@@ -65,7 +71,39 @@ public class Movie {
         return durationMinutes;
     }
 
+    public String getCinemaCityId() {
+        return cinemaCityId;
+    }
+
+    public void setCinemaCityId(String cinemaCityId) {
+        this.cinemaCityId = cinemaCityId;
+    }
+
+    public Integer getHeliosId() {
+        return heliosId;
+    }
+
+    public void setHeliosId(Integer heliosId) {
+        this.heliosId = heliosId;
+    }
+
+    public String getMultikinoId() {
+        return multikinoId;
+    }
+
+    public void setMultikinoId(String multikinoId) {
+        this.multikinoId = multikinoId;
+    }
+
     public List<Showing> getShowings() {
         return showings;
+    }
+
+    public String getNormalizedTitle() {
+        return normalizedTitle;
+    }
+
+    public void setNormalizedTitle(String normalizedTitle) {
+        this.normalizedTitle = normalizedTitle;
     }
 }
