@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import top.cinema.app.service.CinemaSaver;
 import top.cinema.app.service.CitySaver;
 import top.cinema.app.service.MovieSaver;
+import top.cinema.app.service.ShowingSaver;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -14,12 +15,14 @@ public class DataInitializer implements CommandLineRunner {
     private final CitySaver citySaver;
     private final CinemaSaver cinemaSaver;
     private final MovieSaver movieSaver;
+    private final ShowingSaver showingSaver;
 
     @Autowired
-    public DataInitializer(CitySaver citySaver, CinemaSaver cinemaSaver, MovieSaver movieSaver) {
+    public DataInitializer(CitySaver citySaver, CinemaSaver cinemaSaver, MovieSaver movieSaver, ShowingSaver showingSaver) {
         this.citySaver = citySaver;
         this.cinemaSaver = cinemaSaver;
         this.movieSaver = movieSaver;
+        this.showingSaver = showingSaver;
     }
 
     @Override
@@ -28,6 +31,7 @@ public class DataInitializer implements CommandLineRunner {
         citySaver.processCities();
         cinemaSaver.processCinemas();
         movieSaver.processMovies();
+        showingSaver.processShowings();
     }
 
 }

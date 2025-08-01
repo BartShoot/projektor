@@ -2,11 +2,15 @@ package top.cinema.app.fetching.helios.api;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import org.springframework.stereotype.Service;
 import top.cinema.app.fetching.helios.model.CinemasRootDto;
 import top.cinema.app.fetching.helios.model.ShowingsRootDto;
 
 import java.io.InputStream;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Service
 public class HeliosApiAdapter implements HeliosApiPort {
@@ -16,8 +20,11 @@ public class HeliosApiAdapter implements HeliosApiPort {
     private static final String SHOWINGS_FILE_PATH = "/helios/showings.json";
 
     public HeliosApiAdapter() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.objectMapper = new ObjectMapper();
-        // objectMapper.registerModule(new JavaTimeModule()); // If you use LocalDateTime in DTOs
+        JavaTimeModule javaTimeModule = new JavaTimeModule();
+        javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(formatter));
+        objectMapper.registerModule(javaTimeModule); // If you use LocalDateTime in DTOs
         this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 

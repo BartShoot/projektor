@@ -1,9 +1,10 @@
 package top.cinema.app.fetching.helios.model;
 
+import java.time.LocalDate;
 import java.util.Map;
 
 public record ShowingsDataPayloadDto(
-        Map<String, Map<String, DailyMovieScreeningsDto>> screenings, // Date -> Movie/Event Key -> Screenings
+        Map<LocalDate, Map<String, DailyMovieScreeningsDto>> screenings,
         Map<String, MovieDetailsDto> movies,
         Map<String, EventDetailsDto> events,
         PriceListContainerDto priceList
