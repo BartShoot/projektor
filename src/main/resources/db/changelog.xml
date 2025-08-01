@@ -85,4 +85,19 @@
             <column name="normalized_title" type="VARCHAR(255)"/>
         </addColumn>
     </changeSet>
+
+    <changeSet author="bartshoot" id="add unique constraint">
+        <addUniqueConstraint columnNames="cinema_city_id" constraintName="UC_MOVIESCINEMA_CITY_ID_COL"
+                             tableName="movies"/>
+        <addUniqueConstraint columnNames="helios_id" constraintName="UC_MOVIESHELIOS_ID_COL" tableName="movies"/>
+        <addUniqueConstraint columnNames="multikino_id" constraintName="UC_MOVIESMULTIKINO_ID_COL" tableName="movies"/>
+        <addUniqueConstraint columnNames="normalized_title" constraintName="UC_MOVIESNORMALIZED_TITLE_COL"
+                             tableName="movies"/>
+    </changeSet>
+
+    <changeSet author="bartshoot" id="add external id for showing">
+        <addColumn tableName="showings">
+            <column name="external_id" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

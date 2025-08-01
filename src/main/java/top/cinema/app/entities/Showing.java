@@ -13,6 +13,8 @@ public class Showing {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
+    private String externalId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "movie_id")
     private Movie movie;
@@ -26,7 +28,8 @@ public class Showing {
     public Showing() {
     }
 
-    public Showing(Cinema cinema, Movie movie, LocalDateTime showingTime) {
+    public Showing(String externalId, Cinema cinema, Movie movie, LocalDateTime showingTime) {
+        this.externalId = externalId;
         this.cinema = cinema;
         this.movie = movie;
         this.showingTime = showingTime;
@@ -55,5 +58,13 @@ public class Showing {
 
     public LocalDateTime getShowingTime() {
         return showingTime;
+    }
+
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 }

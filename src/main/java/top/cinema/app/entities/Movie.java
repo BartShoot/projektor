@@ -14,11 +14,15 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String title;
+    @Column(unique = true)
     private String normalizedTitle;
     private String originalTitle;
     private Integer durationMinutes;
+    @Column(unique = true)
     private String cinemaCityId;
+    @Column(unique = true)
     private Integer heliosId;
+    @Column(unique = true)
     private String multikinoId;
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
