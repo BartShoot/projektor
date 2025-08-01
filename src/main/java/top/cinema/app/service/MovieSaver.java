@@ -37,62 +37,84 @@ public class MovieSaver {
                 .collect(Collectors.toSet());
         // TODO create fuzzy search
 
-        // Helios
-        var heliosShowings = heliosApiPort.fetchShowingsData();
-        log.info("All helios movies: %s".formatted(heliosShowings.data().movies().size()));
-        heliosShowings.data().movies().values().forEach(heliosMovie -> {
-            String titleToNormalize = heliosMovie.title();
-            String normalizedTitle = TitleNormalizer.normalize(titleToNormalize);
-            if (!normalizedTitles.contains(normalizedTitle)) {
-                Movie movie = new Movie(heliosMovie.title(), normalizedTitle, heliosMovie.titleOriginal(),
-                        heliosMovie.duration());
-                movie.setHeliosId(heliosMovie.id());
-                movieRepository.save(movie);
-                normalizedTitles.add(normalizedTitle);
-            } else {
-                Movie movie = movieRepository.findByNormalizedTitle(normalizedTitle).get();
-                movie.setHeliosId(heliosMovie.id());
-                movieRepository.save(movie);
-            }
-            log.info("Helios movie: {}", normalizedTitle);
-        });
+        saveHeliosMovies(normalizedTitles);
+        saveCinemaCityMovies(normalizedTitles);
+        saveMultikinoMovies(normalizedTitles);
+    }
 
-        // Cinema City
-        var cinemaCityMovies = cinemaCityApiPort.fetchMoviesData();
-        log.info("All cc movies: %s".formatted(cinemaCityMovies.body().movies().size()));
-        cinemaCityMovies.body().movies().forEach(cinemaCityMovie -> {
-            String normalizedTitle = TitleNormalizer.normalize(cinemaCityMovie.title());
-            if (!normalizedTitles.contains(normalizedTitle)) {
-                Movie movie = new Movie(cinemaCityMovie.title(), normalizedTitle, cinemaCityMovie.durationMinutes());
-                movie.setCinemaCityId(cinemaCityMovie.id());
-                movieRepository.save(movie);
-                normalizedTitles.add(normalizedTitle);
-            } else {
-                Movie movie = movieRepository.findByNormalizedTitle(normalizedTitle).get();
-                movie.setCinemaCityId(cinemaCityMovie.id());
-                movieRepository.save(movie);
-            }
-            log.info("CinemaCity movie: {}", normalizedTitle);
-        });
-
-        // Multikino
+    private void saveMultikinoMovies(Set<String> normalizedTitles) {
         var multikinoMovies = multikinoApiPort.fetchMoviesData();
         log.info("All multikino movies: %s".formatted(multikinoMovies.movies().size()));
         multikinoMovies.movies().forEach(multikinoMovie -> {
             String titleToNormalize = multikinoMovie.filmTitle();
             String normalizedTitle = TitleNormalizer.normalize(titleToNormalize);
-            if (!normalizedTitles.contains(normalizedTitle)) {
-                Movie movie = new Movie(multikinoMovie.filmTitle(), normalizedTitle, multikinoMovie.originalTitle(),
-                        multikinoMovie.runningTime());
-                movie.setMultikinoId(multikinoMovie.filmId());
-                movieRepository.save(movie);
-                normalizedTitles.add(normalizedTitle);
+            if (movieRepository.findByMultikinoId(multikinoMovie.filmId()).isEmpty()) {
+                if (!normalizedTitles.contains(normalizedTitle)) {
+                    Movie movie = new Movie(multikinoMovie.filmTitle(), normalizedTitle, multikinoMovie.originalTitle(),
+                            multikinoMovie.runningTime());
+                    movie.setMultikinoId(multikinoMovie.filmId());
+                    movieRepository.save(movie);
+                    normalizedTitles.add(normalizedTitle);
+                    log.info("Multikino movie saved: {}", normalizedTitle);
+                } else {
+                    Movie movie = movieRepository.findByNormalizedTitle(normalizedTitle).get();
+                    movie.setMultikinoId(multikinoMovie.filmId());
+                    movieRepository.save(movie);
+                    log.info("Movie showing in multiKino: {}", normalizedTitle);
+                }
             } else {
-                Movie movie = movieRepository.findByNormalizedTitle(normalizedTitle).get();
-                movie.setMultikinoId(multikinoMovie.filmId());
-                movieRepository.save(movie);
+                log.info("Multikino movie skipped: {}", normalizedTitle);
             }
-            log.info("Multikino movie: {}", normalizedTitle);
+        });
+    }
+
+    private void saveCinemaCityMovies(Set<String> normalizedTitles) {
+        var cinemaCityMovies = cinemaCityApiPort.fetchMoviesData();
+        log.info("All cc movies: %s".formatted(cinemaCityMovies.body().movies().size()));
+        cinemaCityMovies.body().movies().forEach(cinemaCityMovie -> {
+            String normalizedTitle = TitleNormalizer.normalize(cinemaCityMovie.title());
+            if (movieRepository.findByCinemaCityId(cinemaCityMovie.id()).isEmpty()) {
+                if (!normalizedTitles.contains(normalizedTitle)) {
+                    Movie movie = new Movie(cinemaCityMovie.title(), normalizedTitle,
+                            cinemaCityMovie.durationMinutes());
+                    movie.setCinemaCityId(cinemaCityMovie.id());
+                    movieRepository.save(movie);
+                    normalizedTitles.add(normalizedTitle);
+                    log.info("CinemaCity movie saved: {}", normalizedTitle);
+                } else {
+                    Movie movie = movieRepository.findByNormalizedTitle(normalizedTitle).get();
+                    movie.setCinemaCityId(cinemaCityMovie.id());
+                    movieRepository.save(movie);
+                    log.info("Movie showing in cinemaCity: {}", normalizedTitle);
+                }
+            } else {
+                log.info("CinemaCity movie skipped: {}", normalizedTitle);
+            }
+        });
+    }
+
+    private void saveHeliosMovies(Set<String> normalizedTitles) {
+        var heliosShowings = heliosApiPort.fetchShowingsData();
+        log.info("All helios movies: %s".formatted(heliosShowings.data().movies().size()));
+        heliosShowings.data().movies().values().forEach(heliosMovie -> {
+            String normalizedTitle = TitleNormalizer.normalize(heliosMovie.title());
+            if (movieRepository.findByHeliosId(heliosMovie.id()).isEmpty()) {
+                if (!normalizedTitles.contains(normalizedTitle)) {
+                    Movie movie = new Movie(heliosMovie.title(), normalizedTitle, heliosMovie.titleOriginal(),
+                            heliosMovie.duration());
+                    movie.setHeliosId(heliosMovie.id());
+                    movieRepository.save(movie);
+                    normalizedTitles.add(normalizedTitle);
+                    log.info("Helios movie saved: {}", normalizedTitle);
+                } else {
+                    Movie movie = movieRepository.findByNormalizedTitle(normalizedTitle).get();
+                    movie.setHeliosId(heliosMovie.id());
+                    movieRepository.save(movie);
+                    log.info("Movie showing in helios: {}", normalizedTitle);
+                }
+            } else {
+                log.info("Helios movie skipped: {}", normalizedTitle);
+            }
         });
     }
 }
