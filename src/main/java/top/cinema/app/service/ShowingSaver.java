@@ -70,7 +70,7 @@ public class ShowingSaver {
                     id = id.substring(1);
                     Optional<Movie> movie = movieRepository.findByHeliosId(Integer.parseInt(id));
                     Optional<Cinema> cinema =
-                            cinemaRepository.findByExternalId(screeningDetails.cinemaSourceId());
+                            cinemaRepository.findByExternalId("2");// hardcoded instead of id from api
                     showingRepository.save(new Showing(screeningDetails.sourceId(),
                                                        cinema.get(),
                                                        movie.get(),
