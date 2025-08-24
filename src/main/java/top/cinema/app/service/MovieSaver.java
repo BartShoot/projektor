@@ -70,8 +70,8 @@ public class MovieSaver {
 
     private void saveCinemaCityMovies(Set<String> normalizedTitles) {
         var cinemaCityMovies = cinemaCityApiPort.fetchMoviesData();
-        log.info("All cc movies: %s".formatted(cinemaCityMovies.body().movies().size()));
-        cinemaCityMovies.body().movies().forEach(cinemaCityMovie -> {
+        log.info("All cc movies: %s".formatted(cinemaCityMovies.body().films().size()));
+        cinemaCityMovies.body().films().forEach(cinemaCityMovie -> {
             String normalizedTitle = TitleNormalizer.normalize(cinemaCityMovie.title());
             if (movieRepository.findByCinemaCityId(cinemaCityMovie.id()).isEmpty()) {
                 if (!normalizedTitles.contains(normalizedTitle)) {

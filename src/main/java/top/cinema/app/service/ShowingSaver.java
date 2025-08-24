@@ -48,11 +48,36 @@ public class ShowingSaver {
     public void processShowings() {
         log.info("Processing showings...");
 
+        saveHeliosShowings();
+        saveCinemaCityShowings();
+        saveMultikinoShowings();
+    }
+
+    private void saveMultikinoShowings() {
+
+    }
+
+    private void saveCinemaCityShowings() {
+        // only one day
+        var events = cinemaCityApiPort.fetchMoviesData().body().events();
+        events.forEach(showing -> {
+            if (showingRepository.findByExternalId(showing.id().toString()).isEmpty()) {
+                Optional<Movie> movie = movieRepository.findByCinemaCityId(showing.filmId());
+                Optional<Cinema> cinema = cinemaRepository.findByExternalId(showing.cinemaId().toString());
+                showingRepository.save(new Showing(showing.id().toString(),
+                                                   cinema.get(),
+                                                   movie.get(),
+                                                   showing.eventDateTime()));
+            }
+        });
+    }
+
+    private void saveHeliosShowings() {
+        // foreach cinema
         ShowingsRootDto showingsRootDto = heliosApiPort.fetchShowingsData();
         List<ShowingDto>
                 flatShowings =
                 showingsRootDto.data().screenings().entrySet().stream().flatMap(entry -> {
-
                     var date = entry.getKey();
                     var showingsOnDate = entry.getValue();
                     return showingsOnDate.entrySet().stream().flatMap(movieEntry -> {

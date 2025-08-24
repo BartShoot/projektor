@@ -2,11 +2,14 @@ package top.cinema.app.fetching.cinemacity.api;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import org.springframework.stereotype.Service;
 import top.cinema.app.fetching.cinemacity.model.CinemaCityCinemasRootDto;
 import top.cinema.app.fetching.cinemacity.model.CinemaCityMoviesRootDto;
 
 import java.io.InputStream;
+import java.time.LocalDateTime;
 
 @Service
 public class CinemaCityApiAdapter implements CinemaCityApiPort {
@@ -17,6 +20,8 @@ public class CinemaCityApiAdapter implements CinemaCityApiPort {
 
     public CinemaCityApiAdapter() {
         this.objectMapper = new ObjectMapper();
+        JavaTimeModule javaTimeModule = new JavaTimeModule();
+        objectMapper.registerModule(javaTimeModule); // If you use LocalDateTime in DTOs
         this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 

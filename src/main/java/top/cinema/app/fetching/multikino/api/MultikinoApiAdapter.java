@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 import top.cinema.app.fetching.multikino.model.MultikinoCinemasRootDto;
 import top.cinema.app.fetching.multikino.model.MultikinoMoviesRootDto;
+import top.cinema.app.fetching.multikino.model.MultikinoShowingsRootDto;
 
 import java.io.InputStream;
 
@@ -14,6 +15,7 @@ public class MultikinoApiAdapter implements MultikinoApiPort {
     private final ObjectMapper objectMapper;
     private static final String CINEMAS_FILE_PATH = "/multikino/cinemas.json";
     private static final String MOVIES_FILE_PATH = "/multikino/movies.json";
+    private static final String SHOWINGS_FILE_PATH = "/multikino/showings.json";
 
     public MultikinoApiAdapter() {
         this.objectMapper = new ObjectMapper();
@@ -39,6 +41,18 @@ public class MultikinoApiAdapter implements MultikinoApiPort {
                 throw new RuntimeException("Cannot find the movies JSON file: " + MOVIES_FILE_PATH);
             }
             return objectMapper.readValue(inputStream, MultikinoMoviesRootDto.class);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to read or parse movies JSON file", e);
+        }
+    }
+
+    @Override
+    public MultikinoShowingsRootDto fetchShowingsData() {
+        try (InputStream inputStream = MultikinoApiAdapter.class.getResourceAsStream(SHOWINGS_FILE_PATH)) {
+            if (inputStream == null) {
+                throw new RuntimeException("Cannot find the showings JSON file: " + SHOWINGS_FILE_PATH);
+            }
+            return objectMapper.readValue(inputStream, MultikinoShowingsRootDto.class);
         } catch (Exception e) {
             throw new RuntimeException("Failed to read or parse movies JSON file", e);
         }
