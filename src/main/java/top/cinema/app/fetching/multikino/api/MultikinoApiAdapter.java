@@ -2,6 +2,7 @@ package top.cinema.app.fetching.multikino.api;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.stereotype.Service;
 import top.cinema.app.fetching.multikino.model.MultikinoCinemasRootDto;
 import top.cinema.app.fetching.multikino.model.MultikinoMoviesRootDto;
@@ -19,6 +20,8 @@ public class MultikinoApiAdapter implements MultikinoApiPort {
 
     public MultikinoApiAdapter() {
         this.objectMapper = new ObjectMapper();
+        JavaTimeModule javaTimeModule = new JavaTimeModule();
+        objectMapper.registerModule(javaTimeModule);
         this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 

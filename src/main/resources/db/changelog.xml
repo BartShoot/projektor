@@ -100,4 +100,15 @@
             <column name="external_id" type="VARCHAR(255)"/>
         </addColumn>
     </changeSet>
+
+    <changeSet author="bartshoot" id="add indexes">
+        <createIndex indexName="idx_showing_cinema_time" tableName="showings">
+            <column name="cinema_id"/>
+            <column name="showing_time"/>
+        </createIndex>
+        <createIndex indexName="idx_showing_movie_time" tableName="showings">
+            <column name="movie_id"/>
+            <column name="showing_time"/>
+        </createIndex>
+    </changeSet>
 </databaseChangeLog>

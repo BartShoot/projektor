@@ -6,7 +6,12 @@ import top.cinema.app.dto.ShowingFront;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "showings")
+@Table(
+        name = "showings",
+        indexes = {
+                @Index(name = "idx_showing_cinema_time", columnList = "cinema_id, showingTime"),
+                @Index(name = "idx_showing_movie_time", columnList = "movie_id, showingTime")
+        })
 public class Showing {
 
     @Id

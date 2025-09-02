@@ -54,7 +54,18 @@ public class ShowingSaver {
     }
 
     private void saveMultikinoShowings() {
-
+        // one movie
+        var showings = multikinoApiPort.fetchShowingsData().result().getFirst();
+        showings.showingGroups().forEach(showing -> {
+            showing.sessions().forEach(session -> {
+                String string = session.sessionId().toString();
+                if (showingRepository.findByExternalId(string).isEmpty()) {
+                    Optional<Movie> movie = movieRepository.findByMultikinoId(showings.filmId());
+                    Optional<Cinema> cinema = cinemaRepository.findByExternalId("0035"); //is from path
+                    showingRepository.save(new Showing(string, cinema.get(), movie.get(), session.startTime()));
+                }
+            });
+        });
     }
 
     private void saveCinemaCityShowings() {
@@ -95,7 +106,7 @@ public class ShowingSaver {
                     id = id.substring(1);
                     Optional<Movie> movie = movieRepository.findByHeliosId(Integer.parseInt(id));
                     Optional<Cinema> cinema =
-                            cinemaRepository.findByExternalId("2");// hardcoded instead of id from api
+                            cinemaRepository.findByExternalId("2");// is from path
                     showingRepository.save(new Showing(screeningDetails.sourceId(),
                                                        cinema.get(),
                                                        movie.get(),
