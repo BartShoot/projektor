@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.5.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>top.cinema</groupId>
     <artifactId>app</artifactId>
@@ -148,23 +148,20 @@
                         <artifactId>${project.artifactId}</artifactId>
                         <version>${project.version}</version>
                     </dependency>
-                    <!-- Spring Boot Data JPA for context and entity scanning -->
                     <dependency>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-starter-data-jpa</artifactId>
                         <version>${project.parent.version}</version>
                     </dependency>
-                    <!-- JDBC driver for the target database -->
                     <dependency>
                         <groupId>org.postgresql</groupId>
                         <artifactId>postgresql</artifactId>
                         <version>${postgresql.version}</version>
                     </dependency>
-                    <!-- Ensure Hibernate core is available if not transitively included sufficiently -->
                     <dependency>
                         <groupId>org.hibernate.orm</groupId>
                         <artifactId>hibernate-core</artifactId>
-                        <version>${hibernate.version}</version> <!-- Ensure hibernate.version is defined or managed -->
+                        <version>${hibernate.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
