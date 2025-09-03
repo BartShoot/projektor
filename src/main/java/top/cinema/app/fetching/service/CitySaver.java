@@ -1,5 +1,6 @@
 package top.cinema.app.fetching.service;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import top.cinema.app.dao.CityRepository;
 import top.cinema.app.entities.City;
@@ -14,7 +15,6 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Set;
-import jakarta.annotation.PostConstruct;
 import java.util.stream.Collectors;
 
 @Component
@@ -26,7 +26,11 @@ public class CitySaver {
     private Set<String> cityWhitelist;
     private final org.springframework.core.io.ResourceLoader resourceLoader;
 
-    public CitySaver(HeliosApiPort heliosApiPort, CinemaCityApiPort cinemaCityApiPort, MultikinoApiPort multikinoApiPort, CityRepository cityDAO, org.springframework.core.io.ResourceLoader resourceLoader) {
+    public CitySaver(HeliosApiPort heliosApiPort,
+                     CinemaCityApiPort cinemaCityApiPort,
+                     MultikinoApiPort multikinoApiPort,
+                     CityRepository cityDAO,
+                     org.springframework.core.io.ResourceLoader resourceLoader) {
         this.heliosApiPort = heliosApiPort;
         this.cinemaCityApiPort = cinemaCityApiPort;
         this.multikinoApiPort = multikinoApiPort;
@@ -42,8 +46,10 @@ public class CitySaver {
 
     private Set<String> loadCityWhitelist() {
         try {
-            org.springframework.core.io.Resource resource = resourceLoader.getResource("classpath:/multikino/cities_whitelist.txt");
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8))) {
+            org.springframework.core.io.Resource resource =
+                    resourceLoader.getResource("classpath:/multikino/cities_whitelist.txt");
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(resource.getInputStream(),
+                                                                                  StandardCharsets.UTF_8))) {
                 return reader.lines().collect(Collectors.toSet());
             }
         } catch (Exception e) {
@@ -66,12 +72,13 @@ public class CitySaver {
         var multikinoCinemas = multikinoApiPort.fetchCinemasData();
         multikinoCinemas.result().forEach(group -> group.cinemas().forEach(cinema -> {
             cityWhitelist.stream()
-                    .filter(cinema.cinemaName()::startsWith)
-                    .findFirst()
-                    .ifPresentOrElse(
-                            allCities::add,
-                            () -> System.out.println("WARN: City for cinema '" + cinema.cinemaName() + "' not found in whitelist.")
-                    );
+                         .filter(cinema.cinemaName()::startsWith)
+                         .findFirst()
+                         .ifPresentOrElse(
+                                 allCities::add,
+                                 () -> System.out.println(
+                                         "WARN: City for cinema '" + cinema.cinemaName() + "' not found in whitelist.")
+                         );
         }));
 
         PrintWriter consoleOut = new PrintWriter(new OutputStreamWriter(System.out, StandardCharsets.UTF_8));

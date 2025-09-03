@@ -22,7 +22,10 @@ public class MovieSaver {
     private final CinemaCityApiPort cinemaCityApiPort;
     private final MultikinoApiPort multikinoApiPort;
 
-    public MovieSaver(MovieRepository movieRepository, HeliosApiPort heliosApiPort, CinemaCityApiPort cinemaCityApiPort, MultikinoApiPort multikinoApiPort) {
+    public MovieSaver(MovieRepository movieRepository,
+                      HeliosApiPort heliosApiPort,
+                      CinemaCityApiPort cinemaCityApiPort,
+                      MultikinoApiPort multikinoApiPort) {
         this.movieRepository = movieRepository;
         this.heliosApiPort = heliosApiPort;
         this.cinemaCityApiPort = cinemaCityApiPort;
@@ -33,8 +36,8 @@ public class MovieSaver {
         log.info("Processing movies...");
 
         Set<String> normalizedTitles = movieRepository.findAll().stream()
-                .map(movie -> TitleNormalizer.normalize(movie.getOriginalTitle()))
-                .collect(Collectors.toSet());
+                                                      .map(movie -> TitleNormalizer.normalize(movie.getOriginalTitle()))
+                                                      .collect(Collectors.toSet());
         // TODO create fuzzy search
 
         saveHeliosMovies(normalizedTitles);
@@ -51,7 +54,7 @@ public class MovieSaver {
             if (movieRepository.findByMultikinoId(multikinoMovie.filmId()).isEmpty()) {
                 if (!normalizedTitles.contains(normalizedTitle)) {
                     Movie movie = new Movie(multikinoMovie.filmTitle(), normalizedTitle, multikinoMovie.originalTitle(),
-                            multikinoMovie.runningTime());
+                                            multikinoMovie.runningTime());
                     movie.setMultikinoId(multikinoMovie.filmId());
                     movieRepository.save(movie);
                     normalizedTitles.add(normalizedTitle);
@@ -76,7 +79,7 @@ public class MovieSaver {
             if (movieRepository.findByCinemaCityId(cinemaCityMovie.id()).isEmpty()) {
                 if (!normalizedTitles.contains(normalizedTitle)) {
                     Movie movie = new Movie(cinemaCityMovie.title(), normalizedTitle,
-                            cinemaCityMovie.durationMinutes());
+                                            cinemaCityMovie.durationMinutes());
                     movie.setCinemaCityId(cinemaCityMovie.id());
                     movieRepository.save(movie);
                     normalizedTitles.add(normalizedTitle);
@@ -101,7 +104,7 @@ public class MovieSaver {
             if (movieRepository.findByHeliosId(heliosMovie.id()).isEmpty()) {
                 if (!normalizedTitles.contains(normalizedTitle)) {
                     Movie movie = new Movie(heliosMovie.title(), normalizedTitle, heliosMovie.titleOriginal(),
-                            heliosMovie.duration());
+                                            heliosMovie.duration());
                     movie.setHeliosId(heliosMovie.id());
                     movieRepository.save(movie);
                     normalizedTitles.add(normalizedTitle);
