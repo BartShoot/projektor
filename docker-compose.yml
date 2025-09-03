@@ -10,6 +10,32 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-
+  collector:
+    image: otel/opentelemetry-collector-contrib:0.134.1
+    volumes:
+      - ./collector-spring-native-config.yaml:/collector-spring-native-config.yaml
+    command: [ '--config=/collector-spring-native-config.yaml' ]
+    ports:
+      - '4318:4318'
+#  jaeger:
+#    image: jaegertracing/jaeger:latest
+#    ports:
+#      - "16686:16686" # Web UI
+#  prometheus:
+#    image: prom/prometheus:latest
+#    volumes:
+#      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+#    command:
+#      - '--config.file=/etc/prometheus/prometheus.yml'
+#    ports:
+#      - "9090:9090"
+#  loki:
+#    image: grafana/loki:latest
+#    ports:
+#      - "3100:3100"
+#  grafana:
+#    image: grafana/grafana:latest
+#    ports:
+#      - "3001:3000"
 volumes:
   postgres_data:
