@@ -24,9 +24,9 @@ all cinemas
 
 https://multikino.pl/api/microservice/showings/cinemas
 
-all movies
+all movies in cinema `0035`
 
-https://multikino.pl/api/microservice/showings/films
+https://multikino.pl/api/microservice/showings/films?cinemaId=0035
 
 showings for movie `HO00002008` in cinema `0035`
 

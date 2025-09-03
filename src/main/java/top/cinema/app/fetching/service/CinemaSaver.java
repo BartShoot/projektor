@@ -91,7 +91,7 @@ public class CinemaSaver {
                         if (cinemaRepository.findByNameAndCinemaChain(multikinoCinema.cinemaName(),
                                                                       CinemaChain.MULTIKINO).isEmpty()) {
                             Cinema cinema = new Cinema(multikinoCinema.cinemaName(),
-                                                       "",
+                                                       address,
                                                        multikinoCinema.cinemaId(),
                                                        CinemaChain.MULTIKINO,
                                                        city);

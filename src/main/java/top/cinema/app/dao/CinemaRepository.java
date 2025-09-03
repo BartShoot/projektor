@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import top.cinema.app.entities.Cinema;
 import top.cinema.app.model.CinemaChain;
 
+import java.util.Collection;
 import java.util.Optional;
 
 @Repository
@@ -12,4 +13,6 @@ public interface CinemaRepository extends JpaRepository<Cinema, Integer> {
     Optional<Cinema> findByNameAndCinemaChain(String name, CinemaChain cinemaChain);
 
     Optional<Cinema> findByExternalId(String externalId);
+
+    Collection<Cinema> findByCinemaChain(CinemaChain cinemaChain);
 }
