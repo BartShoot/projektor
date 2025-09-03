@@ -1,4 +1,4 @@
-package top.cinema.app.service;
+package top.cinema.app.fetching.service;
 
 import java.text.Normalizer;
 import java.util.regex.Pattern;

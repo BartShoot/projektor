@@ -1,4 +1,4 @@
-package top.cinema.app.service;
+package top.cinema.app.fetching.service;
 
 import org.springframework.stereotype.Service;
 import top.cinema.app.dao.CinemaRepository;

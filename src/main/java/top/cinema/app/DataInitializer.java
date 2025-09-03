@@ -4,10 +4,10 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import top.cinema.app.service.CinemaSaver;
-import top.cinema.app.service.CitySaver;
-import top.cinema.app.service.MovieSaver;
-import top.cinema.app.service.ShowingSaver;
+import top.cinema.app.fetching.service.CinemaSaver;
+import top.cinema.app.fetching.service.CitySaver;
+import top.cinema.app.fetching.service.MovieSaver;
+import top.cinema.app.fetching.service.ShowingSaver;
 
 @Component
 public class DataInitializer implements CommandLineRunner {

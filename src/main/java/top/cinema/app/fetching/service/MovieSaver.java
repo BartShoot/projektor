@@ -1,4 +1,4 @@
-package top.cinema.app.service;
+package top.cinema.app.fetching.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
