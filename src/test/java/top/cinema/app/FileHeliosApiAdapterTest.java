@@ -24,8 +24,6 @@ class FileHeliosApiAdapterTest {
         } catch (Exception e) {
             fail("Deserialization of cinemas.json failed: " + e.getMessage(), e);
         }
-        cinemasRootDto.data().forEach(it -> System.out.println(it.name()));
-
         assertNotNull(cinemasRootDto, "CinemasRootDto should not be null");
         assertEquals(200, cinemasRootDto.status(), "Status should be 200");
         assertNotNull(cinemasRootDto.data(), "Cinema data list should not be null");
@@ -36,7 +34,6 @@ class FileHeliosApiAdapterTest {
         assertNotNull(firstCinema.name(), "First cinema name should not be null");
         assertNotNull(firstCinema.location(), "First cinema location should not be null");
         assertNotNull(firstCinema.location().city(), "First cinema city should not be null");
-        System.out.println("Successfully deserialized cinemas.json. First cinema: " + firstCinema.name());
     }
 
     @Test
@@ -47,8 +44,6 @@ class FileHeliosApiAdapterTest {
         } catch (Exception e) {
             fail("Deserialization of showings.json failed: " + e.getMessage(), e);
         }
-        showingsRootDto.data().movies().forEach((_, it) -> System.out.println(it.title()));
-
         assertNotNull(showingsRootDto, "ShowingsRootDto should not be null");
         assertEquals(200, showingsRootDto.status(), "Status should be 200");
         assertNotNull(showingsRootDto.data(), "ShowingsDataPayloadDto should not be null");
@@ -79,11 +74,7 @@ class FileHeliosApiAdapterTest {
         }
 
 
-        System.out.println(
-                "Successfully deserialized showings.json. Number of dates with screenings: " + payload.screenings().size());
-        System.out.println("Number of movies: " + payload.movies().size());
         if (payload.events() != null) {
-            System.out.println("Number of events: " + payload.events().size());
         }
         assertNotNull(payload.priceList(), "Price list should not be null");
         assertNotNull(payload.priceList().smartPricing(), "Smart pricing details should not be null");

@@ -42,9 +42,10 @@ public class Scheduler {
 
     private void createCinemaCityJobs() {
         // one job to fetch all cinemas - once a week or less often
+        jobRepository.save(Job.cinemaFetchingJob(CinemaChain.CINEMA_CITY));
         var cinemas = cinemaRepository.findByCinemaChain(CinemaChain.CINEMA_CITY);
         cinemas.forEach(cinema -> {
-            jobRepository.save(Job.cinemaFetchingJob(cinema));
+            jobRepository.save(Job.movieFetchingJob(cinema));
         });
         // foreach cinema fetch movies and showings in one request - once a day ~35 requests
     }
