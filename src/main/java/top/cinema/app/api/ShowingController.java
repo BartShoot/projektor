@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import top.cinema.app.dao.ShowingRepository;
 import top.cinema.app.dto.ShowingFront;
-import top.cinema.app.entities.Showing;
+import top.cinema.app.entities.core.Showing;
 
 import java.util.List;
 import java.util.Optional;

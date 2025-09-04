@@ -1,7 +1,7 @@
-package top.cinema.app.fetching.durable_jobs;
+package top.cinema.app.entities.durable_jobs;
 
 import jakarta.persistence.*;
-import top.cinema.app.entities.Cinema;
+import top.cinema.app.entities.core.Cinema;
 import top.cinema.app.model.CinemaChain;
 
 import java.time.LocalDateTime;
@@ -47,8 +47,10 @@ public class Job {
         LocalDateTime now = LocalDateTime.now();
         job.setCreateDate(now);
         job.setLastUpdateDate(now);
-        job.setResource(new Resource(Resource.Type.CINEMAS, cinemaChain));
         job.setStatus(Job.Status.PENDING);
+        Resource resource = new Resource(Resource.Type.CINEMAS, cinemaChain);
+        job.setResource(resource);
+        resource.setJob(job);
         return job;
     }
 
@@ -59,8 +61,10 @@ public class Job {
         LocalDateTime now = LocalDateTime.now();
         job.setCreateDate(now);
         job.setLastUpdateDate(now);
-        job.setResource(new Resource(Resource.Type.MOVIES, cinema));
         job.setStatus(Job.Status.PENDING);
+        Resource resource = new Resource(Resource.Type.MOVIES, cinema);
+        job.setResource(resource);
+        resource.setJob(job);
         return job;
     }
 

@@ -1,7 +1,7 @@
 package top.cinema.app;
 
 import org.junit.Test;
-import top.cinema.app.fetching.durable_jobs.Resource;
+import top.cinema.app.entities.durable_jobs.Resource;
 import top.cinema.app.model.CinemaChain;
 
 import java.time.LocalDate;

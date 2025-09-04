@@ -4,6 +4,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import top.cinema.app.fetching.durable_jobs.Scheduler;
 import top.cinema.app.fetching.service.CinemaSaver;
 import top.cinema.app.fetching.service.CitySaver;
 import top.cinema.app.fetching.service.MovieSaver;
@@ -16,22 +17,29 @@ public class DataInitializer implements CommandLineRunner {
     private final CinemaSaver cinemaSaver;
     private final MovieSaver movieSaver;
     private final ShowingSaver showingSaver;
+    private final Scheduler scheduler;
 
     @Autowired
-    public DataInitializer(CitySaver citySaver, CinemaSaver cinemaSaver, MovieSaver movieSaver, ShowingSaver showingSaver) {
+    public DataInitializer(CitySaver citySaver,
+                           CinemaSaver cinemaSaver,
+                           MovieSaver movieSaver,
+                           ShowingSaver showingSaver,
+                           Scheduler scheduler) {
         this.citySaver = citySaver;
         this.cinemaSaver = cinemaSaver;
         this.movieSaver = movieSaver;
         this.showingSaver = showingSaver;
+        this.scheduler = scheduler;
     }
 
     @Override
     @Transactional
     public void run(String... args) {
-        citySaver.processCities();
-        cinemaSaver.processCinemas();
-        movieSaver.processMovies();
-        showingSaver.processShowings();
+//        scheduler.createJobs();
+//        citySaver.processCities();
+//        cinemaSaver.processCinemas();
+//        movieSaver.processMovies();
+//        showingSaver.processShowings();
     }
 
 }

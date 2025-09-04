@@ -1,4 +1,4 @@
-package top.cinema.app.entities;
+package top.cinema.app.entities.core;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.Formula;

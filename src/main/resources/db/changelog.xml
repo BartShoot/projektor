@@ -111,4 +111,32 @@
             <column name="showing_time"/>
         </createIndex>
     </changeSet>
+
+    <changeSet author="bartshoot" id="add durable_jobs schema">
+        <createSequence incrementBy="50" sequenceName="jobs_seq" startValue="1"/>
+        <createSequence incrementBy="50" sequenceName="resources_seq" startValue="1"/>
+        <createTable tableName="jobs">
+            <column autoIncrement="true" name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jobsPK"/>
+            </column>
+            <column name="cinema_chain" type="SMALLINT"/>
+            <column name="city_id" type="INTEGER"/>
+            <column name="create_date" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="last_update_date" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="movie_id" type="INTEGER"/>
+            <column name="status" type="SMALLINT"/>
+        </createTable>
+        <createTable tableName="resources">
+            <column autoIncrement="true" name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="resourcesPK"/>
+            </column>
+            <column name="type" type="SMALLINT"/>
+            <column name="url" type="VARCHAR(255)"/>
+            <column name="job_id" type="INTEGER"/>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="job_id" baseTableName="resources"
+                                 constraintName="FKh39jom4tg5bybl5ircgpoggx" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jobs"
+                                 validate="true"/>
+    </changeSet>
 </databaseChangeLog>

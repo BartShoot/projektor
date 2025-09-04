@@ -1,9 +1,8 @@
-package top.cinema.app.fetching.durable_jobs;
+package top.cinema.app.entities.durable_jobs;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.apache.commons.lang3.NotImplementedException;
-import top.cinema.app.entities.Cinema;
+import top.cinema.app.entities.core.Cinema;
 import top.cinema.app.model.CinemaChain;
 
 import java.time.LocalDate;
@@ -18,6 +17,14 @@ public class Resource {
     private static final String MULTIKINO_BASE_URL = "https://multikino.pl/api/microservice/";
 
     private static final String HELIOS_BASE_URL = "https://api.helios.pl/api/v1/";
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "job_id")
+    private Job job;
 
     private Type type;
 
@@ -84,6 +91,14 @@ public class Resource {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Job getJob() {
+        return job;
+    }
+
+    public void setJob(Job job) {
+        this.job = job;
     }
 
     public enum Type {

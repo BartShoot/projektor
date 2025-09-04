@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import top.cinema.app.dao.CinemaRepository;
 import top.cinema.app.dao.CityRepository;
-import top.cinema.app.entities.Cinema;
+import top.cinema.app.entities.core.Cinema;
 import top.cinema.app.fetching.cinemacity.api.CinemaCityApiPort;
 import top.cinema.app.fetching.helios.api.HeliosApiPort;
 import top.cinema.app.fetching.multikino.api.MultikinoApiPort;

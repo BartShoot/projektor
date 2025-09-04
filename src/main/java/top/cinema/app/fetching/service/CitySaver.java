@@ -3,7 +3,7 @@ package top.cinema.app.fetching.service;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import top.cinema.app.dao.CityRepository;
-import top.cinema.app.entities.City;
+import top.cinema.app.entities.core.City;
 import top.cinema.app.fetching.cinemacity.api.CinemaCityApiPort;
 import top.cinema.app.fetching.helios.api.HeliosApiPort;
 import top.cinema.app.fetching.multikino.api.MultikinoApiPort;
