@@ -1,17 +1,18 @@
-package top.cinema.app.entities.durable_jobs;
+package top.cinema.app.fetching.durable_jobs;
 
 import jakarta.persistence.*;
 import top.cinema.app.entities.core.Cinema;
 import top.cinema.app.model.CinemaChain;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.List;
 
 @Entity
 @Table(name = "jobs")
 public class Job {
 
+    public enum Type {
+        CINEMAS, MOVIES, SHOWINGS, MOVIES_SHOWINGS
+    }
 
     public enum Status {
         PENDING, RUNNING, SUCCESS, FAILED
@@ -21,15 +22,15 @@ public class Job {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "job_id")
-    private Collection<Resource> resources;
+    private Type type;
 
     private Status status;
 
     private CinemaChain cinemaChain;
 
     private Integer cityId;
+
+    private String cinemaId;
 
     private Integer movieId;
 
@@ -48,9 +49,7 @@ public class Job {
         job.setCreateDate(now);
         job.setLastUpdateDate(now);
         job.setStatus(Job.Status.PENDING);
-        Resource resource = new Resource(Resource.Type.CINEMAS, cinemaChain);
-        job.setResource(resource);
-        resource.setJob(job);
+        job.setType(Type.CINEMAS);
         return job;
     }
 
@@ -62,9 +61,20 @@ public class Job {
         job.setCreateDate(now);
         job.setLastUpdateDate(now);
         job.setStatus(Job.Status.PENDING);
-        Resource resource = new Resource(Resource.Type.MOVIES, cinema);
-        job.setResource(resource);
-        resource.setJob(job);
+        job.setType(Type.MOVIES);
+        return job;
+    }
+
+    public static Job movieShowingsJob(Cinema cinema) {
+        var job = new Job();
+        job.cinemaChain = cinema.getCinemaChain();
+        job.cityId = cinema.getCity().getId();
+        job.cinemaId = cinema.getExternalId();
+        LocalDateTime now = LocalDateTime.now();
+        job.setCreateDate(now);
+        job.setLastUpdateDate(now);
+        job.setStatus(Job.Status.PENDING);
+        job.setType(Type.MOVIES_SHOWINGS);
         return job;
     }
 
@@ -74,18 +84,6 @@ public class Job {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Collection<Resource> getResources() {
-        return resources;
-    }
-
-    public void setResource(Resource resource) {
-        this.resources = List.of(resource);
-    }
-
-    public void setResources(Collection<Resource> resources) {
-        this.resources = resources;
     }
 
     public Status getStatus() {
@@ -112,6 +110,15 @@ public class Job {
         this.cityId = cityId;
     }
 
+
+    public String getCinemaId() {
+        return cinemaId;
+    }
+
+    public void setCinemaId(String cinemaId) {
+        this.cinemaId = cinemaId;
+    }
+
     public Integer getMovieId() {
         return movieId;
     }
@@ -134,5 +141,13 @@ public class Job {
 
     public void setLastUpdateDate(LocalDateTime lastUpdateDate) {
         this.lastUpdateDate = lastUpdateDate;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 }

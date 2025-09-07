@@ -64,9 +64,6 @@ public class CitySaver {
         var heliosCinemas = heliosApiPort.fetchCinemasData();
         heliosCinemas.data().forEach(cinema -> allCities.add(cinema.location().city()));
 
-        // Cinema City
-        var cinemaCityCinemas = cinemaCityApiPort.fetchCinemasData();
-        cinemaCityCinemas.body().cinemas().forEach(cinema -> allCities.add(cinema.addressInfo().city()));
 
         // Multikino
         var multikinoCinemas = multikinoApiPort.fetchCinemasData();
@@ -82,14 +79,14 @@ public class CitySaver {
         }));
 
         PrintWriter consoleOut = new PrintWriter(new OutputStreamWriter(System.out, StandardCharsets.UTF_8));
-        allCities.forEach(city -> {
-            var cityFromDb = cityDAO.findByName(city);
-            if (cityFromDb.isEmpty()) {
-                cityDAO.save(new City(city));
-                consoleOut.println("Saved new city: " + city);
-            }
-        });
-        consoleOut.flush();
+            allCities.forEach(city -> {
+                var cityFromDb = cityDAO.findByName(city);
+                if (cityFromDb.isEmpty()) {
+                    cityDAO.save(new City(city));
+                    consoleOut.println("Saved new city: " + city);
+                }
+            });
+            consoleOut.flush();
     }
 
     public Set<String> getCityWhitelist() {

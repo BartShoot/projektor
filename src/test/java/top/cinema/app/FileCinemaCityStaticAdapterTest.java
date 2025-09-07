@@ -2,19 +2,19 @@ package top.cinema.app;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import top.cinema.app.fetching.cinemacity.api.CinemaCityApiAdapter;
+import top.cinema.app.fetching.cinemacity.api.CinemaCityStaticAdapter;
 import top.cinema.app.fetching.cinemacity.model.CinemaCityCinemaDto;
 import top.cinema.app.fetching.cinemacity.model.CinemaCityCinemasRootDto;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FileCinemaCityApiAdapterTest {
+class FileCinemaCityStaticAdapterTest {
 
-    private CinemaCityApiAdapter adapter;
+    private CinemaCityStaticAdapter adapter;
 
     @BeforeEach
     void setUp() {
-        adapter = new CinemaCityApiAdapter();
+        adapter = new CinemaCityStaticAdapter();
     }
 
     @Test

@@ -56,23 +56,6 @@ public class CinemaSaver {
             }, () -> log.warn("City not found for Helios cinema: {}", heliosCinema.name()));
         });
 
-        // Cinema City
-        var cinemaCityCinemas = cinemaCityApiPort.fetchCinemasData();
-        cinemaCityCinemas.body().cinemas().forEach(cinemaCityCinema -> {
-            cityRepository.findByName(cinemaCityCinema.addressInfo().city()).ifPresentOrElse(city -> {
-                if (cinemaRepository.findByNameAndCinemaChain(cinemaCityCinema.displayName(), CinemaChain.CINEMA_CITY)
-                                    .isEmpty()) {
-                    Cinema cinema = new Cinema(cinemaCityCinema.displayName(),
-                                               cinemaCityCinema.addressInfo().address1(),
-                                               cinemaCityCinema.id(),
-                                               CinemaChain.CINEMA_CITY,
-                                               city);
-                    cinemaRepository.save(cinema);
-                    log.info("Saved Cinema City cinema: {} in city {}", cinemaCityCinema.displayName(), city.getName());
-                }
-            }, () -> log.warn("City not found for Cinema City cinema: {}", cinemaCityCinema.displayName()));
-        });
-
         // Multikino
         var multikinoCinemas = multikinoApiPort.fetchCinemasData();
         multikinoCinemas.result().forEach(group -> {

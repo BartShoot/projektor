@@ -41,7 +41,6 @@ public class MovieSaver {
         // TODO create fuzzy search
 
         saveHeliosMovies(normalizedTitles);
-        saveCinemaCityMovies(normalizedTitles);
         saveMultikinoMovies(normalizedTitles);
     }
 
@@ -67,31 +66,6 @@ public class MovieSaver {
                 }
             } else {
                 log.info("Multikino movie skipped: {}", normalizedTitle);
-            }
-        });
-    }
-
-    private void saveCinemaCityMovies(Set<String> normalizedTitles) {
-        var cinemaCityMovies = cinemaCityApiPort.fetchMoviesData();
-        log.info("All cc movies: %s".formatted(cinemaCityMovies.body().films().size()));
-        cinemaCityMovies.body().films().forEach(cinemaCityMovie -> {
-            String normalizedTitle = TitleNormalizer.normalize(cinemaCityMovie.title());
-            if (movieRepository.findByCinemaCityId(cinemaCityMovie.id()).isEmpty()) {
-                if (!normalizedTitles.contains(normalizedTitle)) {
-                    Movie movie = new Movie(cinemaCityMovie.title(), normalizedTitle,
-                                            cinemaCityMovie.durationMinutes());
-                    movie.setCinemaCityId(cinemaCityMovie.id());
-                    movieRepository.save(movie);
-                    normalizedTitles.add(normalizedTitle);
-                    log.info("CinemaCity movie saved: {}", normalizedTitle);
-                } else {
-                    Movie movie = movieRepository.findByNormalizedTitle(normalizedTitle).get();
-                    movie.setCinemaCityId(cinemaCityMovie.id());
-                    movieRepository.save(movie);
-                    log.info("Movie showing in cinemaCity: {}", normalizedTitle);
-                }
-            } else {
-                log.info("CinemaCity movie skipped: {}", normalizedTitle);
             }
         });
     }

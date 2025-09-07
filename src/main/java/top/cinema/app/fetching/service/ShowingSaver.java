@@ -49,7 +49,6 @@ public class ShowingSaver {
         log.info("Processing showings...");
 
         saveHeliosShowings();
-        saveCinemaCityShowings();
         saveMultikinoShowings();
     }
 
@@ -65,21 +64,6 @@ public class ShowingSaver {
                     showingRepository.save(new Showing(string, cinema.get(), movie.get(), session.startTime()));
                 }
             });
-        });
-    }
-
-    private void saveCinemaCityShowings() {
-        // only one day
-        var events = cinemaCityApiPort.fetchMoviesData().body().events();
-        events.forEach(showing -> {
-            if (showingRepository.findByExternalId(showing.id().toString()).isEmpty()) {
-                Optional<Movie> movie = movieRepository.findByCinemaCityId(showing.filmId());
-                Optional<Cinema> cinema = cinemaRepository.findByExternalId(showing.cinemaId().toString());
-                showingRepository.save(new Showing(showing.id().toString(),
-                                                   cinema.get(),
-                                                   movie.get(),
-                                                   showing.eventDateTime()));
-            }
         });
     }
 

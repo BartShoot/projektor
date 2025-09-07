@@ -4,7 +4,7 @@ all cinemas
 
 https://www.cinema-city.pl/pl/data-api-service/v1/quickbook/10103/cinemas/with-event/until/2026-06-12?attr=&lang=pl_PL
 
-movies and events in cinema with id: `1092`
+movies and events in cinema with id: `1092` for given day 
 
 https://www.cinema-city.pl/pl/data-api-service/v1/quickbook/10103/film-events/in-cinema/1092/at-date/2025-06-12?attr=&lang=pl_PL
 
@@ -14,7 +14,7 @@ all cinemas
 
 https://api.helios.pl/api/v1/cinemas
 
-showings for cinema
+showings for cinema with id `2`
 
 https://api.helios.pl/api/v1/cinemas/2/screenings
 
