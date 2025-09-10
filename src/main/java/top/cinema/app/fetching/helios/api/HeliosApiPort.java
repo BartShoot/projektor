@@ -6,5 +6,5 @@ import top.cinema.app.fetching.helios.model.ShowingsRootDto;
 public interface HeliosApiPort {
     CinemasRootDto fetchCinemasData();
 
-    ShowingsRootDto fetchShowingsData();
+    ShowingsRootDto fetchShowingsData(Integer cinemaId);
 }

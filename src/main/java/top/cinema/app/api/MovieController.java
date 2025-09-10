@@ -6,8 +6,8 @@ import top.cinema.app.dao.MovieRepository;
 import top.cinema.app.dao.ShowingRepository;
 import top.cinema.app.dto.MovieFront;
 import top.cinema.app.dto.ShowingFront;
-import top.cinema.app.entities.Movie;
-import top.cinema.app.entities.Showing;
+import top.cinema.app.entities.core.Movie;
+import top.cinema.app.entities.core.Showing;
 
 import java.util.List;
 import java.util.Optional;

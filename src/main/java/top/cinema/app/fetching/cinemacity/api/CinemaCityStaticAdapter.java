@@ -3,22 +3,23 @@ package top.cinema.app.fetching.cinemacity.api;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import top.cinema.app.fetching.cinemacity.model.CinemaCityCinemasRootDto;
 import top.cinema.app.fetching.cinemacity.model.CinemaCityMoviesRootDto;
 
 import java.io.InputStream;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Service
-public class CinemaCityApiAdapter implements CinemaCityApiPort {
+@Profile("!live")
+public class CinemaCityStaticAdapter implements CinemaCityApiPort {
 
     private final ObjectMapper objectMapper;
     private static final String CINEMAS_FILE_PATH = "/cinema-city/cinemas.json";
     private static final String MOVIES_FILE_PATH = "/cinema-city/movies.json";
 
-    public CinemaCityApiAdapter() {
+    public CinemaCityStaticAdapter() {
         this.objectMapper = new ObjectMapper();
         JavaTimeModule javaTimeModule = new JavaTimeModule();
         objectMapper.registerModule(javaTimeModule); // If you use LocalDateTime in DTOs
@@ -27,7 +28,7 @@ public class CinemaCityApiAdapter implements CinemaCityApiPort {
 
     @Override
     public CinemaCityCinemasRootDto fetchCinemasData() {
-        try (InputStream inputStream = CinemaCityApiAdapter.class.getResourceAsStream(CINEMAS_FILE_PATH)) {
+        try (InputStream inputStream = CinemaCityStaticAdapter.class.getResourceAsStream(CINEMAS_FILE_PATH)) {
             if (inputStream == null) {
                 throw new RuntimeException("Cannot find the cinemas JSON file: " + CINEMAS_FILE_PATH);
             }
@@ -38,8 +39,8 @@ public class CinemaCityApiAdapter implements CinemaCityApiPort {
     }
 
     @Override
-    public CinemaCityMoviesRootDto fetchMoviesData() {
-        try (InputStream inputStream = CinemaCityApiAdapter.class.getResourceAsStream(MOVIES_FILE_PATH)) {
+    public CinemaCityMoviesRootDto fetchMoviesData(Integer cinemaId, LocalDate now) {
+        try (InputStream inputStream = CinemaCityStaticAdapter.class.getResourceAsStream(MOVIES_FILE_PATH)) {
             if (inputStream == null) {
                 throw new RuntimeException("Cannot find the movies JSON file: " + MOVIES_FILE_PATH);
             }

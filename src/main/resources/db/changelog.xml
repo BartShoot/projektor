@@ -111,4 +111,27 @@
             <column name="showing_time"/>
         </createIndex>
     </changeSet>
+
+    <changeSet author="bartshoot" id="add durable_jobs table">
+        <createSequence incrementBy="50" sequenceName="jobs_seq" startValue="1"/>
+        <createTable tableName="jobs">
+            <column autoIncrement="true" name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jobsPK"/>
+            </column>
+            <column name="cinema_chain" type="SMALLINT"/>
+            <column name="cinema_id" type="VARCHAR(255)"/>
+            <column name="city_id" type="INTEGER"/>
+            <column name="create_date" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="last_update_date" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="movie_id" type="INTEGER"/>
+            <column name="status" type="SMALLINT"/>
+            <column name="type" type="SMALLINT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="bartshoot" id="add durable_jobs results">
+        <addColumn tableName="jobs">
+            <column name="result" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

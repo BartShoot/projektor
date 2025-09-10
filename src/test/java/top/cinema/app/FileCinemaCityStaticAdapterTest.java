@@ -2,19 +2,19 @@ package top.cinema.app;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import top.cinema.app.fetching.cinemacity.api.CinemaCityApiAdapter;
+import top.cinema.app.fetching.cinemacity.api.CinemaCityStaticAdapter;
 import top.cinema.app.fetching.cinemacity.model.CinemaCityCinemaDto;
 import top.cinema.app.fetching.cinemacity.model.CinemaCityCinemasRootDto;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FileCinemaCityApiAdapterTest {
+class FileCinemaCityStaticAdapterTest {
 
-    private CinemaCityApiAdapter adapter;
+    private CinemaCityStaticAdapter adapter;
 
     @BeforeEach
     void setUp() {
-        adapter = new CinemaCityApiAdapter();
+        adapter = new CinemaCityStaticAdapter();
     }
 
     @Test
@@ -25,8 +25,6 @@ class FileCinemaCityApiAdapterTest {
         } catch (Exception e) {
             fail("Deserialization of cinemas.json failed: " + e.getMessage(), e);
         }
-        cinemasRootDto.body().cinemas().forEach(it -> System.out.println(it.displayName()));
-
         assertNotNull(cinemasRootDto, "CinemasRootDto should not be null");
         assertNotNull(cinemasRootDto.body(), "Cinema body should not be null");
         assertNotNull(cinemasRootDto.body().cinemas(), "Cinema data list should not be null");
@@ -37,6 +35,5 @@ class FileCinemaCityApiAdapterTest {
         assertNotNull(firstCinema.displayName(), "First cinema name should not be null");
         assertNotNull(firstCinema.addressInfo(), "First cinema address should not be null");
         assertNotNull(firstCinema.addressInfo().city(), "First cinema city should not be null");
-        System.out.println("Successfully deserialized cinemas.json. First cinema: " + firstCinema.displayName());
     }
 }

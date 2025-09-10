@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import top.cinema.app.dao.CinemaRepository;
 import top.cinema.app.dto.CinemaFront;
 import top.cinema.app.dto.ShowingFront;
-import top.cinema.app.entities.Cinema;
-import top.cinema.app.entities.Showing;
+import top.cinema.app.entities.core.Cinema;
+import top.cinema.app.entities.core.Showing;
 
 import java.util.List;
 import java.util.Optional;
