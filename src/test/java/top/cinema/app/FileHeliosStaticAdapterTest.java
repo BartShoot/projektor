@@ -2,18 +2,18 @@ package top.cinema.app;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import top.cinema.app.fetching.helios.api.HeliosApiAdapter;
+import top.cinema.app.fetching.helios.api.HeliosStaticAdapter;
 import top.cinema.app.fetching.helios.model.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FileHeliosApiAdapterTest {
+class FileHeliosStaticAdapterTest {
 
-    private HeliosApiAdapter adapter;
+    private HeliosStaticAdapter adapter;
 
     @BeforeEach
     void setUp() {
-        adapter = new HeliosApiAdapter();
+        adapter = new HeliosStaticAdapter();
     }
 
     @Test
@@ -40,7 +40,7 @@ class FileHeliosApiAdapterTest {
     void fetchShowingsData_shouldDeserializeSuccessfully() {
         ShowingsRootDto showingsRootDto = null;
         try {
-            showingsRootDto = adapter.fetchShowingsData();
+            showingsRootDto = adapter.fetchShowingsData(2);
         } catch (Exception e) {
             fail("Deserialization of showings.json failed: " + e.getMessage(), e);
         }

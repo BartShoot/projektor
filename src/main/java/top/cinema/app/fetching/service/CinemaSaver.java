@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import top.cinema.app.dao.CinemaRepository;
 import top.cinema.app.dao.CityRepository;
 import top.cinema.app.entities.core.Cinema;
-import top.cinema.app.fetching.cinemacity.api.CinemaCityApiPort;
-import top.cinema.app.fetching.helios.api.HeliosApiPort;
 import top.cinema.app.fetching.multikino.api.MultikinoApiPort;
 import top.cinema.app.model.CinemaChain;
 
@@ -18,43 +16,21 @@ public class CinemaSaver {
 
     private final CinemaRepository cinemaRepository;
     private final CityRepository cityRepository;
-    private final HeliosApiPort heliosApiPort;
-    private final CinemaCityApiPort cinemaCityApiPort;
     private final MultikinoApiPort multikinoApiPort;
     private final CitySaver citySaver;
 
     public CinemaSaver(CinemaRepository cinemaRepository,
                        CityRepository cityRepository,
-                       HeliosApiPort heliosApiPort,
-                       CinemaCityApiPort cinemaCityApiPort,
                        MultikinoApiPort multikinoApiPort,
                        CitySaver citySaver) {
         this.cinemaRepository = cinemaRepository;
         this.cityRepository = cityRepository;
-        this.heliosApiPort = heliosApiPort;
-        this.cinemaCityApiPort = cinemaCityApiPort;
         this.multikinoApiPort = multikinoApiPort;
         this.citySaver = citySaver;
     }
 
     public void processCinemas() {
         log.info("Processing cinemas...");
-
-        // Helios
-        var heliosCinemas = heliosApiPort.fetchCinemasData();
-        heliosCinemas.data().forEach(heliosCinema -> {
-            cityRepository.findByName(heliosCinema.location().city()).ifPresentOrElse(city -> {
-                if (cinemaRepository.findByNameAndCinemaChain(heliosCinema.name(), CinemaChain.HELIOS).isEmpty()) {
-                    Cinema cinema = new Cinema(heliosCinema.name(),
-                                               heliosCinema.location().street(),
-                                               String.valueOf(heliosCinema.id()),
-                                               CinemaChain.HELIOS,
-                                               city);
-                    cinemaRepository.save(cinema);
-                    log.info("Saved Helios cinema: {} in city {}", heliosCinema.name(), city.getName());
-                }
-            }, () -> log.warn("City not found for Helios cinema: {}", heliosCinema.name()));
-        });
 
         // Multikino
         var multikinoCinemas = multikinoApiPort.fetchCinemasData();

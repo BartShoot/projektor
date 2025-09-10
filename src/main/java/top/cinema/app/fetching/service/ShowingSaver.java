@@ -69,7 +69,7 @@ public class ShowingSaver {
 
     private void saveHeliosShowings() {
         // foreach cinema
-        ShowingsRootDto showingsRootDto = heliosApiPort.fetchShowingsData();
+        ShowingsRootDto showingsRootDto = heliosApiPort.fetchShowingsData(2);
         List<ShowingDto>
                 flatShowings =
                 showingsRootDto.data().screenings().entrySet().stream().flatMap(entry -> {
@@ -92,9 +92,9 @@ public class ShowingSaver {
                     Optional<Cinema> cinema =
                             cinemaRepository.findByExternalId("2");// is from path
                     showingRepository.save(new Showing(screeningDetails.sourceId(),
-                                                       cinema.get(),
-                                                       movie.get(),
-                                                       screeningDetails.timeFrom()));
+                            cinema.get(),
+                            movie.get(),
+                            screeningDetails.timeFrom()));
                 }
             }
         });

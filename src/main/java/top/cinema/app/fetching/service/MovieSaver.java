@@ -71,7 +71,7 @@ public class MovieSaver {
     }
 
     private void saveHeliosMovies(Set<String> normalizedTitles) {
-        var heliosShowings = heliosApiPort.fetchShowingsData();
+        var heliosShowings = heliosApiPort.fetchShowingsData(2);
         log.info("All helios movies: %s".formatted(heliosShowings.data().movies().size()));
         heliosShowings.data().movies().values().forEach(heliosMovie -> {
             String normalizedTitle = TitleNormalizer.normalize(heliosMovie.title());

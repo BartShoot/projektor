@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import top.cinema.app.fetching.helios.model.CinemasRootDto;
 import top.cinema.app.fetching.helios.model.ShowingsRootDto;
@@ -13,13 +14,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Service
-public class HeliosApiAdapter implements HeliosApiPort {
+@Profile("!live")
+public class HeliosStaticAdapter implements HeliosApiPort {
 
     private final ObjectMapper objectMapper;
     private static final String CINEMAS_FILE_PATH = "/helios/cinemas.json";
     private static final String SHOWINGS_FILE_PATH = "/helios/showings.json";
 
-    public HeliosApiAdapter() {
+    public HeliosStaticAdapter() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.objectMapper = new ObjectMapper();
         JavaTimeModule javaTimeModule = new JavaTimeModule();
@@ -30,7 +32,7 @@ public class HeliosApiAdapter implements HeliosApiPort {
 
     @Override
     public CinemasRootDto fetchCinemasData() {
-        try (InputStream inputStream = HeliosApiAdapter.class.getResourceAsStream(CINEMAS_FILE_PATH)) {
+        try (InputStream inputStream = HeliosStaticAdapter.class.getResourceAsStream(CINEMAS_FILE_PATH)) {
             if (inputStream == null) {
                 throw new RuntimeException("Cannot find the cinemas JSON file: " + CINEMAS_FILE_PATH);
             }
@@ -42,8 +44,8 @@ public class HeliosApiAdapter implements HeliosApiPort {
     }
 
     @Override
-    public ShowingsRootDto fetchShowingsData() {
-        try (InputStream inputStream = HeliosApiAdapter.class.getResourceAsStream(SHOWINGS_FILE_PATH)) {
+    public ShowingsRootDto fetchShowingsData(Integer cinemaId) {
+        try (InputStream inputStream = HeliosStaticAdapter.class.getResourceAsStream(SHOWINGS_FILE_PATH)) {
             if (inputStream == null) {
                 throw new RuntimeException("Cannot find the showings JSON file: " + SHOWINGS_FILE_PATH);
             }

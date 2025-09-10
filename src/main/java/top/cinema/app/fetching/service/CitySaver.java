@@ -4,8 +4,6 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import top.cinema.app.dao.CityRepository;
 import top.cinema.app.entities.core.City;
-import top.cinema.app.fetching.cinemacity.api.CinemaCityApiPort;
-import top.cinema.app.fetching.helios.api.HeliosApiPort;
 import top.cinema.app.fetching.multikino.api.MultikinoApiPort;
 
 import java.io.BufferedReader;
@@ -19,20 +17,14 @@ import java.util.stream.Collectors;
 
 @Component
 public class CitySaver {
-    private final HeliosApiPort heliosApiPort;
-    private final CinemaCityApiPort cinemaCityApiPort;
     private final MultikinoApiPort multikinoApiPort;
     private final CityRepository cityDAO;
     private Set<String> cityWhitelist;
     private final org.springframework.core.io.ResourceLoader resourceLoader;
 
-    public CitySaver(HeliosApiPort heliosApiPort,
-                     CinemaCityApiPort cinemaCityApiPort,
-                     MultikinoApiPort multikinoApiPort,
+    public CitySaver(MultikinoApiPort multikinoApiPort,
                      CityRepository cityDAO,
                      org.springframework.core.io.ResourceLoader resourceLoader) {
-        this.heliosApiPort = heliosApiPort;
-        this.cinemaCityApiPort = cinemaCityApiPort;
         this.multikinoApiPort = multikinoApiPort;
         this.cityDAO = cityDAO;
         this.resourceLoader = resourceLoader;
@@ -59,11 +51,6 @@ public class CitySaver {
 
     public void processCities() {
         Set<String> allCities = new HashSet<>();
-
-        // Helios
-        var heliosCinemas = heliosApiPort.fetchCinemasData();
-        heliosCinemas.data().forEach(cinema -> allCities.add(cinema.location().city()));
-
 
         // Multikino
         var multikinoCinemas = multikinoApiPort.fetchCinemasData();

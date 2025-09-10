@@ -101,10 +101,8 @@ public class CinemaCityJobProcessor implements JobProcessor {
         Set<String> incomingAddresses = cinemaCityCinemas.body()
                 .cinemas()
                 .stream()
-                .map(cinema -> cinema.addressInfo()
-                        .city())
-                .collect(
-                        Collectors.toSet());
+                .map(cinema -> cinema.addressInfo().city())
+                .collect(Collectors.toSet());
         incomingAddresses.removeAll(addresses);
         if (!incomingAddresses.isEmpty()) {
             Set<City> cities = incomingAddresses.stream().map(City::new).collect(Collectors.toSet());

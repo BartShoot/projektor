@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import top.cinema.app.dao.CinemaRepository;
 import top.cinema.app.fetching.cinemacity.CinemaCityJobProcessor;
 import top.cinema.app.fetching.dao.JobRepository;
+import top.cinema.app.fetching.helios.HeliosJobProcessor;
 import top.cinema.app.model.CinemaChain;
 
 import java.time.DayOfWeek;
@@ -21,12 +22,14 @@ public class Scheduler {
     private final JobRepository jobRepository;
     private final CinemaRepository cinemaRepository;
     private final CinemaCityJobProcessor ccJobProcessor;
+    private final HeliosJobProcessor heliosJobProcessor;
 
     public Scheduler(JobRepository jobRepository, CinemaRepository cinemaRepository,
-                     CinemaCityJobProcessor ccJobProcessor) {
+                     CinemaCityJobProcessor ccJobProcessor, HeliosJobProcessor heliosJobProcessor) {
         this.jobRepository = jobRepository;
         this.cinemaRepository = cinemaRepository;
         this.ccJobProcessor = ccJobProcessor;
+        this.heliosJobProcessor = heliosJobProcessor;
     }
 
     @Scheduled(cron = "0 */1 * * * *")
@@ -39,10 +42,12 @@ public class Scheduler {
         ccJobs.forEach(job -> job.setStatus(Job.Status.RUNNING));
         jobRepository.saveAll(ccJobs);
         ccJobProcessor.process(ccJobs);
-        // maybe foreach cinema chain separately
-        // var jobs = jobRepository.getOldestPending
-        // switch (job.cinemaChain) {
-        // switch (job.resource.getFirst().type
+
+        Collection<Job> heliosJobs = jobRepository.findByStatusAndCinemaChain(Job.Status.PENDING, CinemaChain.HELIOS,
+                pageable);
+        heliosJobs.forEach(job -> job.setStatus(Job.Status.RUNNING));
+        jobRepository.saveAll(heliosJobs);
+        heliosJobProcessor.process(heliosJobs);
     }
 
     @Scheduled(cron = "0 0 0 * * *")
@@ -64,15 +69,25 @@ public class Scheduler {
     }
 
     private void createHeliosJobs() {
-        // one job to fetch all cinemas - once a week or less often
-
-        // foreach cinema fetch movies and showings in one request - once a day ~53 requests
-
+        Optional<Job> lastJob = findLastSuccessfulJob(CinemaChain.HELIOS, Job.Type.CINEMAS);
+        LocalDateTime sevenDaysAgo = LocalDateTime.now().minusDays(7);
+        if (lastJob.isEmpty() || lastJob.get().getLastUpdateDate().isBefore(sevenDaysAgo)) {
+            jobRepository.save(Job.cinemaFetchingJob(CinemaChain.HELIOS));
+        }
+        LocalDateTime threeDaysAgo = LocalDate.now().minusDays(3).atStartOfDay();
+        Optional<Job> lastShowingsJob = findLastSuccessfulJob(CinemaChain.HELIOS, Job.Type.MOVIES_SHOWINGS);
+        if (lastShowingsJob.isEmpty() || lastShowingsJob.get().getLastUpdateDate().isBefore(threeDaysAgo)) {
+            var cinemas = cinemaRepository.findByCinemaChain(CinemaChain.HELIOS);
+            cinemas.forEach(cinema -> {
+                jobRepository.save(Job.movieShowingsJob(cinema));
+            });
+        }
     }
 
     private void createCinemaCityJobs() {
         Optional<Job> lastJob = findLastSuccessfulJob(CinemaChain.CINEMA_CITY, Job.Type.CINEMAS);
-        if (lastJob.isEmpty() || lastJob.get().getLastUpdateDate().isBefore(LocalDateTime.now().minusDays(7))) {
+        LocalDateTime sevenDaysAgo = LocalDateTime.now().minusDays(7);
+        if (lastJob.isEmpty() || lastJob.get().getLastUpdateDate().isBefore(sevenDaysAgo)) {
             jobRepository.save(Job.cinemaFetchingJob(CinemaChain.CINEMA_CITY));
         }
         LocalDateTime lastWednesday = LocalDate.now().with(
@@ -81,7 +96,6 @@ public class Scheduler {
         if (lastShowingsJob.isEmpty() || lastShowingsJob.get().getLastUpdateDate().isBefore(lastWednesday)) {
             var cinemas = cinemaRepository.findByCinemaChain(CinemaChain.CINEMA_CITY);
             cinemas.forEach(cinema -> {
-                //if latest movie fetching job != pending || job != running
                 jobRepository.save(Job.movieShowingsJob(cinema));
             });
         }
