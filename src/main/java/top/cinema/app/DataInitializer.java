@@ -35,7 +35,7 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) {
-//        scheduler.createJobs();
+        scheduler.createJobs();
 //        citySaver.processCities();
 //        cinemaSaver.processCinemas();
 //        movieSaver.processMovies();

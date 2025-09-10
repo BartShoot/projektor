@@ -129,4 +129,9 @@
         </createTable>
     </changeSet>
 
+    <changeSet author="bartshoot" id="add durable_jobs results">
+        <addColumn tableName="jobs">
+            <column name="result" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

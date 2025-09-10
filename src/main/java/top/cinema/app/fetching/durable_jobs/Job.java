@@ -38,6 +38,8 @@ public class Job {
 
     private LocalDateTime lastUpdateDate;
 
+    private String result;
+
     public Job() {
 
     }
@@ -149,5 +151,14 @@ public class Job {
 
     public void setType(Type type) {
         this.type = type;
+    }
+
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResults(String message) {
+        this.result = message;
     }
 }

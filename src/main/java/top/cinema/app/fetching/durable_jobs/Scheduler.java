@@ -9,7 +9,12 @@ import top.cinema.app.fetching.cinemacity.CinemaCityJobProcessor;
 import top.cinema.app.fetching.dao.JobRepository;
 import top.cinema.app.model.CinemaChain;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class Scheduler {
@@ -27,10 +32,12 @@ public class Scheduler {
     @Scheduled(cron = "0 */1 * * * *")
     public void processJobs() {
         System.out.println("Processing jobs...");
-        var pageable = PageRequest.of(0, 40, Sort.by("createDate").ascending());
+        var pageable = PageRequest.of(0, 5, Sort.by("createDate").ascending());
         Collection<Job> ccJobs = jobRepository.findByStatusAndCinemaChain(Job.Status.PENDING,
-                                                                          CinemaChain.CINEMA_CITY,
-                                                                          pageable);
+                CinemaChain.CINEMA_CITY,
+                pageable);
+        ccJobs.forEach(job -> job.setStatus(Job.Status.RUNNING));
+        jobRepository.saveAll(ccJobs);
         ccJobProcessor.process(ccJobs);
         // maybe foreach cinema chain separately
         // var jobs = jobRepository.getOldestPending
@@ -40,6 +47,7 @@ public class Scheduler {
 
     @Scheduled(cron = "0 0 0 * * *")
     public void createJobs() {
+        // TODO make all running jobs mark as something else
         createCinemaCityJobs();
         createHeliosJobs();
         createMultikinoJobs();
@@ -63,17 +71,24 @@ public class Scheduler {
     }
 
     private void createCinemaCityJobs() {
-        // one job to fetch all cinemas - once a week or less often
+        Optional<Job> lastJob = findLastSuccessfulJob(CinemaChain.CINEMA_CITY, Job.Type.CINEMAS);
+        if (lastJob.isEmpty() || lastJob.get().getLastUpdateDate().isBefore(LocalDateTime.now().minusDays(7))) {
+            jobRepository.save(Job.cinemaFetchingJob(CinemaChain.CINEMA_CITY));
+        }
+        LocalDateTime lastWednesday = LocalDate.now().with(
+                TemporalAdjusters.previousOrSame(DayOfWeek.WEDNESDAY)).atStartOfDay();
+        Optional<Job> lastShowingsJob = findLastSuccessfulJob(CinemaChain.CINEMA_CITY, Job.Type.MOVIES_SHOWINGS);
+        if (lastShowingsJob.isEmpty() || lastShowingsJob.get().getLastUpdateDate().isBefore(lastWednesday)) {
+            var cinemas = cinemaRepository.findByCinemaChain(CinemaChain.CINEMA_CITY);
+            cinemas.forEach(cinema -> {
+                //if latest movie fetching job != pending || job != running
+                jobRepository.save(Job.movieShowingsJob(cinema));
+            });
+        }
+    }
 
-        //if latest cinema fetching job != pending || job != running
-        jobRepository.save(Job.cinemaFetchingJob(CinemaChain.CINEMA_CITY));
-        var cinemas = cinemaRepository.findByCinemaChain(CinemaChain.CINEMA_CITY);
-        cinemas.forEach(cinema -> {
-            //if latest movie fetching job != pending || job != running
-            jobRepository.save(Job.movieShowingsJob(cinema));
-        });
-        // foreach cinema fetch movies and showings in one request - once a day ~35 requests FOR ONE DAY ONLY
-        // API DOES NOT SHOW HISTORICAL DATA
+    private Optional<Job> findLastSuccessfulJob(CinemaChain cinemaChain, Job.Type type) {
+        return jobRepository.findLastJob(cinemaChain, type, Job.Status.SUCCESS);
     }
 
 }
