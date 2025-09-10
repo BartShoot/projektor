@@ -163,8 +163,7 @@ public class CinemaCityJobProcessor implements JobProcessor {
                 Optional<Movie> movie = movieRepository.findByCinemaCityId(showing.filmId());
                 Optional<Cinema> cinema = cinemaRepository.findByExternalId(showing.cinemaId().toString());
                 if (cinema.isEmpty() || movie.isEmpty()) {
-                    throw new IllegalStateException(
-                            "Showing for nonexistent movie or cinema");
+                    throw new IllegalStateException("Showing for nonexistent movie or cinema");
                 }
                 showingRepository.save(new Showing(showing.id().toString(),
                         cinema.get(),

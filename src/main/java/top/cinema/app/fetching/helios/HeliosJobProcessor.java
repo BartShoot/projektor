@@ -8,17 +8,25 @@ import top.cinema.app.dao.MovieRepository;
 import top.cinema.app.dao.ShowingRepository;
 import top.cinema.app.entities.core.Cinema;
 import top.cinema.app.entities.core.City;
+import top.cinema.app.entities.core.Movie;
+import top.cinema.app.entities.core.Showing;
 import top.cinema.app.fetching.dao.JobRepository;
 import top.cinema.app.fetching.durable_jobs.Job;
 import top.cinema.app.fetching.durable_jobs.JobProcessor;
 import top.cinema.app.fetching.helios.api.HeliosApiPort;
 import top.cinema.app.fetching.helios.model.CinemasRootDto;
+import top.cinema.app.fetching.helios.model.ScreeningEntryDto;
+import top.cinema.app.fetching.helios.model.ShowingDto;
+import top.cinema.app.fetching.helios.model.ShowingsRootDto;
+import top.cinema.app.fetching.service.TitleNormalizer;
 import top.cinema.app.model.CinemaChain;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 @Service
@@ -58,11 +66,73 @@ public class HeliosJobProcessor implements JobProcessor {
                     }
                 }
                 case MOVIES_SHOWINGS -> {
-
+                    var heliosMovies = webClient.fetchShowingsData(Integer.parseInt(job.getCinemaId()));
+                    var heliosResult = saveHeliosMoviesAndShowings(heliosMovies, job.getCinemaId());
+                    job.setLastUpdateDate(LocalDateTime.now());
+                    job.setStatus(Job.Status.SUCCESS);
+                    job.setResults(String.format("Saved %d new movies, %d updated movies, %d new showings",
+                            heliosResult.newMovies(), heliosResult.updatedMovies(), heliosResult.newShowings()));
                 }
             }
             jobRepository.save(job);
         });
+    }
+
+    private HeliosResult saveHeliosMoviesAndShowings(ShowingsRootDto heliosMovies, String cinemaId) {
+        AtomicInteger newMovie = new AtomicInteger(), updatedMovie = new AtomicInteger(), newShowing = new AtomicInteger();
+        Set<String> normalizedTitles = movieRepository.findAll().stream()
+                .map(movie -> TitleNormalizer.normalize(movie.getTitle()))
+                .collect(Collectors.toSet());
+        heliosMovies.data().movies().values().forEach(heliosMovie -> {
+            String normalizedTitle = TitleNormalizer.normalize(heliosMovie.title());
+            if (movieRepository.findByHeliosId(heliosMovie.id()).isEmpty()) {
+                if (!normalizedTitles.contains(normalizedTitle)) {
+                    Movie movie = new Movie(heliosMovie.title(), normalizedTitle, heliosMovie.titleOriginal(),
+                            heliosMovie.duration());
+                    movie.setHeliosId(heliosMovie.id());
+                    movieRepository.saveAndFlush(movie);
+                    newMovie.incrementAndGet();
+                    normalizedTitles.add(normalizedTitle);
+                } else {
+                    Movie movie = movieRepository.findByNormalizedTitle(normalizedTitle).get();
+                    movie.setHeliosId(heliosMovie.id());
+                    movieRepository.save(movie);
+                    updatedMovie.incrementAndGet();
+                }
+            }
+        });
+        List<ShowingDto>
+                flatShowings =
+                heliosMovies.data().screenings().entrySet().stream().flatMap(entry -> {
+                    var date = entry.getKey();
+                    var showingsOnDate = entry.getValue();
+                    return showingsOnDate.entrySet().stream().flatMap(movieEntry -> {
+                        var eventId = movieEntry.getKey();
+                        var showings = movieEntry.getValue();
+                        return showings.screenings().stream().map(
+                                screeningDetails -> new ShowingDto(eventId, date, screeningDetails));
+                    });
+                }).toList();
+        flatShowings.forEach(showing -> {
+            ScreeningEntryDto screeningDetails = showing.screeningDetails();
+            if (showingRepository.findByExternalId(screeningDetails.sourceId()).isEmpty()) {
+                var id = showing.eventId();
+                if (id.startsWith("m")) {
+                    id = id.substring(1);
+                    Optional<Movie> movie = movieRepository.findByHeliosId(Integer.parseInt(id));
+                    Optional<Cinema> cinema = cinemaRepository.findByExternalId(cinemaId);
+                    if (cinema.isEmpty() || movie.isEmpty()) {
+                        throw new IllegalStateException("Showing for nonexistent movie or cinema");
+                    }
+                    showingRepository.save(new Showing(screeningDetails.sourceId(),
+                            cinema.get(),
+                            movie.get(),
+                            screeningDetails.timeFrom()));
+                    newShowing.incrementAndGet();
+                }
+            }
+        });
+        return new HeliosResult(newMovie.get(), updatedMovie.get(), newShowing.get());
     }
 
     private void saveHeliosCinemasAndCities(CinemasRootDto heliosCinemas) {

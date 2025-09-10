@@ -22,8 +22,8 @@ public class HeliosStaticAdapter implements HeliosApiPort {
     private static final String SHOWINGS_FILE_PATH = "/helios/showings.json";
 
     public HeliosStaticAdapter() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.objectMapper = new ObjectMapper();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         JavaTimeModule javaTimeModule = new JavaTimeModule();
         javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(formatter));
         objectMapper.registerModule(javaTimeModule); // If you use LocalDateTime in DTOs
