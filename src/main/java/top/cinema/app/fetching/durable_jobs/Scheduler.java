@@ -50,7 +50,7 @@ public class Scheduler {
         heliosJobProcessor.process(heliosJobs);
     }
 
-    @Scheduled(cron = "0 0 0 * * *")
+    @Scheduled(cron = "0 0 */4 * * *")
     public void createJobs() {
         // TODO make all running jobs mark as something else
         createCinemaCityJobs();
