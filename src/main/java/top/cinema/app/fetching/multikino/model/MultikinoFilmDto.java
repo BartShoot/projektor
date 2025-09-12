@@ -2,6 +2,7 @@ package top.cinema.app.fetching.multikino.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -10,7 +11,8 @@ public record MultikinoFilmDto(
         String filmTitle,
         String originalTitle,
         int runningTime,
-        List<Object> filmAttributes
+        List<Object> filmAttributes,
+        LocalDateTime releaseDate
 ) {
 }
 

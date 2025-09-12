@@ -9,6 +9,7 @@ public record CinemaCityFilmDto(
         @JsonProperty("name")
         String title,
         @JsonProperty("length")
-        int durationMinutes
+        int durationMinutes,
+        int releaseYear
 ) {
 }

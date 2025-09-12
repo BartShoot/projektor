@@ -6,7 +6,6 @@ import top.cinema.app.dao.ShowingRepository;
 import top.cinema.app.dto.ShowingFront;
 import top.cinema.app.entities.core.Showing;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -18,11 +17,6 @@ public class ShowingController {
 
     public ShowingController(ShowingRepository showingRepository) {
         this.showingRepository = showingRepository;
-    }
-
-    @GetMapping
-    public ResponseEntity<List<ShowingFront>> getAllShowings() {
-        return ResponseEntity.ok(showingRepository.findAll().stream().map(Showing::toFrontWithCinema).toList());
     }
 
     @GetMapping("/{id}")
