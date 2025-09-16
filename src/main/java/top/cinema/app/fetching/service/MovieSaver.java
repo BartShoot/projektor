@@ -28,15 +28,15 @@ public class MovieSaver {
         log.info("Processing movies...");
 
         Set<String> normalizedTitles = movieRepository.findAll().stream()
-                                                      .map(movie -> TitleNormalizer.normalize(movie.getOriginalTitle()))
-                                                      .collect(Collectors.toSet());
+                .map(movie -> TitleNormalizer.normalize(movie.getOriginalTitle()))
+                .collect(Collectors.toSet());
         // TODO create fuzzy search
 
         saveMultikinoMovies(normalizedTitles);
     }
 
     private void saveMultikinoMovies(Set<String> normalizedTitles) {
-        var multikinoMovies = multikinoApiPort.fetchMoviesData();
+        var multikinoMovies = multikinoApiPort.fetchMoviesData("0035");
         log.info("All multikino movies: %s".formatted(multikinoMovies.movies().size()));
         multikinoMovies.movies().forEach(multikinoMovie -> {
             String titleToNormalize = multikinoMovie.filmTitle();
@@ -44,7 +44,7 @@ public class MovieSaver {
             if (movieRepository.findByMultikinoId(multikinoMovie.filmId()).isEmpty()) {
                 if (!normalizedTitles.contains(normalizedTitle)) {
                     Movie movie = new Movie(multikinoMovie.filmTitle(), normalizedTitle, multikinoMovie.originalTitle(),
-                                            multikinoMovie.runningTime());
+                            multikinoMovie.runningTime());
                     movie.setMultikinoId(multikinoMovie.filmId());
                     movieRepository.save(movie);
                     normalizedTitles.add(normalizedTitle);

@@ -2,19 +2,19 @@ package top.cinema.app;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import top.cinema.app.fetching.multikino.api.MultikinoApiAdapter;
+import top.cinema.app.fetching.multikino.api.MultikinoStaticAdapter;
 import top.cinema.app.fetching.multikino.model.MultikinoCinemaDto;
 import top.cinema.app.fetching.multikino.model.MultikinoCinemasRootDto;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FileMultikinoApiAdapterTest {
+class FileMultikinoStaticAdapterTest {
 
-    private MultikinoApiAdapter adapter;
+    private MultikinoStaticAdapter adapter;
 
     @BeforeEach
     void setUp() {
-        adapter = new MultikinoApiAdapter();
+        adapter = new MultikinoStaticAdapter();
     }
 
     @Test

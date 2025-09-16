@@ -3,6 +3,7 @@ package top.cinema.app.fetching.multikino.api;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import top.cinema.app.fetching.multikino.model.MultikinoCinemasRootDto;
 import top.cinema.app.fetching.multikino.model.MultikinoMoviesRootDto;
@@ -11,14 +12,15 @@ import top.cinema.app.fetching.multikino.model.MultikinoShowingsRootDto;
 import java.io.InputStream;
 
 @Service
-public class MultikinoApiAdapter implements MultikinoApiPort {
+@Profile("!live")
+public class MultikinoStaticAdapter implements MultikinoApiPort {
 
     private final ObjectMapper objectMapper;
     private static final String CINEMAS_FILE_PATH = "/multikino/cinemas.json";
     private static final String MOVIES_FILE_PATH = "/multikino/movies.json";
     private static final String SHOWINGS_FILE_PATH = "/multikino/showings.json";
 
-    public MultikinoApiAdapter() {
+    public MultikinoStaticAdapter() {
         this.objectMapper = new ObjectMapper();
         JavaTimeModule javaTimeModule = new JavaTimeModule();
         objectMapper.registerModule(javaTimeModule);
@@ -27,7 +29,7 @@ public class MultikinoApiAdapter implements MultikinoApiPort {
 
     @Override
     public MultikinoCinemasRootDto fetchCinemasData() {
-        try (InputStream inputStream = MultikinoApiAdapter.class.getResourceAsStream(CINEMAS_FILE_PATH)) {
+        try (InputStream inputStream = MultikinoStaticAdapter.class.getResourceAsStream(CINEMAS_FILE_PATH)) {
             if (inputStream == null) {
                 throw new RuntimeException("Cannot find the cinemas JSON file: " + CINEMAS_FILE_PATH);
             }
@@ -38,8 +40,8 @@ public class MultikinoApiAdapter implements MultikinoApiPort {
     }
 
     @Override
-    public MultikinoMoviesRootDto fetchMoviesData() {
-        try (InputStream inputStream = MultikinoApiAdapter.class.getResourceAsStream(MOVIES_FILE_PATH)) {
+    public MultikinoMoviesRootDto fetchMoviesData(String cinemaId) {
+        try (InputStream inputStream = MultikinoStaticAdapter.class.getResourceAsStream(MOVIES_FILE_PATH)) {
             if (inputStream == null) {
                 throw new RuntimeException("Cannot find the movies JSON file: " + MOVIES_FILE_PATH);
             }
@@ -50,8 +52,8 @@ public class MultikinoApiAdapter implements MultikinoApiPort {
     }
 
     @Override
-    public MultikinoShowingsRootDto fetchShowingsData() {
-        try (InputStream inputStream = MultikinoApiAdapter.class.getResourceAsStream(SHOWINGS_FILE_PATH)) {
+    public MultikinoShowingsRootDto fetchShowingsData(String filmId, String cinemaId) {
+        try (InputStream inputStream = MultikinoStaticAdapter.class.getResourceAsStream(SHOWINGS_FILE_PATH)) {
             if (inputStream == null) {
                 throw new RuntimeException("Cannot find the showings JSON file: " + SHOWINGS_FILE_PATH);
             }

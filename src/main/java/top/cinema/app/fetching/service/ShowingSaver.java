@@ -40,7 +40,7 @@ public class ShowingSaver {
 
     private void saveMultikinoShowings() {
         // one movie
-        var showings = multikinoApiPort.fetchShowingsData().result().getFirst();
+        var showings = multikinoApiPort.fetchShowingsData("HO00002008", "0035").result().getFirst();
         showings.showingGroups().forEach(showing -> {
             showing.sessions().forEach(session -> {
                 String string = session.sessionId().toString();

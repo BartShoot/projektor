@@ -7,7 +7,7 @@ import top.cinema.app.fetching.multikino.model.MultikinoShowingsRootDto;
 public interface MultikinoApiPort {
     MultikinoCinemasRootDto fetchCinemasData();
 
-    MultikinoMoviesRootDto fetchMoviesData();
+    MultikinoMoviesRootDto fetchMoviesData(String cinemaId);
 
-    MultikinoShowingsRootDto fetchShowingsData();
+    MultikinoShowingsRootDto fetchShowingsData(String filmId, String cinemaId);
 }
