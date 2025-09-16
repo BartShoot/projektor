@@ -11,9 +11,9 @@ import java.time.LocalDate;
 
 public interface CinemaCityApiClient {
 
-    @GetExchange("/cinemas/with-event/until/{yearAway}")
+    @GetExchange("/v1/quickbook/10103/cinemas/with-event/until/{yearAway}")
     ResponseEntity<CinemaCityCinemasRootDto> fetchCinemas(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate yearAway);
 
-    @GetExchange("/film-events/in-cinema/{cinemaId}/at-date/{atDate}")
+    @GetExchange("/v1/quickbook/10103/film-events/in-cinema/{cinemaId}/at-date/{atDate}")
     ResponseEntity<CinemaCityMoviesRootDto> fetchMovies(@PathVariable Integer cinemaId, @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate atDate);
 }

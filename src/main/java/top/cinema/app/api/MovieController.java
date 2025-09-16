@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.*;
 import top.cinema.app.dao.MovieRepository;
 import top.cinema.app.dao.ShowingRepository;
 import top.cinema.app.dto.MovieFront;
+import top.cinema.app.dto.MovieUpdateCommand;
 import top.cinema.app.dto.ShowingFront;
 import top.cinema.app.entities.core.Movie;
 import top.cinema.app.entities.core.Showing;
+import top.cinema.app.fetching.movie_data.api.FilmwebApiClient;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,9 +23,12 @@ public class MovieController {
 
     private final ShowingRepository showingRepository;
 
-    public MovieController(MovieRepository movieRepository, ShowingRepository showingRepository) {
+    private final FilmwebApiClient filmwebApiClient;
+
+    public MovieController(MovieRepository movieRepository, ShowingRepository showingRepository, FilmwebApiClient filmwebApiClient) {
         this.movieRepository = movieRepository;
         this.showingRepository = showingRepository;
+        this.filmwebApiClient = filmwebApiClient;
     }
 
     @GetMapping
@@ -36,6 +41,24 @@ public class MovieController {
         Optional<Movie> movieOptional = movieRepository.findById(id);
         return movieOptional.map(movie -> ResponseEntity.ok(movie.toFront())).orElseGet(
                 () -> ResponseEntity.notFound().build());
+    }
+
+    @PostMapping("/{id}")
+    public ResponseEntity<?> updateMovieData(@PathVariable Integer id, @RequestBody(required = false) MovieUpdateCommand command) {
+        if (command == null) {
+            Optional<Movie> byId = movieRepository.findById(id);
+            if (byId.isEmpty()) {
+                return ResponseEntity.notFound().build();
+            }
+            var movie = byId.get();
+            var search = filmwebApiClient.search(movie.getTitle(), 3).getBody();
+            var fwId = search.searchHits().stream().findFirst().get().id();
+            var preview = filmwebApiClient.fetchPreview(fwId).getBody();
+            var rating = filmwebApiClient.fetchRating(fwId).getBody();
+            return ResponseEntity.ok(new MovieFront(movie.getId(), movie.getTitle(), movie.getDurationMinutes(), null,
+                    preview.getHtmlUrl(fwId), rating.rate(), rating.count(), preview.getPosterUrl()));
+        }
+        return ResponseEntity.ok(List.of());
     }
 
     @GetMapping("/{id}/showing")

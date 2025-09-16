@@ -15,6 +15,7 @@ import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 import top.cinema.app.fetching.cinemacity.api.CinemaCityApiClient;
 import top.cinema.app.fetching.helios.api.HeliosApiClient;
+import top.cinema.app.fetching.movie_data.api.FilmwebApiClient;
 import top.cinema.app.fetching.multikino.api.MultikinoApiClient;
 
 import java.net.http.HttpClient;
@@ -26,11 +27,13 @@ public class ClientConfiguration {
     private static final Logger log = LoggerFactory.getLogger("CinemaCityApiClient");
 
     private static final String CINEMA_CITY_BASE_URL =
-            "https://www.cinema-city.pl/pl/data-api-service/v1/quickbook/10103";
+            "https://www.cinema-city.pl/pl/data-api-service";
 
-    private static final String HELIOS_BASE_URL = "https://api.helios.pl/api/v1";
+    private static final String HELIOS_BASE_URL = "https://api.helios.pl/api";
 
     private static final String MULTIKINO_BASE_URL = "https://multikino.pl/api";
+
+    private static final String FILMWEB_API_URL = "https://www.filmweb.pl/api";
 
     @Bean
     CinemaCityApiClient cinemaCityApiClient() {
@@ -91,5 +94,13 @@ public class ClientConfiguration {
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
         HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
         return factory.createClient(MultikinoApiClient.class);
+    }
+
+    @Bean
+    FilmwebApiClient filmwebApiClient() {
+        RestClient restClient = RestClient.builder().baseUrl(FILMWEB_API_URL).build();
+        RestClientAdapter adapter = RestClientAdapter.create(restClient);
+        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
+        return factory.createClient(FilmwebApiClient.class);
     }
 }

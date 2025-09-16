@@ -56,7 +56,8 @@ public class Movie {
     }
 
     public MovieFront toFrontWithShowings() {
-        return new MovieFront(id, title, durationMinutes, showings.stream().map(Showing::toFront).toList());
+        return new MovieFront(id, title, durationMinutes, showings.stream().map(Showing::toFront).toList(), null, null,
+                null, null);
     }
 
     public Integer getId() {
