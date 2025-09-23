@@ -11,5 +11,106 @@
     </ul>
 </div>
 
+<!-- Cities Table Fragment -->
+<div th:fragment="cities-table">
+    <h3>Cities</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="city : ${cities}">
+            <td th:text="${city.id}"></td>
+            <td th:text="${city.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Cinemas Table Fragment -->
+<div th:fragment="cinemas-table">
+    <h3>Cinemas</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cinema : ${cinemas}">
+            <td th:text="${cinema.id}"></td>
+            <td th:text="${cinema.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Movies Table Fragment -->
+<div th:fragment="movies-table">
+    <h3>Movies</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="movie : ${movies}">
+            <td th:text="${movie.id}"></td>
+            <td th:text="${movie.title}"></td>
+            <td th:text="${movie.showingsCount}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Showings View Fragment -->
+<div id="showings-view" th:fragment="showings-view">
+    <h3>Showings</h3>
+
+    <form hx-get="/admin/showings" hx-target="#showings-view" hx-swap="outerHTML">
+        <label for="cinema-select">Select a Cinema:</label>
+        <select id="cinema-select" name="cinemaId" onchange="this.form.requestSubmit()">
+            <option value="">-- Please choose a cinema --</option>
+            <option th:each="cinema : ${cinemas}"
+                    th:value="${cinema.id}"
+                    th:text="${cinema.name}"
+                    th:selected="${param.cinemaId != null && #strings.equals(param.cinemaId[0], cinema.id.toString())}"></option>
+        </select>
+    </form>
+
+    <div id="showings-table-container">
+        <div th:if="${not #lists.isEmpty(showings)}">
+            <h4>Showings for selected cinema</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Movie</th>
+                    <th>Start Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="showing : ${showings}">
+                    <td th:text="${showing.id}"></td>
+                    <td th:text="${showing.movie.title}"></td>
+                    <td th:text="${showing.showingTime}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div th:if="${#lists.isEmpty(showings) and param.cinemaId != null}">
+            <p>No showings found for the selected cinema.</p>
+        </div>
+    </div>
+</div>
+
+
 </body>
 </html>
