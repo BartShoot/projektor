@@ -13,6 +13,8 @@ import top.cinema.app.entities.core.Movie;
 import top.cinema.app.entities.core.Showing;
 import top.cinema.app.fetching.movie_data.api.FilmwebApiClient;
 import top.cinema.app.fetching.movie_data.api.ImdbApiClient;
+import top.cinema.app.fetching.movie_data.model.FilmwebMoviePreview;
+import top.cinema.app.fetching.movie_data.model.FilmwebSearchResults;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -30,6 +32,8 @@ public class AdminController {
     private final ShowingRepository showingRepository;
     private final FilmwebApiClient filmwebApiClient;
     private final ImdbApiClient imdbApiClient;
+
+    public record FilmwebSearchResultView(Integer id, FilmwebMoviePreview preview) {}
 
     public AdminController(CityRepository cityRepository,
                            CinemaRepository cinemaRepository,
@@ -83,7 +87,12 @@ public class AdminController {
         model.addAttribute("movie", movie.toFront());
 
         // Pre-load search results
-        model.addAttribute("filmwebResults", filmwebApiClient.search(movie.getTitle(), 5).getBody());
+        FilmwebSearchResults filmwebSearch = filmwebApiClient.search(movie.getTitle(), 5).getBody();
+        List<FilmwebSearchResultView> filmwebResults = filmwebSearch.searchHits().stream()
+                .filter(it -> it.type().equals("film"))
+                .map(it -> new FilmwebSearchResultView(it.id(), filmwebApiClient.fetchPreview(it.id()).getBody()))
+                .toList();
+        model.addAttribute("filmwebResults", filmwebResults);
         model.addAttribute("imdbResults", imdbApiClient.search(movie.getTitle(), 5).getBody());
 
         return "admin/edit-movie :: edit-movie-container";
@@ -119,7 +128,12 @@ public class AdminController {
 
         String searchQuery = (query == null || query.isBlank()) ? movie.getTitle() : query;
 
-        model.addAttribute("filmwebResults", filmwebApiClient.search(searchQuery, 5).getBody());
+        FilmwebSearchResults filmwebSearch = filmwebApiClient.search(searchQuery, 5).getBody();
+        List<FilmwebSearchResultView> filmwebResults = filmwebSearch.searchHits().stream()
+                .filter(it -> it.type().equals("film"))
+                .map(it -> new FilmwebSearchResultView(it.id(), filmwebApiClient.fetchPreview(it.id()).getBody()))
+                .toList();
+        model.addAttribute("filmwebResults", filmwebResults);
         return "admin/edit-movie :: filmweb-search-results";
     }
 
