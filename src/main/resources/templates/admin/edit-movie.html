@@ -21,8 +21,8 @@
             <input type="text" name="query" placeholder="Override search query"/>
             <button type="submit">Search</button>
         </form>
-        <div id="filmweb-results">
-            <div th:replace="~{admin/edit-movie :: filmweb-search-results}"></div>
+        <div id="filmweb-results" th:attr="hx-get=@{/admin/search/filmweb(movieId=${movie.id})}" hx-trigger="load" hx-swap="innerHTML">
+            <p>Loading Filmweb results...</p>
         </div>
     </div>
 
@@ -34,8 +34,8 @@
             <input type="text" name="query" placeholder="Override search query"/>
             <button type="submit">Search</button>
         </form>
-        <div id="imdb-results">
-            <div th:replace="~{admin/edit-movie :: imdb-search-results}"></div>
+        <div id="imdb-results" th:attr="hx-get=@{/admin/search/imdb(movieId=${movie.id})}" hx-trigger="load" hx-swap="innerHTML">
+            <p>Loading IMDb results...</p>
         </div>
     </div>
 </div>

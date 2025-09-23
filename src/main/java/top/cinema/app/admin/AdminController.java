@@ -86,15 +86,6 @@ public class AdminController {
         Movie movie = movieOptional.get();
         model.addAttribute("movie", movie.toFront());
 
-        // Pre-load search results
-        FilmwebSearchResults filmwebSearch = filmwebApiClient.search(movie.getTitle(), 5).getBody();
-        List<FilmwebSearchResultView> filmwebResults = filmwebSearch.searchHits().stream()
-                .filter(it -> it.type().equals("film"))
-                .map(it -> new FilmwebSearchResultView(it.id(), filmwebApiClient.fetchPreview(it.id()).getBody()))
-                .toList();
-        model.addAttribute("filmwebResults", filmwebResults);
-        model.addAttribute("imdbResults", imdbApiClient.search(movie.getTitle(), 5).getBody());
-
         return "admin/edit-movie :: edit-movie-container";
     }
 
