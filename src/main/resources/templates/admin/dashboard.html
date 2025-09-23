@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <!-- Load HTMX from static resources -->
+    <script src="/js/htmx.min.js" th:src="@{/js/htmx.min.js}"></script>
+    <style>
+        body { font-family: sans-serif; margin: 2rem; }
+        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 1rem; }
+        button { padding: 0.5rem 1rem; cursor: pointer; }
+        #user-list-container { margin-top: 2rem; border: 1px solid #eee; padding: 1rem; min-height: 100px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Admin Dashboard</h1>
+    <div>
+        <span>Welcome, <b sec:authentication="name">Admin</b>!</span>
+        <!-- Logout Form -->
+        <form th:action="@{/logout}" method="post" style="display: inline; margin-left: 1rem;">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+</header>
+
+<main>
+    <p>This is the main content of your admin panel.</p>
+
+    <button hx-get="/admin/api/users"
+            hx-target="#user-list-container"
+            hx-swap="innerHTML">
+        Fetch User List
+    </button>
+
+    <div id="user-list-container">Click the button to load users here.</div>
+</main>
+
+</body>
+</html>

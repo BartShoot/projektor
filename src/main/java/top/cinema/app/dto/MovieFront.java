@@ -10,10 +10,14 @@ public record MovieFront(Integer id,
                          Integer durationMinutes,
                          List<ShowingFront> list,
                          String filmwebUrl,
-                         Float rating,
-                         Integer ratingCount,
-                         String posterUrl) {
+                         Float filmwebRating,
+                         Integer filmwebRatingCount,
+                         String filmwebPosterUrl,
+                         String imdbUrl,
+                         Float imdbRating,
+                         Integer imdbRatingCount,
+                         String imdbPosterUrl) {
     public MovieFront(Integer id, String title, Integer durationMinutes) {
-        this(id, title, durationMinutes, null, null, null, null, null);
+        this(id, title, durationMinutes, null, null, null, null, null, null, null, null, null);
     }
 }

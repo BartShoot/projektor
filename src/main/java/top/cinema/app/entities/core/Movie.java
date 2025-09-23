@@ -24,6 +24,10 @@ public class Movie {
     private Integer heliosId;
     @Column(unique = true)
     private String multikinoId;
+//    @Embedded
+//    private FilmwebData filmwebData;
+//    @Embedded
+//    private IMDbData imdbData;
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
     private List<Showing> showings;
@@ -56,8 +60,18 @@ public class Movie {
     }
 
     public MovieFront toFrontWithShowings() {
-        return new MovieFront(id, title, durationMinutes, showings.stream().map(Showing::toFront).toList(), null, null,
-                null, null);
+        return new MovieFront(id,
+                              title,
+                              durationMinutes,
+                              showings.stream().map(Showing::toFront).toList(),
+                              null,
+                              null,
+                              null,
+                              null,
+                              null,
+                              null,
+                              null,
+                              null);
     }
 
     public Integer getId() {
@@ -111,4 +125,20 @@ public class Movie {
     public void setNormalizedTitle(String normalizedTitle) {
         this.normalizedTitle = normalizedTitle;
     }
+
+//    public FilmwebData getFilmwebData() {
+//        return filmwebData;
+//    }
+//
+//    public void setFilmwebData(FilmwebData filmwebData) {
+//        this.filmwebData = filmwebData;
+//    }
+//
+//    public IMDbData getImdbData() {
+//        return imdbData;
+//    }
+//
+//    public void setImdbData(IMDbData imdbData) {
+//        this.imdbData = imdbData;
+//    }
 }

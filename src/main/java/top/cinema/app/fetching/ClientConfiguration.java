@@ -4,8 +4,6 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.JdkClientHttpRequestFactory;
@@ -16,6 +14,7 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 import top.cinema.app.fetching.cinemacity.api.CinemaCityApiClient;
 import top.cinema.app.fetching.helios.api.HeliosApiClient;
 import top.cinema.app.fetching.movie_data.api.FilmwebApiClient;
+import top.cinema.app.fetching.movie_data.api.ImdbApiClient;
 import top.cinema.app.fetching.multikino.api.MultikinoApiClient;
 
 import java.net.http.HttpClient;
@@ -24,16 +23,11 @@ import java.time.format.DateTimeFormatter;
 
 @Configuration
 public class ClientConfiguration {
-    private static final Logger log = LoggerFactory.getLogger("CinemaCityApiClient");
-
-    private static final String CINEMA_CITY_BASE_URL =
-            "https://www.cinema-city.pl/pl/data-api-service";
-
+    private static final String CINEMA_CITY_BASE_URL = "https://www.cinema-city.pl/pl/data-api-service";
     private static final String HELIOS_BASE_URL = "https://api.helios.pl/api";
-
     private static final String MULTIKINO_BASE_URL = "https://multikino.pl/api";
-
     private static final String FILMWEB_API_URL = "https://www.filmweb.pl/api";
+    private static final String IMDB_API_URL = "https://api.imdbapi.dev/";
 
     @Bean
     CinemaCityApiClient cinemaCityApiClient() {
@@ -102,5 +96,13 @@ public class ClientConfiguration {
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
         HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
         return factory.createClient(FilmwebApiClient.class);
+    }
+
+    @Bean
+    ImdbApiClient imdbApiClient() {
+        RestClient restClient = RestClient.builder().baseUrl(IMDB_API_URL).build();
+        RestClientAdapter adapter = RestClientAdapter.create(restClient);
+        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
+        return factory.createClient(ImdbApiClient.class);
     }
 }
