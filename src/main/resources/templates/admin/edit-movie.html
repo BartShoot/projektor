@@ -42,59 +42,31 @@
 
 <!-- Filmweb Search Results Fragment -->
 <div th:fragment="filmweb-search-results">
-    <div th:if="${filmwebResults}">
-        <table>
-            <thead>
-            <tr>
-                <th>Poster</th>
-                <th>Filmweb ID</th>
-                <th>Title</th>
-                <th>Year</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="result : ${filmwebResults}">
-                <td>
-                    <img th:if="${result.preview.poster != null}" th:src="${result.preview.getPosterUrl()}" alt="Poster" style="width: 100px;"/>
-                    <span th:unless="${result.preview.poster != null}">No poster</span>
-                </td>
-                <td th:text="${result.id}"></td>
-                <td><a th:href="${result.preview.getHtmlUrl(result.id)}" th:text="${result.preview.title != null ? result.preview.title.title : result.preview.originalTitle.title}" target="_blank"></a></td>
-                <td th:text="${result.preview.year}"></td>
-                <td><button>Select</button></td>
-            </tr>
-            </tbody>
-        </table>
+    <div th:if="${filmwebResults}" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <div th:each="result : ${filmwebResults}" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem; width: 200px; text-align: center;">
+            <img th:if="${result.preview.poster != null}" th:src="${result.preview.getPosterUrl()}" alt="Poster" style="max-width: 100px; height: auto; margin-bottom: 0.5rem;"/>
+            <span th:unless="${result.preview.poster != null}">No poster</span>
+            <div style="font-weight: bold; margin-bottom: 0.5rem;">
+                <a th:href="${result.preview.getHtmlUrl(result.id)}" th:text="${result.preview.title != null ? result.preview.title.title : result.preview.originalTitle.title}" target="_blank"></a>
+            </div>
+            <div th:text="${result.preview.year}" style="margin-bottom: 0.5rem;"></div>
+            <button>Select</button>
+        </div>
     </div>
 </div>
 
 <!-- IMDb Search Results Fragment -->
 <div th:fragment="imdb-search-results">
-    <div th:if="${imdbResults}">
-        <table>
-            <thead>
-            <tr>
-                <th>Poster</th>
-                <th>IMDb ID</th>
-                <th>Title</th>
-                <th>Year</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="result : ${imdbResults.titles}">
-                <td>
-                    <img th:if="${result.primaryImage != null && result.primaryImage.url != null}" th:src="${result.primaryImage.url}" alt="Poster" style="width: 100px;"/>
-                    <span th:unless="${result.primaryImage != null && result.primaryImage.url != null}">No poster</span>
-                </td>
-                <td th:text="${result.id}"></td>
-                <td><a th:href="@{'https://www.imdb.com/title/' + ${result.id}}" th:text="${result.primaryTitle}" target="_blank"></a></td>
-                <td th:text="${result.startYear}"></td>
-                <td><button>Select</button></td>
-            </tr>
-            </tbody>
-        </table>
+    <div th:if="${imdbResults}" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <div th:each="result : ${imdbResults.titles}" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem; width: 200px; text-align: center;">
+            <img th:if="${result.primaryImage != null && result.primaryImage.url != null}" th:src="${result.primaryImage.url}" alt="Poster" style="max-width: 100px; height: auto; margin-bottom: 0.5rem;"/>
+            <span th:unless="${result.primaryImage != null && result.primaryImage.url != null}">No poster</span>
+            <div style="font-weight: bold; margin-bottom: 0.5rem;">
+                <a th:href="@{'https://www.imdb.com/title/' + ${result.id}}" th:text="${result.primaryTitle}" target="_blank"></a>
+            </div>
+            <div th:text="${result.startYear}" style="margin-bottom: 0.5rem;"></div>
+            <button>Select</button>
+        </div>
     </div>
 </div>
 
