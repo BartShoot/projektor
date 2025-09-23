@@ -2,10 +2,7 @@ package top.cinema.app.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import top.cinema.app.dao.CinemaRepository;
 import top.cinema.app.dao.CityRepository;
 import top.cinema.app.dao.MovieRepository;
@@ -14,6 +11,8 @@ import top.cinema.app.entities.core.Cinema;
 import top.cinema.app.entities.core.City;
 import top.cinema.app.entities.core.Movie;
 import top.cinema.app.entities.core.Showing;
+import top.cinema.app.fetching.movie_data.api.FilmwebApiClient;
+import top.cinema.app.fetching.movie_data.api.ImdbApiClient;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -29,15 +28,21 @@ public class AdminController {
     private final CinemaRepository cinemaRepository;
     private final MovieRepository movieRepository;
     private final ShowingRepository showingRepository;
+    private final FilmwebApiClient filmwebApiClient;
+    private final ImdbApiClient imdbApiClient;
 
     public AdminController(CityRepository cityRepository,
                            CinemaRepository cinemaRepository,
                            MovieRepository movieRepository,
-                           ShowingRepository showingRepository) {
+                           ShowingRepository showingRepository,
+                           FilmwebApiClient filmwebApiClient,
+                           ImdbApiClient imdbApiClient) {
         this.cityRepository = cityRepository;
         this.cinemaRepository = cinemaRepository;
         this.movieRepository = movieRepository;
         this.showingRepository = showingRepository;
+        this.filmwebApiClient = filmwebApiClient;
+        this.imdbApiClient = imdbApiClient;
     }
 
     @GetMapping("/login")
@@ -68,6 +73,22 @@ public class AdminController {
         return "admin/fragments :: movies-table";
     }
 
+    @GetMapping("/movie/{id}/edit")
+    public String showEditMoviePage(@PathVariable Integer id, Model model) {
+        Optional<Movie> movieOptional = movieRepository.findById(id);
+        if (movieOptional.isEmpty()) {
+            return "redirect:/admin/movies";
+        }
+        Movie movie = movieOptional.get();
+        model.addAttribute("movie", movie.toFront());
+
+        // Pre-load search results
+        model.addAttribute("filmwebResults", filmwebApiClient.search(movie.getTitle(), 5).getBody());
+        model.addAttribute("imdbResults", imdbApiClient.search(movie.getTitle(), 5).getBody());
+
+        return "admin/edit-movie :: edit-movie-container";
+    }
+
     @GetMapping("/showings")
     public String getShowings(Model model, @RequestParam(name = "cinemaId", required = false) Integer cinemaId) {
         model.addAttribute("cinemas", cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
@@ -85,6 +106,36 @@ public class AdminController {
             model.addAttribute("showings", Collections.emptyList());
         }
         return "admin/fragments :: showings-view";
+    }
+
+    @GetMapping("/search/filmweb")
+    public String searchFilmweb(@RequestParam Integer movieId, @RequestParam(required = false) String query, Model model) {
+        Optional<Movie> movieOptional = movieRepository.findById(movieId);
+        if (movieOptional.isEmpty()) {
+            return "admin/edit-movie :: filmweb-search-results"; // Return empty fragment
+        }
+        Movie movie = movieOptional.get();
+        model.addAttribute("movie", movie.toFront());
+
+        String searchQuery = (query == null || query.isBlank()) ? movie.getTitle() : query;
+
+        model.addAttribute("filmwebResults", filmwebApiClient.search(searchQuery, 5).getBody());
+        return "admin/edit-movie :: filmweb-search-results";
+    }
+
+    @GetMapping("/search/imdb")
+    public String searchImdb(@RequestParam Integer movieId, @RequestParam(required = false) String query, Model model) {
+        Optional<Movie> movieOptional = movieRepository.findById(movieId);
+        if (movieOptional.isEmpty()) {
+            return "admin/edit-movie :: imdb-search-results"; // Return empty fragment
+        }
+        Movie movie = movieOptional.get();
+        model.addAttribute("movie", movie.toFront());
+
+        String searchQuery = (query == null || query.isBlank()) ? movie.getTitle() : query;
+
+        model.addAttribute("imdbResults", imdbApiClient.search(searchQuery, 5).getBody());
+        return "admin/edit-movie :: imdb-search-results";
     }
 
 

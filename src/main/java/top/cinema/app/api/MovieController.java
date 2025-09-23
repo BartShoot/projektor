@@ -52,7 +52,7 @@ public class MovieController {
     }
 
     @GetMapping("/data/{id}")
-    public ResponseEntity<?> updateMovieData(@PathVariable Integer id,
+    public ResponseEntity<?> searchMovieData(@PathVariable Integer id,
                                              @RequestBody(required = false) MovieUpdateCommand command) {
         if (command == null) {
             Optional<Movie> byId = movieRepository.findById(id);

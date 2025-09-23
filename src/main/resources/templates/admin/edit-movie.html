@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="edit-movie-container">
+    <!-- Movie Edit Panel -->
+    <div id="edit-movie-panel">
+        <h3>Edit Movie</h3>
+        <div th:if="${movie}">
+            <p><strong>ID:</strong> <span th:text="${movie.id}"></span></p>
+            <p><strong>Title:</strong> <span th:text="${movie.title}"></span></p>
+            <!-- Add other movie fields here -->
+        </div>
+    </div>
+
+    <!-- Filmweb Search -->
+    <div>
+        <h4>Filmweb Search</h4>
+        <form hx-get="/admin/search/filmweb" hx-target="#filmweb-results" hx-swap="innerHTML">
+            <input type="hidden" name="movieId" th:value="${movie.id}"/>
+            <input type="text" name="query" placeholder="Override search query"/>
+            <button type="submit">Search</button>
+        </form>
+        <div id="filmweb-results">
+            <div th:replace="~{admin/edit-movie :: filmweb-search-results}"></div>
+        </div>
+    </div>
+
+    <!-- IMDb Search -->
+    <div>
+        <h4>IMDb Search</h4>
+        <form hx-get="/admin/search/imdb" hx-target="#imdb-results" hx-swap="innerHTML">
+            <input type="hidden" name="movieId" th:value="${movie.id}"/>
+            <input type="text" name="query" placeholder="Override search query"/>
+            <button type="submit">Search</button>
+        </form>
+        <div id="imdb-results">
+            <div th:replace="~{admin/edit-movie :: imdb-search-results}"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Filmweb Search Results Fragment -->
+<div th:fragment="filmweb-search-results">
+    <div th:if="${filmwebResults}">
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="result : ${filmwebResults.searchHits}">
+                <td th:text="${result.matchedTitle}"></td>
+                <td><button>Select</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- IMDb Search Results Fragment -->
+<div th:fragment="imdb-search-results">
+    <div th:if="${imdbResults}">
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="result : ${imdbResults.titles}">
+                <td th:text="${result.primaryTitle}"></td>
+                <td th:text="${result.startYear}"></td>
+                <td><button>Select</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
