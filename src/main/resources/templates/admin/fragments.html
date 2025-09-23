@@ -57,6 +57,10 @@
         <tr>
             <th>ID</th>
             <th>Title</th>
+            <th>Showings</th>
+            <th>Filmweb</th>
+            <th>IMDb</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -64,6 +68,17 @@
             <td th:text="${movie.id}"></td>
             <td th:text="${movie.title}"></td>
             <td th:text="${movie.showingsCount}"></td>
+            <td>
+                <a th:if="${movie.filmwebUrl}" th:href="${movie.filmwebUrl}" th:text="${movie.title}" target="_blank"></a>
+                <span th:unless="${movie.filmwebUrl}">-</span>
+            </td>
+            <td>
+                <a th:if="${movie.imdbUrl}" th:href="${movie.imdbUrl}" th:text="${movie.title}" target="_blank"></a>
+                <span th:unless="${movie.imdbUrl}">-</span>
+            </td>
+            <td>
+                <button class="btn btn-secondary btn-sm">Edit</button>
+            </td>
         </tr>
         </tbody>
     </table>

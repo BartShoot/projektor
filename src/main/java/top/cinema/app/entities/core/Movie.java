@@ -13,21 +13,27 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
+
     private String title;
+
     @Column(unique = true)
     private String normalizedTitle;
+
     private String originalTitle;
     private Integer durationMinutes;
+
     @Column(unique = true)
     private String cinemaCityId;
+
     @Column(unique = true)
     private Integer heliosId;
+
     @Column(unique = true)
     private String multikinoId;
-//    @Embedded
-//    private FilmwebData filmwebData;
-//    @Embedded
-//    private IMDbData imdbData;
+    //    @Embedded
+    //    private FilmwebData filmwebData;
+    //    @Embedded
+    //    private IMDbData imdbData;
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
     private List<Showing> showings;
@@ -37,9 +43,7 @@ public class Movie {
     @Formula("(SELECT COUNT(s.id) FROM showings as s WHERE s.movie_id = id)")
     private Integer showingsCount;
 
-    public Movie() {
-
-    }
+    public Movie() {}
 
     public Movie(String name, String normalizedTitle, Integer durationMinutes) {
         this.title = name;
@@ -56,22 +60,24 @@ public class Movie {
     }
 
     public MovieFront toFront() {
-        return new MovieFront(id, title, durationMinutes);
+        return new MovieFront(id, title, durationMinutes, showingsCount);
     }
 
     public MovieFront toFrontWithShowings() {
-        return new MovieFront(id,
-                              title,
-                              durationMinutes,
-                              showings.stream().map(Showing::toFront).toList(),
-                              null,
-                              null,
-                              null,
-                              null,
-                              null,
-                              null,
-                              null,
-                              null);
+        return new MovieFront(
+                id,
+                title,
+                durationMinutes,
+                showings.stream().map(Showing::toFront).toList(),
+                showingsCount,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
     }
 
     public Integer getId() {
@@ -126,19 +132,23 @@ public class Movie {
         this.normalizedTitle = normalizedTitle;
     }
 
-//    public FilmwebData getFilmwebData() {
-//        return filmwebData;
-//    }
-//
-//    public void setFilmwebData(FilmwebData filmwebData) {
-//        this.filmwebData = filmwebData;
-//    }
-//
-//    public IMDbData getImdbData() {
-//        return imdbData;
-//    }
-//
-//    public void setImdbData(IMDbData imdbData) {
-//        this.imdbData = imdbData;
-//    }
+    public Integer getShowingsCount() {
+        return showingsCount;
+    }
+
+    //    public FilmwebData getFilmwebData() {
+    //        return filmwebData;
+    //    }
+    //
+    //    public void setFilmwebData(FilmwebData filmwebData) {
+    //        this.filmwebData = filmwebData;
+    //    }
+    //
+    //    public IMDbData getImdbData() {
+    //        return imdbData;
+    //    }
+    //
+    //    public void setImdbData(IMDbData imdbData) {
+    //        this.imdbData = imdbData;
+    //    }
 }
