@@ -2,7 +2,10 @@ package top.cinema.app.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import top.cinema.app.dao.CinemaRepository;
 import top.cinema.app.dao.CityRepository;
 import top.cinema.app.dao.MovieRepository;
@@ -16,7 +19,6 @@ import top.cinema.app.fetching.movie_data.api.ImdbApiClient;
 import top.cinema.app.fetching.movie_data.model.FilmwebMoviePreview;
 import top.cinema.app.fetching.movie_data.model.FilmwebSearchResults;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -155,5 +157,4 @@ public class AdminController {
         model.addAttribute("imdbResults", imdbApiClient.search(searchQuery, 5).getBody());
         return "admin/edit-movie :: imdb-search-results";
     }
-
 }
