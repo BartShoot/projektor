@@ -54,7 +54,6 @@ public class MovieController {
     @GetMapping("/{id}/showing")
     public ResponseEntity<List<ShowingFront>> getMovieShowings(@PathVariable Integer id) {
         Optional<Movie> movieOptional = movieRepository.findById(id);
-        var test = showingRepository.findAll();
         if (movieOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
