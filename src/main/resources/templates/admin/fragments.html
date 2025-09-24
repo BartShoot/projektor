@@ -2,15 +2,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<!-- User List Fragment -->
-<div th:fragment="user-list">
-    <h3>User List</h3>
-    <p><em>(Loaded at <span th:text="${timestamp}"></span>)</em></p>
-    <ul>
-        <li th:each="user : ${users}" th:text="${user}"></li>
-    </ul>
-</div>
-
 <!-- Cities Table Fragment -->
 <div th:fragment="cities-table">
     <h3>Cities</h3>

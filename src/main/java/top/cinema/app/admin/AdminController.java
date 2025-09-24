@@ -156,12 +156,4 @@ public class AdminController {
         return "admin/edit-movie :: imdb-search-results";
     }
 
-    @GetMapping("/api/users")
-    public String getUsers(Model model, @RequestHeader(value = "HX-Request", required = false) String hxRequest) {
-        List<String> users = List.of("Alice", "Bob", "Charlie");
-        model.addAttribute("users", users);
-        model.addAttribute("timestamp", Instant.now().toString());
-
-        return "admin/fragments :: user-list";
-    }
 }
