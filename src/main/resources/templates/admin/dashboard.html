@@ -42,6 +42,25 @@
             border: none;
         }
     </style>
+    <script>
+        function selectImdb(button) {
+            const imdbId = button.dataset.id;
+            document.getElementById('imdbId').value = imdbId;
+            document.getElementById('selected-imdb-id').textContent = imdbId;
+            const buttons = document.querySelectorAll('#imdb-results button');
+            buttons.forEach(btn => btn.style.fontWeight = 'normal');
+            button.style.fontWeight = 'bold';
+        }
+
+        function selectFilmweb(button) {
+            const filmwebId = button.dataset.id;
+            document.getElementById('filmwebId').value = filmwebId;
+            document.getElementById('selected-filmweb-id').textContent = filmwebId;
+            const buttons = document.querySelectorAll('#filmweb-results button');
+            buttons.forEach(btn => btn.style.fontWeight = 'normal');
+            button.style.fontWeight = 'bold';
+        }
+    </script>
 </head>
 <body>
 

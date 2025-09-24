@@ -3,15 +3,22 @@
 <body>
 
 <div th:fragment="edit-movie-container">
-    <!-- Movie Edit Panel -->
-    <div id="edit-movie-panel">
-        <h3>Edit Movie</h3>
-        <div th:if="${movie}">
-            <p><strong>ID:</strong> <span th:text="${movie.id}"></span></p>
-            <p><strong>Title:</strong> <span th:text="${movie.title}"></span></p>
-            <!-- Add other movie fields here -->
+    <form th:hx-post="@{/admin/movie/{id}/update(id=${movie.id})}" hx-target="#content" hx-swap="innerHTML">
+        <!-- Movie Edit Panel -->
+        <div id="edit-movie-panel">
+            <h3>Edit Movie</h3>
+            <div th:if="${movie}">
+                <p><strong>ID:</strong> <span th:text="${movie.id}"></span></p>
+                <p><strong>Title:</strong> <span th:text="${movie.title}"></span></p>
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                <input type="hidden" id="imdbId" name="imdbId"/>
+                <input type="hidden" id="filmwebId" name="filmwebId"/>
+                <p><strong>Selected IMDb ID:</strong> <span id="selected-imdb-id"></span></p>
+                <p><strong>Selected Filmweb ID:</strong> <span id="selected-filmweb-id"></span></p>
+            </div>
         </div>
-    </div>
+        <button type="submit">Update Movie</button>
+    </form>
 
     <!-- Filmweb Search -->
     <div>
@@ -21,7 +28,8 @@
             <input type="text" name="query" placeholder="Override search query"/>
             <button type="submit">Search</button>
         </form>
-        <div id="filmweb-results" th:attr="hx-get=@{/admin/search/filmweb(movieId=${movie.id})}" hx-trigger="load" hx-swap="innerHTML">
+        <div id="filmweb-results" th:attr="hx-get=@{/admin/search/filmweb(movieId=${movie.id})}" hx-trigger="load"
+             hx-swap="innerHTML">
             <p>Loading Filmweb results...</p>
         </div>
     </div>
@@ -34,7 +42,8 @@
             <input type="text" name="query" placeholder="Override search query"/>
             <button type="submit">Search</button>
         </form>
-        <div id="imdb-results" th:attr="hx-get=@{/admin/search/imdb(movieId=${movie.id})}" hx-trigger="load" hx-swap="innerHTML">
+        <div id="imdb-results" th:attr="hx-get=@{/admin/search/imdb(movieId=${movie.id})}" hx-trigger="load"
+             hx-swap="innerHTML">
             <p>Loading IMDb results...</p>
         </div>
     </div>
@@ -43,14 +52,18 @@
 <!-- Filmweb Search Results Fragment -->
 <div th:fragment="filmweb-search-results">
     <div th:if="${filmwebResults}" style="display: flex; flex-wrap: wrap; gap: 1rem;">
-        <div th:each="result : ${filmwebResults}" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem; width: 200px; text-align: center;">
-            <img th:if="${result.preview.poster != null}" th:src="${result.preview.getPosterUrl()}" alt="Poster" style="max-width: 100px; height: auto; margin-bottom: 0.5rem;"/>
+        <div th:each="result : ${filmwebResults}"
+             style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem; width: 200px; text-align: center;">
+            <img th:if="${result.preview.poster != null}" th:src="${result.preview.getPosterUrl()}" alt="Poster"
+                 style="max-width: 100px; height: auto; margin-bottom: 0.5rem;"/>
             <span th:unless="${result.preview.poster != null}">No poster</span>
             <div style="font-weight: bold; margin-bottom: 0.5rem;">
-                <a th:href="${result.preview.getHtmlUrl(result.id)}" th:text="${result.preview.title != null ? result.preview.title.title : result.preview.originalTitle.title}" target="_blank"></a>
+                <a th:href="${result.preview.getHtmlUrl(result.id)}"
+                   th:text="${result.preview.title != null ? result.preview.title.title : result.preview.originalTitle.title}"
+                   target="_blank"></a>
             </div>
             <div th:text="${result.preview.year}" style="margin-bottom: 0.5rem;"></div>
-            <button>Select</button>
+            <button th:data-id="${result.id}" onclick="selectFilmweb(this)">Select</button>
         </div>
     </div>
 </div>
@@ -58,14 +71,18 @@
 <!-- IMDb Search Results Fragment -->
 <div th:fragment="imdb-search-results">
     <div th:if="${imdbResults}" style="display: flex; flex-wrap: wrap; gap: 1rem;">
-        <div th:each="result : ${imdbResults.titles}" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem; width: 200px; text-align: center;">
-            <img th:if="${result.primaryImage != null && result.primaryImage.url != null}" th:src="${result.primaryImage.url}" alt="Poster" style="max-width: 100px; height: auto; margin-bottom: 0.5rem;"/>
+        <div th:each="result : ${imdbResults.titles}"
+             style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem; width: 200px; text-align: center;">
+            <img th:if="${result.primaryImage != null && result.primaryImage.url != null}"
+                 th:src="${result.primaryImage.url}" alt="Poster"
+                 style="max-width: 100px; height: auto; margin-bottom: 0.5rem;"/>
             <span th:unless="${result.primaryImage != null && result.primaryImage.url != null}">No poster</span>
             <div style="font-weight: bold; margin-bottom: 0.5rem;">
-                <a th:href="@{'https://www.imdb.com/title/' + ${result.id}}" th:text="${result.primaryTitle}" target="_blank"></a>
+                <a th:href="@{'https://www.imdb.com/title/' + ${result.id}}" th:text="${result.primaryTitle}"
+                   target="_blank"></a>
             </div>
             <div th:text="${result.startYear}" style="margin-bottom: 0.5rem;"></div>
-            <button>Select</button>
+            <button th:data-id="${result.id}" onclick="selectImdb(this)">Select</button>
         </div>
     </div>
 </div>

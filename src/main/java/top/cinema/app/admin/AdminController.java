@@ -2,10 +2,7 @@ package top.cinema.app.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import top.cinema.app.dao.CinemaRepository;
 import top.cinema.app.dao.CityRepository;
 import top.cinema.app.dao.MovieRepository;
@@ -93,6 +90,23 @@ public class AdminController {
         Movie movie = movieOptional.get();
         model.addAttribute("movie", movie.toFront());
 
+        return "admin/edit-movie :: edit-movie-container";
+    }
+
+    @PostMapping("/movie/{id}/update")
+    public String updateMovie(
+            @PathVariable Integer id,
+            @RequestParam(required = false) String imdbId,
+            @RequestParam(required = false) Integer filmwebId,
+            Model model) {
+        Optional<Movie> movieOptional = movieRepository.findById(id);
+        if (movieOptional.isEmpty()) {
+            return "redirect:/admin/movies";
+        }
+        Movie movie = movieOptional.get();
+        // TODO: update movie with imdbId and filmwebId
+        System.out.println("Updating movie " + id + " with imdbId: " + imdbId + " and filmwebId: " + filmwebId);
+        model.addAttribute("movie", movie.toFront());
         return "admin/edit-movie :: edit-movie-container";
     }
 
