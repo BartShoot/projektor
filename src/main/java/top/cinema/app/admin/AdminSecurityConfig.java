@@ -26,7 +26,11 @@ public class AdminSecurityConfig {
     public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
         // For demonstration purposes, we use an in-memory user.
         // For production, you should use a database-backed UserDetailsService.
-        UserDetails admin = User.builder().username("admin").password(passwordEncoder.encode("password")).roles("ADMIN").build();
+        UserDetails admin = User.builder()
+                .username("admin")
+                .password(passwordEncoder.encode("password"))
+                .roles("ADMIN")
+                .build();
         return new InMemoryUserDetailsManager(admin);
     }
 
@@ -34,9 +38,11 @@ public class AdminSecurityConfig {
     @Order(1) // This filter chain will be checked first
     public SecurityFilterChain adminFilterChain(HttpSecurity http) throws Exception {
         http.securityMatcher("/admin/**") // Apply this filter chain to /admin/** paths
-                .authorizeHttpRequests(authorize -> authorize.anyRequest().hasRole("ADMIN")).formLogin(form -> form.loginPage(
-                                "/admin/login") // Custom login page
-                        .loginProcessingUrl("/admin/login").defaultSuccessUrl("/admin/dashboard", true).permitAll());
+                .authorizeHttpRequests(authorize -> authorize.anyRequest().hasRole("ADMIN"))
+                .formLogin(form -> form.loginPage("/admin/login") // Custom login page
+                        .loginProcessingUrl("/admin/login")
+                        .defaultSuccessUrl("/admin/dashboard", true)
+                        .permitAll());
         return http.build();
     }
 }

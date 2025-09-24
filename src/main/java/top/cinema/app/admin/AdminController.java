@@ -35,12 +35,13 @@ public class AdminController {
 
     public record FilmwebSearchResultView(Integer id, FilmwebMoviePreview preview) {}
 
-    public AdminController(CityRepository cityRepository,
-                           CinemaRepository cinemaRepository,
-                           MovieRepository movieRepository,
-                           ShowingRepository showingRepository,
-                           FilmwebApiClient filmwebApiClient,
-                           ImdbApiClient imdbApiClient) {
+    public AdminController(
+            CityRepository cityRepository,
+            CinemaRepository cinemaRepository,
+            MovieRepository movieRepository,
+            ShowingRepository showingRepository,
+            FilmwebApiClient filmwebApiClient,
+            ImdbApiClient imdbApiClient) {
         this.cityRepository = cityRepository;
         this.cinemaRepository = cinemaRepository;
         this.movieRepository = movieRepository;
@@ -61,19 +62,23 @@ public class AdminController {
 
     @GetMapping("/cities")
     public String getCities(Model model) {
-        model.addAttribute("cities", cityRepository.findAll().stream().map(City::toFront).toList());
+        model.addAttribute(
+                "cities", cityRepository.findAll().stream().map(City::toFront).toList());
         return "admin/fragments :: cities-table";
     }
 
     @GetMapping("/cinemas")
     public String getCinemas(Model model) {
-        model.addAttribute("cinemas", cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
+        model.addAttribute(
+                "cinemas",
+                cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
         return "admin/fragments :: cinemas-table";
     }
 
     @GetMapping("/movies")
     public String getMovies(Model model) {
-        model.addAttribute("movies", movieRepository.findAll().stream().map(Movie::toFront).toList());
+        model.addAttribute(
+                "movies", movieRepository.findAll().stream().map(Movie::toFront).toList());
         return "admin/fragments :: movies-table";
     }
 
@@ -91,14 +96,19 @@ public class AdminController {
 
     @GetMapping("/showings")
     public String getShowings(Model model, @RequestParam(name = "cinemaId", required = false) Integer cinemaId) {
-        model.addAttribute("cinemas", cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
+        model.addAttribute(
+                "cinemas",
+                cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
         if (cinemaId != null) {
             Optional<Cinema> cinemaOptional = cinemaRepository.findById(cinemaId);
             if (cinemaOptional.isPresent()) {
-                model.addAttribute("showings",
-                                   showingRepository.findByCinemaAndShowingTimeAfter(cinemaOptional.get(),
-                                                                                     LocalDateTime.now()).stream().map(
-                                           Showing::toFront).toList());
+                model.addAttribute(
+                        "showings",
+                        showingRepository
+                                .findByCinemaAndShowingTimeAfter(cinemaOptional.get(), LocalDateTime.now())
+                                .stream()
+                                .map(Showing::toFront)
+                                .toList());
             } else {
                 model.addAttribute("showings", Collections.emptyList());
             }
@@ -109,7 +119,8 @@ public class AdminController {
     }
 
     @GetMapping("/search/filmweb")
-    public String searchFilmweb(@RequestParam Integer movieId, @RequestParam(required = false) String query, Model model) {
+    public String searchFilmweb(
+            @RequestParam Integer movieId, @RequestParam(required = false) String query, Model model) {
         Optional<Movie> movieOptional = movieRepository.findById(movieId);
         if (movieOptional.isEmpty()) {
             return "admin/edit-movie :: filmweb-search-results"; // Return empty fragment
@@ -119,10 +130,12 @@ public class AdminController {
 
         String searchQuery = (query == null || query.isBlank()) ? movie.getTitle() : query;
 
-        FilmwebSearchResults filmwebSearch = filmwebApiClient.search(searchQuery, 5).getBody();
+        FilmwebSearchResults filmwebSearch =
+                filmwebApiClient.search(searchQuery, 5).getBody();
         List<FilmwebSearchResultView> filmwebResults = filmwebSearch.searchHits().stream()
                 .filter(it -> it.type().equals("film"))
-                .map(it -> new FilmwebSearchResultView(it.id(), filmwebApiClient.fetchPreview(it.id()).getBody()))
+                .map(it -> new FilmwebSearchResultView(
+                        it.id(), filmwebApiClient.fetchPreview(it.id()).getBody()))
                 .toList();
         model.addAttribute("filmwebResults", filmwebResults);
         return "admin/edit-movie :: filmweb-search-results";
@@ -142,7 +155,6 @@ public class AdminController {
         model.addAttribute("imdbResults", imdbApiClient.search(searchQuery, 5).getBody());
         return "admin/edit-movie :: imdb-search-results";
     }
-
 
     /**
      * This endpoint is designed to be called by HTMX.
