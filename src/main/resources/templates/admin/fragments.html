@@ -4,8 +4,8 @@
 
 <!-- Cities Table Fragment -->
 <div th:fragment="cities-table">
-    <h3>Cities</h3>
-    <table>
+    <h3 class="title">Cities</h3>
+    <table class="table is-stripped">
         <thead>
         <tr>
             <th>ID</th>
@@ -23,8 +23,8 @@
 
 <!-- Cinemas Table Fragment -->
 <div th:fragment="cinemas-table">
-    <h3>Cinemas</h3>
-    <table>
+    <h3 class="title">Cinemas</h3>
+    <table class="table is-stripped">
         <thead>
         <tr>
             <th>ID</th>
@@ -42,8 +42,8 @@
 
 <!-- Movies Table Fragment -->
 <div th:fragment="movies-table">
-    <h3>Movies</h3>
-    <table>
+    <h3 class="title">Movies</h3>
+    <table class="table is-stripped is-hoverable">
         <thead>
         <tr>
             <th>ID</th>
@@ -60,7 +60,8 @@
             <td th:text="${movie.title}"></td>
             <td th:text="${movie.showingsCount}"></td>
             <td>
-                <a th:if="${movie.filmwebUrl}" th:href="${movie.filmwebUrl}" th:text="${movie.title}" target="_blank"></a>
+                <a th:if="${movie.filmwebUrl}" th:href="${movie.filmwebUrl}" th:text="${movie.title}"
+                   target="_blank"></a>
                 <span th:unless="${movie.filmwebUrl}">-</span>
             </td>
             <td>
@@ -68,7 +69,8 @@
                 <span th:unless="${movie.imdbUrl}">-</span>
             </td>
             <td>
-                <a th:attr="hx-get=@{/admin/movie/{id}/edit(id=${movie.id})}" hx-target="#content" hx-swap="innerHTML" class="btn btn-secondary btn-sm">Edit</a>
+                <a th:attr="hx-get=@{/admin/movie/{id}/edit(id=${movie.id})}" hx-target="#content" hx-swap="innerHTML"
+                   class="btn btn-secondary btn-sm">Edit</a>
             </td>
         </tr>
         </tbody>
@@ -77,24 +79,28 @@
 
 
 <!-- Showings View Fragment -->
-<div id="showings-view" th:fragment="showings-view">
-    <h3>Showings</h3>
+<div class="block" id="showings-view" th:fragment="showings-view">
+    <h3 class="title">Showings</h3>
 
     <form hx-get="/admin/showings" hx-target="#showings-view" hx-swap="outerHTML">
-        <label for="cinema-select">Select a Cinema:</label>
-        <select id="cinema-select" name="cinemaId" onchange="this.form.requestSubmit()">
-            <option value="">-- Please choose a cinema --</option>
-            <option th:each="cinema : ${cinemas}"
-                    th:value="${cinema.id}"
-                    th:text="${cinema.name}"
-                    th:selected="${param.cinemaId != null && #strings.equals(param.cinemaId[0], cinema.id.toString())}"></option>
-        </select>
+        <div class="field">
+            <label class="label" for="cinema-select">Select a Cinema:</label>
+            <div class="control select">
+                <select id="cinema-select" name="cinemaId" onchange="this.form.requestSubmit()">
+                    <option value="">-- Please choose a cinema --</option>
+                    <option th:each="cinema : ${cinemas}"
+                            th:value="${cinema.id}"
+                            th:text="${cinema.name}"
+                            th:selected="${param.cinemaId != null && #strings.equals(param.cinemaId[0], cinema.id.toString())}"></option>
+                </select>
+            </div>
+        </div>
     </form>
 
     <div id="showings-table-container">
-        <div th:if="${not #lists.isEmpty(showings)}">
-            <h4>Showings for selected cinema</h4>
-            <table>
+        <div class="block" th:if="${not #lists.isEmpty(showings)}">
+            <h4 class="block">Showings for selected cinema</h4>
+            <table class="table is-stripped">
                 <thead>
                 <tr>
                     <th>ID</th>
