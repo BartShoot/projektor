@@ -51,7 +51,7 @@
 
 <!-- Filmweb Search Results Fragment -->
 <div th:fragment="filmweb-search-results">
-    <div th:if="${filmwebResults}" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+    <div th:if="${filmwebResults}" class="flex-switch">
         <div th:each="result : ${filmwebResults}"
              style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem; width: 200px; text-align: center;">
             <img th:if="${result.preview.poster != null}" th:src="${result.preview.getPosterUrl()}" alt="Poster"
@@ -70,7 +70,7 @@
 
 <!-- IMDb Search Results Fragment -->
 <div th:fragment="imdb-search-results">
-    <div th:if="${imdbResults}" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+    <div th:if="${imdbResults}" class="flex-switch">
         <div th:each="result : ${imdbResults.titles}"
              style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem; width: 200px; text-align: center;">
             <img th:if="${result.primaryImage != null && result.primaryImage.url != null}"
