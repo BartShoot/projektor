@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin Login</title>
-    <link th:href="@{/styles/css/missing.min.css}" rel="stylesheet" />
+    <link th:href="@{/styles/css/missing.min.css}" rel="stylesheet"/>
 </head>
 <body>
-<div class="container">
-    <h2>Admin Panel Login</h2>
 
-    <!-- Show error message if login fails -->
+<header>
+    <h1>Admin Panel Login</h1>
+</header>
+<main>
     <div th:if="${param.error}" class="error">
         Invalid username or password.
     </div>
 
-    <form th:action="@{/admin/login}" method="post">
-        <div>
+    <form th:action="@{/admin/login}" method="post" class="table rows">
+        <p>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required autofocus>
-        </div>
-        <div>
+        </p>
+        <p>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit">Log In</button>
+        </p>
+        <p>
+            <label></label>
+            <button class="sticky right" type="submit">Log In</button>
+        </p>
     </form>
-</div>
+</main>
 </body>
 </html>
