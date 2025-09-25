@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Dashboard</title>
     <script th:src="@{/js/htmx.min.js}"></script>
-    <link th:href="@{/styles/css/missing.min.css}" rel="stylesheet" />
+    <link th:href="@{/styles/css/bulma.min.css}" rel="stylesheet"/>
     <script>
         function selectImdb(button) {
             const imdbId = button.dataset.id;
@@ -27,32 +27,32 @@
 </head>
 <body>
 
-<header class="navbar">
-    <nav aria-label="Admin Menu">
-        <ul role="list">
-            <li><a href="/admin/cities" hx-get="/admin/cities" hx-target="#content">Cities</a></li>
-            <li><a href="/admin/cinemas" hx-get="/admin/cinemas" hx-target="#content">Cinemas</a></li>
-            <li><a href="/admin/movies" hx-get="/admin/movies" hx-target="#content">Movies</a></li>
-            <li><a href="/admin/showings" hx-get="/admin/showings" hx-target="#content">Showings</a></li>
-        </ul>
+<header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <b class="navbar-item">Admin Dashboard</b>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" hx-get="/admin/cities" hx-target="#content">Cities</a>
+                <a class="navbar-item" hx-get="/admin/cinemas" hx-target="#content">Cinemas</a>
+                <a class="navbar-item" hx-get="/admin/movies" hx-target="#content">Movies</a>
+                <a class="navbar-item" hx-get="/admin/showings" hx-target="#content">Showings</a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <form th:action="@{/logout}" method="post" class="buttons">
+                        <button class="button is-primary" type="submit">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </nav>
 </header>
 
-<div>
-    <header>
-        <h1>Admin Dashboard</h1>
-        <div>
-            <span>Welcome, <b sec:authentication="name">Admin</b>!</span>
-            <form th:action="@{/logout}" method="post">
-                <button type="submit">Logout</button>
-            </form>
-        </div>
-    </header>
-
-    <main id="content">
-        <p>Select an item from the menu to view details.</p>
-    </main>
-</div>
+<main id="content" class="container">
+    <p>Select an item from the menu to view details.</p>
+</main>
 
 </body>
 </html>
