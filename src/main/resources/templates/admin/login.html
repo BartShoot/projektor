@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Login</title>
-    <link th:href="@{/styles/css/missing.min.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/css/bulma.min.css}" rel="stylesheet"/>
 </head>
 <body>
 
-<header>
-    <h1>Admin Panel Login</h1>
-</header>
-<main>
+<section class="section">
+    <h1 class="title">Admin Panel Login</h1>
+</section>
+<main class="container is-max-tablet">
     <div th:if="${param.error}" class="error">
         Invalid username or password.
     </div>
 
-    <form th:action="@{/admin/login}" method="post" class="table rows">
-        <p>
+    <form th:action="@{/admin/login}" method="post" class="box">
+        <div class="field">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required autofocus>
-        </p>
-        <p>
+            <div class="control">
+                <input class="input" type="text" id="username" name="username" required autofocus>
+            </div>
+        </div>
+        <div class="field">
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </p>
-        <p>
-            <label></label>
-            <button class="sticky right" type="submit">Log In</button>
-        </p>
+            <div class="control">
+                <input class="input" type="password" id="password" name="password" required>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <input class="button is-link" type="submit" value="Log In"/>
+            </div>
+        </div>
     </form>
 </main>
 </body>
