@@ -1,45 +1,30 @@
 package top.cinema.app;
 
-import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-import top.cinema.app.fetching.durable_jobs.Scheduler;
-import top.cinema.app.fetching.service.CinemaSaver;
-import top.cinema.app.fetching.service.CitySaver;
-import top.cinema.app.fetching.service.MovieSaver;
-import top.cinema.app.fetching.service.ShowingSaver;
+import top.cinema.app.entities.core.User;
+import top.cinema.app.user.UserRepository;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
 
-    private final CitySaver citySaver;
-    private final CinemaSaver cinemaSaver;
-    private final MovieSaver movieSaver;
-    private final ShowingSaver showingSaver;
-    private final Scheduler scheduler;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    @Autowired
-    public DataInitializer(CitySaver citySaver,
-                           CinemaSaver cinemaSaver,
-                           MovieSaver movieSaver,
-                           ShowingSaver showingSaver,
-                           Scheduler scheduler) {
-        this.citySaver = citySaver;
-        this.cinemaSaver = cinemaSaver;
-        this.movieSaver = movieSaver;
-        this.showingSaver = showingSaver;
-        this.scheduler = scheduler;
+    public DataInitializer(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
-    @Transactional
     public void run(String... args) {
-        scheduler.createJobs();
-//        citySaver.processCities();
-//        cinemaSaver.processCinemas();
-//        movieSaver.processMovies();
-//        showingSaver.processShowings();
+        if (userRepository.findByUsername("admin").isEmpty()) {
+            User admin = new User();
+            admin.setUsername("admin");
+            admin.setPassword(passwordEncoder.encode("password"));
+            admin.setRoles("ADMIN");
+            userRepository.save(admin);
+        }
     }
-
 }

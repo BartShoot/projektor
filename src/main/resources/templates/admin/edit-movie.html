@@ -8,9 +8,15 @@
         <fieldset class="disabled">
             <form th:hx-post="@{/admin/movie/{id}/update(id=${movie.id})}" hx-target="#content" hx-swap="innerHTML">
                 <!-- Movie Edit Panel -->
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                <input type="hidden" id="imdbId" name="imdbId"/>
+                <input type="hidden" id="filmwebId" name="filmwebId"/>
+
                 <div class="card-content" id="edit-movie-panel">
+
                     <h3 class="title">Edit Movie</h3>
                     <div class="content" th:if="${movie}">
+
                         <div class="field is-horizontal has-addons">
                             <div class="field-label is-normal">
                                 <label class="label">ID:</label>
@@ -19,15 +25,36 @@
                                 <span class="input" th:text="${movie.id}"></span>
                             </div>
                         </div>
-                        <p><strong>Title:</strong> <span th:text="${movie.title}"></span></p>
-                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-                        <input type="hidden" id="imdbId" name="imdbId"/>
-                        <input type="hidden" id="filmwebId" name="filmwebId"/>
-                        <p><strong>Selected IMDb ID:</strong> <span id="selected-imdb-id"></span></p>
-                        <p><strong>Selected Filmweb ID:</strong> <span id="selected-filmweb-id"></span></p>
+
+                        <div class="field is-horizontal has-addons">
+                            <div class="field-label is-normal">
+                                <label class="label">Title:</label>
+                            </div>
+                            <div class="control is-expanded">
+                                <span class="input" th:text="${movie.title}"></span>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal has-addons">
+                            <div class="field-label is-normal">
+                                <label class="label">Selected IMDb ID:</label>
+                            </div>
+                            <div class="control is-expanded">
+                                <span class="input" id="selected-imdb-id"></span>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal has-addons">
+                            <div class="field-label is-normal">
+                                <label class="label">Selected Filmweb ID:</label>
+                            </div>
+                            <div class="control is-expanded">
+                                <span class="input" id="selected-filmweb-id"></span>
+                            </div>
+                        </div>
                     </div>
+                    <button class="button" type="submit">Update Movie</button>
                 </div>
-                <button type="submit">Update Movie</button>
             </form>
         </fieldset>
     </div>

@@ -5,17 +5,26 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import top.cinema.app.user.JpaUserDetailsService;
+
+import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
 public class AdminSecurityConfig {
+
+    private final JpaUserDetailsService jpaUserDetailsService;
+    private final DataSource dataSource;
+
+    public AdminSecurityConfig(JpaUserDetailsService jpaUserDetailsService, DataSource dataSource) {
+        this.jpaUserDetailsService = jpaUserDetailsService;
+        this.dataSource = dataSource;
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -23,26 +32,26 @@ public class AdminSecurityConfig {
     }
 
     @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
-        // For demonstration purposes, we use an in-memory user.
-        // For production, you should use a database-backed UserDetailsService.
-        UserDetails admin = User.builder()
-                .username("admin")
-                .password(passwordEncoder.encode("password"))
-                .roles("ADMIN")
-                .build();
-        return new InMemoryUserDetailsManager(admin);
+    @Order(1)
+    public SecurityFilterChain adminFilterChain(HttpSecurity http) throws Exception {
+        http.securityMatcher("/admin/**")
+                .userDetailsService(jpaUserDetailsService)
+                .authorizeHttpRequests(authorize -> authorize.anyRequest().hasRole("ADMIN"))
+                .formLogin(form -> form.loginPage("/admin/login")
+                        .loginProcessingUrl("/admin/login")
+                        .defaultSuccessUrl("/admin/dashboard", true)
+                        .permitAll())
+                .logout(logout -> logout.logoutUrl("/admin/logout")
+                        .logoutSuccessUrl("/admin/login?logout")
+                        .permitAll())
+                .rememberMe(rememberMe -> rememberMe.tokenRepository(persistentTokenRepository()));
+        return http.build();
     }
 
     @Bean
-    @Order(1) // This filter chain will be checked first
-    public SecurityFilterChain adminFilterChain(HttpSecurity http) throws Exception {
-        http.securityMatcher("/admin/**") // Apply this filter chain to /admin/** paths
-                .authorizeHttpRequests(authorize -> authorize.anyRequest().hasRole("ADMIN"))
-                .formLogin(form -> form.loginPage("/admin/login") // Custom login page
-                        .loginProcessingUrl("/admin/login")
-                        .defaultSuccessUrl("/admin/dashboard", true)
-                        .permitAll());
-        return http.build();
+    public PersistentTokenRepository persistentTokenRepository() {
+        JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
+        tokenRepository.setDataSource(dataSource);
+        return tokenRepository;
     }
 }
