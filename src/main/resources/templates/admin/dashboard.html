@@ -9,19 +9,19 @@
         function selectImdb(button) {
             const imdbId = button.dataset.id;
             document.getElementById('imdbId').value = imdbId;
-            document.getElementById('selected-imdb-id').textContent = imdbId;
+            document.getElementById('selected-imdb-id').value = imdbId;
             const buttons = document.querySelectorAll('#imdb-results button');
-            buttons.forEach(btn => btn.style.fontWeight = 'normal');
-            button.style.fontWeight = 'bold';
+            buttons.forEach(btn => btn.classList.remove('is-primary'));
+            button.classList.add('is-primary');
         }
 
         function selectFilmweb(button) {
             const filmwebId = button.dataset.id;
             document.getElementById('filmwebId').value = filmwebId;
-            document.getElementById('selected-filmweb-id').textContent = filmwebId;
+            document.getElementById('selected-filmweb-id').value = filmwebId;
             const buttons = document.querySelectorAll('#filmweb-results button');
-            buttons.forEach(btn => btn.style.fontWeight = 'normal');
-            button.style.fontWeight = 'bold';
+            buttons.forEach(btn => btn.classList.remove('is-primary'));
+            button.classList.add('is-primary');
         }
     </script>
 </head>
