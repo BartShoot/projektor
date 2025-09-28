@@ -123,6 +123,83 @@
     </div>
 </div>
 
+<!-- Jobs Table Fragment -->
+<div th:fragment="jobs-table" id="jobs-table">
+    <h3 class="title">Jobs</h3>
+
+    <form hx-get="/admin/jobs" hx-target="#jobs-table" hx-swap="innerHTML">
+        <div class="field is-grouped">
+            <div class="control">
+                <label class="label" for="status-select">Status:</label>
+                <div class="select">
+                    <select id="status-select" name="status" onchange="this.form.requestSubmit()">
+                        <option value="">All</option>
+                        <option th:each="statusValue : ${T(top.cinema.app.fetching.durable_jobs.Job.Status).values()}"
+                                th:value="${statusValue}"
+                                th:text="${statusValue}"
+                                th:selected="${statusValue.name() == status}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="control">
+                <label class="label" for="cinema-chain-select">Cinema Chain:</label>
+                <div class="select">
+                    <select id="cinema-chain-select" name="cinemaChain" onchange="this.form.requestSubmit()">
+                        <option value="">All</option>
+                        <option th:each="chainValue : ${T(top.cinema.app.model.CinemaChain).values()}"
+                                th:value="${chainValue}"
+                                th:text="${chainValue}"
+                                th:selected="${chainValue.name() == cinemaChain}"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <table class="table is-stripped is-hoverable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Cinema Chain</th>
+            <th>City ID</th>
+            <th>Cinema ID</th>
+            <th>Movie ID</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="job : ${jobs.content}">
+            <td th:text="${job.id}"></td>
+            <td th:text="${job.type}"></td>
+            <td th:text="${job.status}"></td>
+            <td th:text="${job.cinemaChain}"></td>
+            <td th:text="${job.cityId}"></td>
+            <td th:text="${job.cinemaId}"></td>
+            <td th:text="${job.movieId}"></td>
+            <td th:text="${#temporals.format(job.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+            <td th:text="${#temporals.format(job.lastUpdateDate, 'yyyy-MM-dd HH:mm')}"></td>
+            <td th:text="${job.result}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination" th:if="${jobs.totalPages > 0}">
+        <ul class="pagination-list">
+            <li th:each="i : ${#numbers.sequence(0, jobs.totalPages - 1)}">
+                <a th:attr="hx-get=@{/admin/jobs(page=${i}, size=${jobs.size}, status=${status}, cinemaChain=${cinemaChain})}"
+                   hx-target="#jobs-table" hx-swap="innerHTML"
+                   th:class="${i == jobs.number} ? 'pagination-link is-current' : 'pagination-link'"
+                   th:text="${i + 1}">
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
 
 </body>
 </html>

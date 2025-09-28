@@ -1,5 +1,7 @@
 package top.cinema.app.admin;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +13,13 @@ import top.cinema.app.entities.core.Cinema;
 import top.cinema.app.entities.core.City;
 import top.cinema.app.entities.core.Movie;
 import top.cinema.app.entities.core.Showing;
+import top.cinema.app.fetching.dao.JobRepository;
+import top.cinema.app.fetching.durable_jobs.Job;
 import top.cinema.app.fetching.movie_data.api.FilmwebApiClient;
 import top.cinema.app.fetching.movie_data.api.ImdbApiClient;
 import top.cinema.app.fetching.movie_data.model.FilmwebMoviePreview;
 import top.cinema.app.fetching.movie_data.model.FilmwebSearchResults;
+import top.cinema.app.model.CinemaChain;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -31,6 +36,7 @@ public class AdminController {
     private final ShowingRepository showingRepository;
     private final FilmwebApiClient filmwebApiClient;
     private final ImdbApiClient imdbApiClient;
+    private final JobRepository jobRepository;
 
     public record FilmwebSearchResultView(Integer id, FilmwebMoviePreview preview) {}
 
@@ -40,13 +46,15 @@ public class AdminController {
             MovieRepository movieRepository,
             ShowingRepository showingRepository,
             FilmwebApiClient filmwebApiClient,
-            ImdbApiClient imdbApiClient) {
+            ImdbApiClient imdbApiClient,
+            JobRepository jobRepository) {
         this.cityRepository = cityRepository;
         this.cinemaRepository = cinemaRepository;
         this.movieRepository = movieRepository;
         this.showingRepository = showingRepository;
         this.filmwebApiClient = filmwebApiClient;
         this.imdbApiClient = imdbApiClient;
+        this.jobRepository = jobRepository;
     }
 
     @GetMapping("/login")
@@ -132,6 +140,52 @@ public class AdminController {
             model.addAttribute("showings", Collections.emptyList());
         }
         return "admin/fragments :: showings-view";
+    }
+
+    @GetMapping("/jobs")
+    public String getJobs(
+            Model model,
+            @RequestParam(required = false) String status,
+            @RequestParam(required = false) String cinemaChain,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size) {
+
+        Job.Status statusEnum = null;
+        if (status != null && !status.isEmpty()) {
+            try {
+                statusEnum = Job.Status.valueOf(status);
+            } catch (IllegalArgumentException e) {
+                // Handle invalid status string
+            }
+        }
+
+        CinemaChain cinemaChainEnum = null;
+        if (cinemaChain != null && !cinemaChain.isEmpty()) {
+            try {
+                cinemaChainEnum = CinemaChain.valueOf(cinemaChain);
+            } catch (IllegalArgumentException e) {
+                // Handle invalid cinemaChain string
+            }
+        }
+
+        Page<Job> jobsPage;
+        PageRequest pageable = PageRequest.of(page, size);
+
+        if (statusEnum != null && cinemaChainEnum != null) {
+            jobsPage = jobRepository.findByStatusAndCinemaChain(statusEnum, cinemaChainEnum, pageable);
+        } else if (statusEnum != null) {
+            jobsPage = jobRepository.findByStatus(statusEnum, pageable);
+        } else if (cinemaChainEnum != null) {
+            jobsPage = jobRepository.findByCinemaChain(cinemaChainEnum, pageable);
+        } else {
+            jobsPage = jobRepository.findAll(pageable);
+        }
+
+        model.addAttribute("jobs", jobsPage);
+        model.addAttribute("status", status);
+        model.addAttribute("cinemaChain", cinemaChain);
+
+        return "admin/fragments :: jobs-table";
     }
 
     @GetMapping("/search/filmweb")
