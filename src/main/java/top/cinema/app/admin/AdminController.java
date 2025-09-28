@@ -11,10 +11,7 @@ import top.cinema.app.dao.CityRepository;
 import top.cinema.app.dao.MovieRepository;
 import top.cinema.app.dao.ShowingRepository;
 import top.cinema.app.dto.MovieFront;
-import top.cinema.app.entities.core.Cinema;
-import top.cinema.app.entities.core.City;
-import top.cinema.app.entities.core.Movie;
-import top.cinema.app.entities.core.Showing;
+import top.cinema.app.entities.core.*;
 import top.cinema.app.fetching.dao.JobRepository;
 import top.cinema.app.fetching.durable_jobs.Job;
 import top.cinema.app.fetching.movie_data.api.FilmwebApiClient;
@@ -145,7 +142,31 @@ public class AdminController {
             return "redirect:/admin/movies";
         }
         Movie movie = movieOptional.get();
-        model.addAttribute("movie", movie.toFront());
+
+        var filmwebData = movie.getFilmwebData();
+        var imdbData = movie.getImdbData();
+
+        MovieFront.ExternalSourceData filmweb = null;
+        if (filmwebData != null) {
+            filmweb = new MovieFront.ExternalSourceData(filmwebData.getExternalId(), filmwebData.getUrl(), filmwebData.getRating(), filmwebData.getRatingCount(), filmwebData.getPosterUrl());
+        }
+
+        MovieFront.ExternalSourceData imdb = null;
+        if (imdbData != null) {
+            imdb = new MovieFront.ExternalSourceData(imdbData.getExternalId(), imdbData.getUrl(), imdbData.getRating(), imdbData.getRatingCount(), imdbData.getPosterUrl());
+        }
+
+        MovieFront movieFront = new MovieFront(
+                movie.getId(),
+                movie.getTitle(),
+                movie.getDurationMinutes(),
+                null, // showings list - not needed for edit page
+                movie.getShowingsCount(),
+                filmweb,
+                imdb
+        );
+
+        model.addAttribute("movie", movieFront);
 
         if (hxRequest != null) {
             return "admin/edit-movie :: edit-movie-container";
@@ -159,16 +180,41 @@ public class AdminController {
     public String updateMovie(
             @PathVariable Integer id,
             @RequestParam(required = false) String imdbId,
-            @RequestParam(required = false) Integer filmwebId,
+            @RequestParam(required = false) String filmwebId,
             Model model) {
+
+        movieUpdater.updateMovie(id, imdbId, filmwebId);
+
         Optional<Movie> movieOptional = movieRepository.findById(id);
         if (movieOptional.isEmpty()) {
             return "redirect:/admin/movies";
         }
         Movie movie = movieOptional.get();
 
-        MovieFront movieFront = movieUpdater.updateMovie(id, imdbId, filmwebId.toString());
-        model.addAttribute("movie", movie.toFront());
+        var filmwebData = movie.getFilmwebData();
+        var imdbData = movie.getImdbData();
+
+        MovieFront.ExternalSourceData filmweb = null;
+        if (filmwebData != null) {
+            filmweb = new MovieFront.ExternalSourceData(filmwebData.getExternalId(), filmwebData.getUrl(), filmwebData.getRating(), filmwebData.getRatingCount(), filmwebData.getPosterUrl());
+        }
+
+        MovieFront.ExternalSourceData imdb = null;
+        if (imdbData != null) {
+            imdb = new MovieFront.ExternalSourceData(imdbData.getExternalId(), imdbData.getUrl(), imdbData.getRating(), imdbData.getRatingCount(), imdbData.getPosterUrl());
+        }
+
+        MovieFront movieFront = new MovieFront(
+                movie.getId(),
+                movie.getTitle(),
+                movie.getDurationMinutes(),
+                null,
+                movie.getShowingsCount(),
+                filmweb,
+                imdb
+        );
+
+        model.addAttribute("movie", movieFront);
         return "admin/edit-movie :: edit-movie-container";
     }
 

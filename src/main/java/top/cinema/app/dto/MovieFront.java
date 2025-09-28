@@ -14,5 +14,9 @@ public record MovieFront(
         ExternalSourceData filmweb,
         ExternalSourceData imdb) {
 
-    public record ExternalSourceData(String url, Float rating, Integer ratingCount, String posterUrl) {}
+    public record ExternalSourceData(String externalId, String url, Float rating, Integer ratingCount, String posterUrl) {}
+
+    public MovieFront(Integer id, String title, Integer durationMinutes, Integer showingsCount) {
+        this(id, title, durationMinutes, null, showingsCount, null, null);
+    }
 }
