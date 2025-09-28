@@ -174,9 +174,31 @@
         <tbody>
         <tr th:each="job : ${jobs.content}">
             <td th:text="${job.id}"></td>
-            <td th:text="${job.type}"></td>
-            <td th:text="${job.status}"></td>
-            <td th:text="${job.cinemaChain}"></td>
+            <td>
+                <div th:switch="${job.type}">
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Type).CINEMAS}" class="tag is-primary" th:text="${job.type}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Type).MOVIES}" class="tag is-link" th:text="${job.type}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Type).SHOWINGS}" class="tag is-info" th:text="${job.type}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Type).MOVIES_SHOWINGS}" class="tag is-success" th:text="${job.type}"></span>
+                    <span th:case="*" class="tag" th:text="${job.type}"></span>
+                </div>
+            </td>
+            <td>
+                <div th:switch="${job.status}">
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Status).PENDING}" class="tag is-warning" th:text="${job.status}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Status).RUNNING}" class="tag is-info" th:text="${job.status}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Status).SUCCESS}" class="tag is-success" th:text="${job.status}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Status).FAILED}" class="tag is-danger" th:text="${job.status}"></span>
+                    <span th:case="*" class="tag" th:text="${job.status}"></span>
+                </div>
+            </td>
+            <td>
+                <div th:switch="${job.cinemaChain}">
+                    <span th:case="${T(top.cinema.app.model.CinemaChain).MULTIKINO}" class="tag is-warning" th:text="${job.cinemaChain}"></span>
+                    <span th:case="${T(top.cinema.app.model.CinemaChain).HELIOS}" class="tag is-black" th:text="${job.cinemaChain}"></span>
+                    <span th:case="*" class="tag" th:text="${job.cinemaChain}"></span>
+                </div>
+            </td>
             <td th:text="${job.cityId}"></td>
             <td th:text="${job.cinemaId}"></td>
             <td th:text="${job.movieId}"></td>
