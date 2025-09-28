@@ -33,21 +33,21 @@ public class Movie {
 
     @Embedded
     @AttributeOverrides({
-        @AttributeOverride(name = "externalId", column = @Column(name = "filmweb_id")),
-        @AttributeOverride(name = "url", column = @Column(name = "filmweb_url")),
-        @AttributeOverride(name = "rating", column = @Column(name = "filmweb_rating")),
-        @AttributeOverride(name = "ratingCount", column = @Column(name = "filmweb_rating_count")),
-        @AttributeOverride(name = "posterUrl", column = @Column(name = "filmweb_poster_url", length = 511))
+            @AttributeOverride(name = "externalId", column = @Column(name = "filmweb_id")),
+            @AttributeOverride(name = "url", column = @Column(name = "filmweb_url")),
+            @AttributeOverride(name = "rating", column = @Column(name = "filmweb_rating")),
+            @AttributeOverride(name = "ratingCount", column = @Column(name = "filmweb_rating_count")),
+            @AttributeOverride(name = "posterUrl", column = @Column(name = "filmweb_poster_url", length = 511))
     })
     private FilmwebData filmwebData;
 
     @Embedded
     @AttributeOverrides({
-        @AttributeOverride(name = "externalId", column = @Column(name = "imdb_id")),
-        @AttributeOverride(name = "url", column = @Column(name = "imdb_url")),
-        @AttributeOverride(name = "rating", column = @Column(name = "imdb_rating")),
-        @AttributeOverride(name = "ratingCount", column = @Column(name = "imdb_rating_count")),
-        @AttributeOverride(name = "posterUrl", column = @Column(name = "imdb_poster_url", length = 511))
+            @AttributeOverride(name = "externalId", column = @Column(name = "imdb_id")),
+            @AttributeOverride(name = "url", column = @Column(name = "imdb_url")),
+            @AttributeOverride(name = "rating", column = @Column(name = "imdb_rating")),
+            @AttributeOverride(name = "ratingCount", column = @Column(name = "imdb_rating_count")),
+            @AttributeOverride(name = "posterUrl", column = @Column(name = "imdb_poster_url", length = 511))
     })
     private IMDbData imdbData;
 
@@ -76,26 +76,10 @@ public class Movie {
     }
 
     public MovieFront toFront() {
-        return new MovieFront(
-                id,
-                title,
-                durationMinutes,
-                null,
-                showingsCount,
-                filmwebData != null
-                        ? new MovieFront.ExternalSourceData(
-                                filmwebData.getUrl(),
-                                filmwebData.getRating(),
-                                filmwebData.getRatingCount(),
-                                filmwebData.getPosterUrl())
-                        : null,
-                imdbData != null
-                        ? new MovieFront.ExternalSourceData(
-                                imdbData.getUrl(),
-                                imdbData.getRating(),
-                                imdbData.getRatingCount(),
-                                imdbData.getPosterUrl())
-                        : null);
+        return new MovieFront(id, title, durationMinutes,null, showingsCount,
+                              filmwebData != null ? new MovieFront.ExternalSourceData(filmwebData.getUrl(), filmwebData.getRating(), filmwebData.getRatingCount(), filmwebData.getPosterUrl()) : null,
+                              imdbData != null ? new MovieFront.ExternalSourceData(imdbData.getUrl(), imdbData.getRating(), imdbData.getRatingCount(), imdbData.getPosterUrl()) : null
+                              );
     }
 
     public MovieFront toFrontWithShowings() {
@@ -105,20 +89,9 @@ public class Movie {
                 durationMinutes,
                 showings.stream().map(Showing::toFront).toList(),
                 showingsCount,
-                filmwebData != null
-                        ? new MovieFront.ExternalSourceData(
-                                filmwebData.getUrl(),
-                                filmwebData.getRating(),
-                                filmwebData.getRatingCount(),
-                                filmwebData.getPosterUrl())
-                        : null,
-                imdbData != null
-                        ? new MovieFront.ExternalSourceData(
-                                imdbData.getUrl(),
-                                imdbData.getRating(),
-                                imdbData.getRatingCount(),
-                                imdbData.getPosterUrl())
-                        : null);
+                filmwebData != null ? new MovieFront.ExternalSourceData(filmwebData.getUrl(), filmwebData.getRating(), filmwebData.getRatingCount(), filmwebData.getPosterUrl()) : null,
+                imdbData != null ? new MovieFront.ExternalSourceData(imdbData.getUrl(), imdbData.getRating(), imdbData.getRatingCount(), imdbData.getPosterUrl()) : null
+        );
     }
 
     public Integer getId() {

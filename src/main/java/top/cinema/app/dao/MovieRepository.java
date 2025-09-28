@@ -1,9 +1,11 @@
 package top.cinema.app.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import top.cinema.app.entities.core.Movie;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -18,4 +20,7 @@ public interface MovieRepository extends JpaRepository<Movie, Integer> {
     Optional<Movie> findByHeliosId(int id);
 
     Optional<Movie> findByMultikinoId(String id);
+
+    @Query("SELECT m FROM Movie m JOIN m.showings s WHERE s.showingTime > CURRENT_TIMESTAMP GROUP BY m")
+    List<Movie> findMoviesWithFutureShowings();
 }

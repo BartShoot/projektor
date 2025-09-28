@@ -114,10 +114,18 @@ public class AdminController {
     @GetMapping("/movies")
     public String getMovies(
             Model model,
+            @RequestParam(name = "showAll", defaultValue = "false") boolean showAll,
             @RequestHeader(name = "HX-Request", required = false) String hxRequest,
             HttpServletRequest request) {
+        List<Movie> movies;
+        if (showAll) {
+            movies = movieRepository.findAll();
+        } else {
+            movies = movieRepository.findMoviesWithFutureShowings();
+        }
         model.addAttribute(
-                "movies", movieRepository.findAll().stream().map(Movie::toFront).toList());
+                "movies", movies.stream().map(Movie::toFront).toList());
+        model.addAttribute("showAll", showAll);
         if (hxRequest != null) {
             return "admin/fragments :: movies-table";
         } else {

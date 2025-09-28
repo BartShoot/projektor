@@ -41,8 +41,20 @@
 </div>
 
 <!-- Movies Table Fragment -->
-<div th:fragment="movies-table">
+<div th:fragment="movies-table" id="movies-table">
     <h3 class="title">Movies</h3>
+
+    <form hx-get="/admin/movies" hx-target="#movies-table" hx-swap="outerHTML">
+        <div class="field">
+            <div class="control">
+                <label class="checkbox">
+                    <input type="checkbox" name="showAll" value="true" th:checked="${showAll}" onchange="this.form.requestSubmit()">
+                    Show all movies
+                </label>
+            </div>
+        </div>
+    </form>
+
     <table class="table is-stripped is-hoverable">
         <thead>
         <tr>
