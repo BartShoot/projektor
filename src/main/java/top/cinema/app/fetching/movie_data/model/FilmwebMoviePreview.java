@@ -26,7 +26,7 @@ public record FilmwebMoviePreview(Integer year,
         return "https://fwcdn.pl/fpo" + poster().path();
     }
 
-    public String getHtmlUrl(Integer id) {
+    public String getHtmlUrl(String id) {
         String title = this.title == null ? this.originalTitle.title() : this.title.title();
         return "https://www.filmweb.pl/film/%s-%s-%s".formatted(title, year(), id);
     }
