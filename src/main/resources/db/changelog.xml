@@ -162,4 +162,37 @@
             </column>
         </createTable>
     </changeSet>
+
+    <changeSet author="bartshoot" id="add movie details">
+        <addColumn tableName="movies">
+            <column name="filmweb_id" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="filmweb_poster_url" type="VARCHAR(511)"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="filmweb_rating" type="FLOAT4"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="filmweb_rating_count" type="INTEGER"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="filmweb_url" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="imdb_id" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="imdb_poster_url" type="VARCHAR(511)"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="imdb_rating" type="FLOAT4"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="imdb_rating_count" type="INTEGER"/>
+        </addColumn>
+        <addColumn tableName="movies">
+            <column name="imdb_url" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

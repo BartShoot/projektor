@@ -60,13 +60,13 @@
             <td th:text="${movie.title}"></td>
             <td th:text="${movie.showingsCount}"></td>
             <td>
-                <a th:if="${movie.filmwebUrl}" th:href="${movie.filmwebUrl}" th:text="${movie.title}"
+                <a th:if="${movie.filmweb != null && movie.filmweb.url != null}" th:href="${movie.filmweb.url}" th:text="${movie.title}"
                    target="_blank"></a>
-                <span th:unless="${movie.filmwebUrl}">-</span>
+                <span th:unless="${movie.filmweb != null && movie.filmweb.url != null}">-</span>
             </td>
             <td>
-                <a th:if="${movie.imdbUrl}" th:href="${movie.imdbUrl}" th:text="${movie.title}" target="_blank"></a>
-                <span th:unless="${movie.imdbUrl}">-</span>
+                <a th:if="${movie.imdb != null && movie.imdb.url != null}" th:href="${movie.imdb.url}" th:text="${movie.title}" target="_blank"></a>
+                <span th:unless="${movie.imdb != null && movie.imdb.url != null}">-</span>
             </td>
             <td>
                 <a th:attr="hx-get=@{/admin/movie/{id}/edit(id=${movie.id})}" hx-target="#content" hx-swap="innerHTML" hx-push-url="true"

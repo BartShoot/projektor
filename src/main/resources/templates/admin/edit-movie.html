@@ -28,6 +28,62 @@
                     </div>
                 </div>
 
+                <!-- IMDb Data -->
+                <div th:if="${movie.imdb != null}">
+                    <div class="field">
+                        <label class="label">IMDb URL</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.imdb.url}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">IMDb Rating</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.imdb.rating}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">IMDb Rating Count</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.imdb.ratingCount}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">IMDb Poster URL</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.imdb.posterUrl}" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filmweb Data -->
+                <div th:if="${movie.filmweb != null}">
+                    <div class="field">
+                        <label class="label">Filmweb URL</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.filmweb.url}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Filmweb Rating</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.filmweb.rating}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Filmweb Rating Count</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.filmweb.ratingCount}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Filmweb Poster URL</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.filmweb.posterUrl}" readonly>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="field">
                     <label class="label">Selected IMDb ID</label>
                     <div class="control">

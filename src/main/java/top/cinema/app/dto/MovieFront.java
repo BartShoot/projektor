@@ -11,15 +11,8 @@ public record MovieFront(
         Integer durationMinutes,
         List<ShowingFront> list,
         Integer showingsCount,
-        String filmwebUrl,
-        Float filmwebRating,
-        Integer filmwebRatingCount,
-        String filmwebPosterUrl,
-        String imdbUrl,
-        Float imdbRating,
-        Integer imdbRatingCount,
-        String imdbPosterUrl) {
-    public MovieFront(Integer id, String title, Integer durationMinutes, Integer showingsCount) {
-        this(id, title, durationMinutes, null, showingsCount, null, null, null, null, null, null, null, null);
-    }
+        ExternalSourceData filmweb,
+        ExternalSourceData imdb) {
+
+    public record ExternalSourceData(String url, Float rating, Integer ratingCount, String posterUrl) {}
 }

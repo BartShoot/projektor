@@ -76,7 +76,26 @@ public class Movie {
     }
 
     public MovieFront toFront() {
-        return new MovieFront(id, title, durationMinutes, showingsCount);
+        return new MovieFront(
+                id,
+                title,
+                durationMinutes,
+                null,
+                showingsCount,
+                filmwebData != null
+                        ? new MovieFront.ExternalSourceData(
+                                filmwebData.getUrl(),
+                                filmwebData.getRating(),
+                                filmwebData.getRatingCount(),
+                                filmwebData.getPosterUrl())
+                        : null,
+                imdbData != null
+                        ? new MovieFront.ExternalSourceData(
+                                imdbData.getUrl(),
+                                imdbData.getRating(),
+                                imdbData.getRatingCount(),
+                                imdbData.getPosterUrl())
+                        : null);
     }
 
     public MovieFront toFrontWithShowings() {
@@ -86,14 +105,20 @@ public class Movie {
                 durationMinutes,
                 showings.stream().map(Showing::toFront).toList(),
                 showingsCount,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null);
+                filmwebData != null
+                        ? new MovieFront.ExternalSourceData(
+                                filmwebData.getUrl(),
+                                filmwebData.getRating(),
+                                filmwebData.getRatingCount(),
+                                filmwebData.getPosterUrl())
+                        : null,
+                imdbData != null
+                        ? new MovieFront.ExternalSourceData(
+                                imdbData.getUrl(),
+                                imdbData.getRating(),
+                                imdbData.getRatingCount(),
+                                imdbData.getPosterUrl())
+                        : null);
     }
 
     public Integer getId() {
