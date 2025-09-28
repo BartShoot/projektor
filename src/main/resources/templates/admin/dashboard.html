@@ -34,11 +34,11 @@
         </div>
         <div class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" hx-get="/admin/cities" hx-target="#content">Cities</a>
-                <a class="navbar-item" hx-get="/admin/cinemas" hx-target="#content">Cinemas</a>
-                <a class="navbar-item" hx-get="/admin/movies" hx-target="#content">Movies</a>
-                <a class="navbar-item" hx-get="/admin/showings" hx-target="#content">Showings</a>
-                <a class="navbar-item" hx-get="/admin/jobs" hx-target="#content">Jobs</a>
+                <a class="navbar-item" hx-get="/admin/cities" hx-target="#content" hx-push-url="true">Cities</a>
+                <a class="navbar-item" hx-get="/admin/cinemas" hx-target="#content" hx-push-url="true">Cinemas</a>
+                <a class="navbar-item" hx-get="/admin/movies" hx-target="#content" hx-push-url="true">Movies</a>
+                <a class="navbar-item" hx-get="/admin/showings" hx-target="#content" hx-push-url="true">Showings</a>
+                <a class="navbar-item" hx-get="/admin/jobs" hx-target="#content" hx-push-url="true">Jobs</a>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">
@@ -51,8 +51,11 @@
     </nav>
 </header>
 
-<main id="content" class="container">
-    <p class="block">Select an item from the menu to view details.</p>
+<main id="content" class="container"
+      th:attr="hx-get=${!#strings.isEmpty(initialFragmentUrl) ? initialFragmentUrl : null},
+               hx-trigger=${!#strings.isEmpty(initialFragmentUrl) ? 'load' : null},
+               hx-swap=${!#strings.isEmpty(initialFragmentUrl) ? 'innerHTML' : null}">
+    <p class="block" th:if="${#strings.isEmpty(initialFragmentUrl)}">Select an item from the menu to view details.</p>
 </main>
 
 </body>

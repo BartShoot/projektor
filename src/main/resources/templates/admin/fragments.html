@@ -69,7 +69,7 @@
                 <span th:unless="${movie.imdbUrl}">-</span>
             </td>
             <td>
-                <a th:attr="hx-get=@{/admin/movie/{id}/edit(id=${movie.id})}" hx-target="#content" hx-swap="innerHTML"
+                <a th:attr="hx-get=@{/admin/movie/{id}/edit(id=${movie.id})}" hx-target="#content" hx-swap="innerHTML" hx-push-url="true"
                    class="btn btn-secondary btn-sm">Edit</a>
             </td>
         </tr>
@@ -194,8 +194,8 @@
             </td>
             <td>
                 <div th:switch="${job.cinemaChain}">
-                    <span th:case="${T(top.cinema.app.model.CinemaChain).MULTIKINO}" class="tag is-warning" th:text="${job.cinemaChain}"></span>
-                    <span th:case="${T(top.cinema.app.model.CinemaChain).HELIOS}" class="tag is-black" th:text="${job.cinemaChain}"></span>
+                    <span th:case="${T(top.cinema.app.model.CinemaChain).MULTIKINO}" class="tag is-dark" th:text="${job.cinemaChain}"></span>
+                    <span th:case="${T(top.cinema.app.model.CinemaChain).HELIOS}" class="tag is-light" th:text="${job.cinemaChain}"></span>
                     <span th:case="*" class="tag" th:text="${job.cinemaChain}"></span>
                 </div>
             </td>

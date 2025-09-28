@@ -1,5 +1,6 @@
 package top.cinema.app.admin;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -57,40 +58,58 @@ public class AdminController {
         this.jobRepository = jobRepository;
     }
 
+    private String getInitialFragmentUrl(HttpServletRequest request) {
+        String path = request.getRequestURI();
+        String query = request.getQueryString();
+        return path + (query != null ? "?" + query : "");
+    }
+
     @GetMapping("/login")
     public String login() {
         return "admin/login";
     }
 
     @GetMapping("/dashboard")
-    public String dashboard() {
+    public String dashboard(Model model) {
+        model.addAttribute("initialFragmentUrl", "");
         return "admin/dashboard";
     }
 
     @GetMapping("/cities")
-    public String getCities(Model model) {
-        model.addAttribute(
-                "cities", cityRepository.findAll().stream().map(City::toFront).toList());
-        return "admin/fragments :: cities-table";
+    public String getCities(Model model, @RequestHeader(name = "HX-Request", required = false) String hxRequest, HttpServletRequest request) {
+        model.addAttribute("cities", cityRepository.findAll().stream().map(City::toFront).toList());
+        if (hxRequest != null) {
+            return "admin/fragments :: cities-table";
+        } else {
+            model.addAttribute("initialFragmentUrl", getInitialFragmentUrl(request));
+            return "admin/dashboard";
+        }
     }
 
     @GetMapping("/cinemas")
-    public String getCinemas(Model model) {
-        model.addAttribute(
-                "cinemas",
-                cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
-        return "admin/fragments :: cinemas-table";
+    public String getCinemas(Model model, @RequestHeader(name = "HX-Request", required = false) String hxRequest, HttpServletRequest request) {
+        model.addAttribute("cinemas", cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
+        if (hxRequest != null) {
+            return "admin/fragments :: cinemas-table";
+        } else {
+            model.addAttribute("initialFragmentUrl", getInitialFragmentUrl(request));
+            return "admin/dashboard";
+        }
     }
 
     @GetMapping("/movies")
-    public String getMovies(Model model) {
-        model.addAttribute(
-                "movies", movieRepository.findAll().stream().map(Movie::toFront).toList());
-        return "admin/fragments :: movies-table";
+    public String getMovies(Model model, @RequestHeader(name = "HX-Request", required = false) String hxRequest, HttpServletRequest request) {
+        model.addAttribute("movies", movieRepository.findAll().stream().map(Movie::toFront).toList());
+        if (hxRequest != null) {
+            return "admin/fragments :: movies-table";
+        } else {
+            model.addAttribute("initialFragmentUrl", getInitialFragmentUrl(request));
+            return "admin/dashboard";
+        }
     }
 
     @GetMapping("/movie/{id}/edit")
-    public String showEditMoviePage(@PathVariable Integer id, Model model) {
+    public String showEditMoviePage(@PathVariable Integer id, Model model, @RequestHeader(name = "HX-Request", required = false) String hxRequest, HttpServletRequest request) {
         Optional<Movie> movieOptional = movieRepository.findById(id);
         if (movieOptional.isEmpty()) {
             return "redirect:/admin/movies";
@@ -98,7 +117,12 @@ public class AdminController {
         Movie movie = movieOptional.get();
         model.addAttribute("movie", movie.toFront());
 
-        return "admin/edit-movie :: edit-movie-container";
+        if (hxRequest != null) {
+            return "admin/edit-movie :: edit-movie-container";
+        } else {
+            model.addAttribute("initialFragmentUrl", getInitialFragmentUrl(request));
+            return "admin/dashboard";
+        }
     }
 
     @PostMapping("/movie/{id}/update")
@@ -119,10 +143,8 @@ public class AdminController {
     }
 
     @GetMapping("/showings")
-    public String getShowings(Model model, @RequestParam(name = "cinemaId", required = false) Integer cinemaId) {
-        model.addAttribute(
-                "cinemas",
-                cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
+    public String getShowings(Model model, @RequestParam(name = "cinemaId", required = false) Integer cinemaId, @RequestHeader(name = "HX-Request", required = false) String hxRequest, HttpServletRequest request) {
+        model.addAttribute("cinemas", cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
         if (cinemaId != null) {
             Optional<Cinema> cinemaOptional = cinemaRepository.findById(cinemaId);
             if (cinemaOptional.isPresent()) {
@@ -139,7 +161,13 @@ public class AdminController {
         } else {
             model.addAttribute("showings", Collections.emptyList());
         }
-        return "admin/fragments :: showings-view";
+
+        if (hxRequest != null) {
+            return "admin/fragments :: showings-view";
+        } else {
+            model.addAttribute("initialFragmentUrl", getInitialFragmentUrl(request));
+            return "admin/dashboard";
+        }
     }
 
     @GetMapping("/jobs")
@@ -148,7 +176,9 @@ public class AdminController {
             @RequestParam(required = false) String status,
             @RequestParam(required = false) String cinemaChain,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size) {
+            @RequestParam(defaultValue = "20") int size,
+            @RequestHeader(name = "HX-Request", required = false) String hxRequest,
+            HttpServletRequest request) {
 
         Job.Status statusEnum = null;
         if (status != null && !status.isEmpty()) {
@@ -185,7 +215,12 @@ public class AdminController {
         model.addAttribute("status", status);
         model.addAttribute("cinemaChain", cinemaChain);
 
-        return "admin/fragments :: jobs-table";
+        if (hxRequest != null) {
+            return "admin/fragments :: jobs-table";
+        } else {
+            model.addAttribute("initialFragmentUrl", getInitialFragmentUrl(request));
+            return "admin/dashboard";
+        }
     }
 
     @GetMapping("/search/filmweb")
