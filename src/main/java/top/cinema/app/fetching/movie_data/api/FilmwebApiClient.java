@@ -20,8 +20,8 @@ public interface FilmwebApiClient {
     ResponseEntity<FilmwebSearchResults> search(@RequestParam String query, @RequestParam Integer pageSize);
 
     @GetExchange("/v1/film/{id}/preview")
-    ResponseEntity<FilmwebMoviePreview> fetchPreview(@PathVariable Integer id);
+    ResponseEntity<FilmwebMoviePreview> fetchPreview(@PathVariable String id);
 
     @GetExchange("/v1/film/{id}/rating")
-    ResponseEntity<FilmwebMovieRating> fetchRating(@PathVariable Integer id);
+    ResponseEntity<FilmwebMovieRating> fetchRating(@PathVariable String id);
 }

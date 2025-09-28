@@ -265,7 +265,7 @@ public class AdminController {
         List<FilmwebSearchResultView> filmwebResults = filmwebSearch.searchHits().stream()
                 .filter(it -> it.type().equals("film"))
                 .map(it -> new FilmwebSearchResultView(
-                        it.id(), filmwebApiClient.fetchPreview(it.id()).getBody()))
+                        it.id(), filmwebApiClient.fetchPreview(it.id().toString()).getBody()))
                 .toList();
         model.addAttribute("filmwebResults", filmwebResults);
         return "admin/edit-movie :: filmweb-search-results";
