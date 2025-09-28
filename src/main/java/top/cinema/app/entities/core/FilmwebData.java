@@ -4,65 +4,65 @@ import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class FilmwebData {
-    private String id;
-    private String filmwebUrl;
-    private Float filmwebRating;
-    private Integer filmwebRatingCount;
-    private String filmwebPosterUrl;
+    private String externalId;
+    private String url;
+    private Float rating;
+    private Integer ratingCount;
+    private String posterUrl;
 
     public FilmwebData() {
     }
 
-    public FilmwebData(String id,
-                       String filmwebUrl,
-                       Float filmwebRating,
-                       Integer filmwebRatingCount,
-                       String filmwebPosterUrl) {
-        this.id = id;
-        this.filmwebUrl = filmwebUrl;
-        this.filmwebRating = filmwebRating;
-        this.filmwebRatingCount = filmwebRatingCount;
-        this.filmwebPosterUrl = filmwebPosterUrl;
+    public FilmwebData(String externalId,
+                       String url,
+                       Float rating,
+                       Integer ratingCount,
+                       String posterUrl) {
+        this.externalId = externalId;
+        this.url = url;
+        this.rating = rating;
+        this.ratingCount = ratingCount;
+        this.posterUrl = posterUrl;
     }
 
-    public String getId() {
-        return id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public String getFilmwebUrl() {
-        return filmwebUrl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setFilmwebUrl(String filmwebUrl) {
-        this.filmwebUrl = filmwebUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public Float getFilmwebRating() {
-        return filmwebRating;
+    public Float getRating() {
+        return rating;
     }
 
-    public void setFilmwebRating(Float filmwebRating) {
-        this.filmwebRating = filmwebRating;
+    public void setRating(Float rating) {
+        this.rating = rating;
     }
 
-    public Integer getFilmwebRatingCount() {
-        return filmwebRatingCount;
+    public Integer getRatingCount() {
+        return ratingCount;
     }
 
-    public void setFilmwebRatingCount(Integer filmwebRatingCount) {
-        this.filmwebRatingCount = filmwebRatingCount;
+    public void setRatingCount(Integer ratingCount) {
+        this.ratingCount = ratingCount;
     }
 
-    public String getFilmwebPosterUrl() {
-        return filmwebPosterUrl;
+    public String getPosterUrl() {
+        return posterUrl;
     }
 
-    public void setFilmwebPosterUrl(String filmwebPosterUrl) {
-        this.filmwebPosterUrl = filmwebPosterUrl;
+    public void setPosterUrl(String posterUrl) {
+        this.posterUrl = posterUrl;
     }
 
 }

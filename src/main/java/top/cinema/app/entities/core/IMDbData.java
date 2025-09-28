@@ -4,61 +4,61 @@ import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class IMDbData {
-    private String id;
-    private String imdbUrl;
-    private Float imdbRating;
-    private Integer imdbRatingCount;
-    private String imdbPosterUrl;
+    private String externalId;
+    private String url;
+    private Float rating;
+    private Integer ratingCount;
+    private String posterUrl;
 
     public IMDbData() {
     }
 
-    public IMDbData(String id, String imdbUrl, Float imdbRating, Integer imdbRatingCount, String imdbPosterUrl) {
-        this.id = id;
-        this.imdbUrl = imdbUrl;
-        this.imdbRating = imdbRating;
-        this.imdbRatingCount = imdbRatingCount;
-        this.imdbPosterUrl = imdbPosterUrl;
+    public IMDbData(String externalId, String url, Float rating, Integer ratingCount, String posterUrl) {
+        this.externalId = externalId;
+        this.url = url;
+        this.rating = rating;
+        this.ratingCount = ratingCount;
+        this.posterUrl = posterUrl;
     }
 
-    public String getId() {
-        return id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public String getImdbUrl() {
-        return imdbUrl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setImdbUrl(String imdbUrl) {
-        this.imdbUrl = imdbUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public Float getImdbRating() {
-        return imdbRating;
+    public Float getRating() {
+        return rating;
     }
 
-    public void setImdbRating(Float imdbRating) {
-        this.imdbRating = imdbRating;
+    public void setRating(Float rating) {
+        this.rating = rating;
     }
 
-    public Integer getImdbRatingCount() {
-        return imdbRatingCount;
+    public Integer getRatingCount() {
+        return ratingCount;
     }
 
-    public void setImdbRatingCount(Integer imdbRatingCount) {
-        this.imdbRatingCount = imdbRatingCount;
+    public void setRatingCount(Integer ratingCount) {
+        this.ratingCount = ratingCount;
     }
 
-    public String getImdbPosterUrl() {
-        return imdbPosterUrl;
+    public String getPosterUrl() {
+        return posterUrl;
     }
 
-    public void setImdbPosterUrl(String imdbPosterUrl) {
-        this.imdbPosterUrl = imdbPosterUrl;
+    public void setPosterUrl(String posterUrl) {
+        this.posterUrl = posterUrl;
     }
 
 }

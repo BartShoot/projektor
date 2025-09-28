@@ -30,10 +30,26 @@ public class Movie {
 
     @Column(unique = true)
     private String multikinoId;
-    //    @Embedded
-    //    private FilmwebData filmwebData;
-    //    @Embedded
-    //    private IMDbData imdbData;
+
+    @Embedded
+    @AttributeOverrides({
+        @AttributeOverride(name = "externalId", column = @Column(name = "filmweb_id")),
+        @AttributeOverride(name = "url", column = @Column(name = "filmweb_url")),
+        @AttributeOverride(name = "rating", column = @Column(name = "filmweb_rating")),
+        @AttributeOverride(name = "ratingCount", column = @Column(name = "filmweb_rating_count")),
+        @AttributeOverride(name = "posterUrl", column = @Column(name = "filmweb_poster_url", length = 511))
+    })
+    private FilmwebData filmwebData;
+
+    @Embedded
+    @AttributeOverrides({
+        @AttributeOverride(name = "externalId", column = @Column(name = "imdb_id")),
+        @AttributeOverride(name = "url", column = @Column(name = "imdb_url")),
+        @AttributeOverride(name = "rating", column = @Column(name = "imdb_rating")),
+        @AttributeOverride(name = "ratingCount", column = @Column(name = "imdb_rating_count")),
+        @AttributeOverride(name = "posterUrl", column = @Column(name = "imdb_poster_url", length = 511))
+    })
+    private IMDbData imdbData;
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
     private List<Showing> showings;
@@ -136,19 +152,19 @@ public class Movie {
         return showingsCount;
     }
 
-    //    public FilmwebData getFilmwebData() {
-    //        return filmwebData;
-    //    }
-    //
-    //    public void setFilmwebData(FilmwebData filmwebData) {
-    //        this.filmwebData = filmwebData;
-    //    }
-    //
-    //    public IMDbData getImdbData() {
-    //        return imdbData;
-    //    }
-    //
-    //    public void setImdbData(IMDbData imdbData) {
-    //        this.imdbData = imdbData;
-    //    }
+    public FilmwebData getFilmwebData() {
+        return filmwebData;
+    }
+
+    public void setFilmwebData(FilmwebData filmwebData) {
+        this.filmwebData = filmwebData;
+    }
+
+    public IMDbData getImdbData() {
+        return imdbData;
+    }
+
+    public void setImdbData(IMDbData imdbData) {
+        this.imdbData = imdbData;
+    }
 }

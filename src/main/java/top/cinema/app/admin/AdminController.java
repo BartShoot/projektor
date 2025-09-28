@@ -10,6 +10,7 @@ import top.cinema.app.dao.CinemaRepository;
 import top.cinema.app.dao.CityRepository;
 import top.cinema.app.dao.MovieRepository;
 import top.cinema.app.dao.ShowingRepository;
+import top.cinema.app.dto.MovieFront;
 import top.cinema.app.entities.core.Cinema;
 import top.cinema.app.entities.core.City;
 import top.cinema.app.entities.core.Movie;
@@ -20,6 +21,7 @@ import top.cinema.app.fetching.movie_data.api.FilmwebApiClient;
 import top.cinema.app.fetching.movie_data.api.ImdbApiClient;
 import top.cinema.app.fetching.movie_data.model.FilmwebMoviePreview;
 import top.cinema.app.fetching.movie_data.model.FilmwebSearchResults;
+import top.cinema.app.fetching.movie_data.service.MovieDataUpdater;
 import top.cinema.app.model.CinemaChain;
 
 import java.time.LocalDateTime;
@@ -38,6 +40,7 @@ public class AdminController {
     private final FilmwebApiClient filmwebApiClient;
     private final ImdbApiClient imdbApiClient;
     private final JobRepository jobRepository;
+    private final MovieDataUpdater movieUpdater;
 
     public record FilmwebSearchResultView(Integer id, FilmwebMoviePreview preview) {}
 
@@ -48,7 +51,8 @@ public class AdminController {
             ShowingRepository showingRepository,
             FilmwebApiClient filmwebApiClient,
             ImdbApiClient imdbApiClient,
-            JobRepository jobRepository) {
+            JobRepository jobRepository,
+            MovieDataUpdater movieUpdater) {
         this.cityRepository = cityRepository;
         this.cinemaRepository = cinemaRepository;
         this.movieRepository = movieRepository;
@@ -56,6 +60,7 @@ public class AdminController {
         this.filmwebApiClient = filmwebApiClient;
         this.imdbApiClient = imdbApiClient;
         this.jobRepository = jobRepository;
+        this.movieUpdater = movieUpdater;
     }
 
     private String getInitialFragmentUrl(HttpServletRequest request) {
@@ -76,8 +81,12 @@ public class AdminController {
     }
 
     @GetMapping("/cities")
-    public String getCities(Model model, @RequestHeader(name = "HX-Request", required = false) String hxRequest, HttpServletRequest request) {
-        model.addAttribute("cities", cityRepository.findAll().stream().map(City::toFront).toList());
+    public String getCities(
+            Model model,
+            @RequestHeader(name = "HX-Request", required = false) String hxRequest,
+            HttpServletRequest request) {
+        model.addAttribute(
+                "cities", cityRepository.findAll().stream().map(City::toFront).toList());
         if (hxRequest != null) {
             return "admin/fragments :: cities-table";
         } else {
@@ -87,8 +96,13 @@ public class AdminController {
     }
 
     @GetMapping("/cinemas")
-    public String getCinemas(Model model, @RequestHeader(name = "HX-Request", required = false) String hxRequest, HttpServletRequest request) {
-        model.addAttribute("cinemas", cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
+    public String getCinemas(
+            Model model,
+            @RequestHeader(name = "HX-Request", required = false) String hxRequest,
+            HttpServletRequest request) {
+        model.addAttribute(
+                "cinemas",
+                cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
         if (hxRequest != null) {
             return "admin/fragments :: cinemas-table";
         } else {
@@ -98,8 +112,12 @@ public class AdminController {
     }
 
     @GetMapping("/movies")
-    public String getMovies(Model model, @RequestHeader(name = "HX-Request", required = false) String hxRequest, HttpServletRequest request) {
-        model.addAttribute("movies", movieRepository.findAll().stream().map(Movie::toFront).toList());
+    public String getMovies(
+            Model model,
+            @RequestHeader(name = "HX-Request", required = false) String hxRequest,
+            HttpServletRequest request) {
+        model.addAttribute(
+                "movies", movieRepository.findAll().stream().map(Movie::toFront).toList());
         if (hxRequest != null) {
             return "admin/fragments :: movies-table";
         } else {
@@ -109,7 +127,11 @@ public class AdminController {
     }
 
     @GetMapping("/movie/{id}/edit")
-    public String showEditMoviePage(@PathVariable Integer id, Model model, @RequestHeader(name = "HX-Request", required = false) String hxRequest, HttpServletRequest request) {
+    public String showEditMoviePage(
+            @PathVariable Integer id,
+            Model model,
+            @RequestHeader(name = "HX-Request", required = false) String hxRequest,
+            HttpServletRequest request) {
         Optional<Movie> movieOptional = movieRepository.findById(id);
         if (movieOptional.isEmpty()) {
             return "redirect:/admin/movies";
@@ -136,15 +158,21 @@ public class AdminController {
             return "redirect:/admin/movies";
         }
         Movie movie = movieOptional.get();
-        // TODO: update movie with imdbId and filmwebId
-        System.out.println("Updating movie " + id + " with imdbId: " + imdbId + " and filmwebId: " + filmwebId);
+
+        MovieFront movieFront = movieUpdater.updateMovie(id, imdbId, filmwebId.toString());
         model.addAttribute("movie", movie.toFront());
         return "admin/edit-movie :: edit-movie-container";
     }
 
     @GetMapping("/showings")
-    public String getShowings(Model model, @RequestParam(name = "cinemaId", required = false) Integer cinemaId, @RequestHeader(name = "HX-Request", required = false) String hxRequest, HttpServletRequest request) {
-        model.addAttribute("cinemas", cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
+    public String getShowings(
+            Model model,
+            @RequestParam(name = "cinemaId", required = false) Integer cinemaId,
+            @RequestHeader(name = "HX-Request", required = false) String hxRequest,
+            HttpServletRequest request) {
+        model.addAttribute(
+                "cinemas",
+                cinemaRepository.findAll().stream().map(Cinema::toFront).toList());
         if (cinemaId != null) {
             Optional<Cinema> cinemaOptional = cinemaRepository.findById(cinemaId);
             if (cinemaOptional.isPresent()) {
@@ -188,7 +216,6 @@ public class AdminController {
                 // Handle invalid status string
             }
         }
-
         CinemaChain cinemaChainEnum = null;
         if (cinemaChain != null && !cinemaChain.isEmpty()) {
             try {
@@ -197,10 +224,8 @@ public class AdminController {
                 // Handle invalid cinemaChain string
             }
         }
-
         Page<Job> jobsPage;
         PageRequest pageable = PageRequest.of(page, size);
-
         if (statusEnum != null && cinemaChainEnum != null) {
             jobsPage = jobRepository.findByStatusAndCinemaChain(statusEnum, cinemaChainEnum, pageable);
         } else if (statusEnum != null) {
