@@ -1,10 +1,9 @@
 package top.cinema.app.entities.core;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import top.cinema.app.user.Role;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -15,7 +14,12 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    private String roles;
+
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private Set<Role> roles;
 
     public Long getId() {
         return id;
@@ -41,11 +45,11 @@ public class User {
         this.password = password;
     }
 
-    public String getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(String roles) {
+    public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
 }

@@ -20,7 +20,7 @@ public class JpaUserDetailsService implements UserDetailsService {
                 .map(user -> org.springframework.security.core.userdetails.User.builder()
                         .username(user.getUsername())
                         .password(user.getPassword())
-                        .roles(user.getRoles().split(","))
+                        .roles(user.getRoles().stream().map(Role::name).toArray(String[]::new))
                         .build())
                 .orElseThrow(() -> new UsernameNotFoundException("Username not found: " + username));
     }

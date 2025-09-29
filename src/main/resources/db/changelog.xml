@@ -223,4 +223,15 @@
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="genres"
                                  validate="true"/>
     </changeSet>
+
+    <changeSet author="bartshoot" id="change user roles">
+        <createTable tableName="user_roles">
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role" type="VARCHAR(255)"/>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_roles" constraintName="FKhfh9dx7w3ubf1co1vdev94g3f" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="users" validate="true"/>
+        <dropColumn columnName="roles" tableName="users"/>
+    </changeSet>
 </databaseChangeLog>

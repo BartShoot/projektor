@@ -3,6 +3,7 @@ package top.cinema.app.admin;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,6 +17,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class AdminSecurityConfig {
 
     private final JpaUserDetailsService jpaUserDetailsService;
@@ -47,6 +49,20 @@ public class AdminSecurityConfig {
                 .rememberMe(rememberMe -> rememberMe.tokenRepository(persistentTokenRepository()));
         return http.build();
     }
+
+    @Bean
+    @Order(2)
+    public SecurityFilterChain defaultFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/user/register").permitAll()
+                .anyRequest().permitAll()
+            )
+            .csrf(csrf -> csrf.ignoringRequestMatchers("/user/register"))
+            .logout(logout -> logout.logoutSuccessUrl("/admin/login?logout"));
+        return http.build();
+    }
+
 
     @Bean
     public PersistentTokenRepository persistentTokenRepository() {

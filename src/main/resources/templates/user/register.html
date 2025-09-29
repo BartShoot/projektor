@@ -2,20 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Login</title>
+    <title>Register</title>
     <link th:href="@{/styles/css/bulma.min.css}" rel="stylesheet"/>
 </head>
 <body>
 
 <section class="section">
-    <h1 class="title">Admin Panel Login</h1>
+    <h1 class="title">Create a new user</h1>
 </section>
 <main class="container is-max-tablet">
     <div th:if="${param.error}" class="notification is-danger">
-        Invalid username or password.
+        <p th:if="${param.error[0] == 'passphrase'}">Invalid passphrase.</p>
+        <p th:if="${param.error[0] == 'username'}">Username already exists.</p>
     </div>
 
-    <form th:action="@{/admin/login}" method="post" class="box">
+    <form th:action="@{/user/register}" method="post" class="box">
         <div class="field">
             <label for="username" class="label">Username:</label>
             <div class="control">
@@ -29,22 +30,17 @@
             </div>
         </div>
         <div class="field">
+            <label for="passphrase" class="label">Passphrase:</label>
             <div class="control">
-                <label class="checkbox">
-                    <input type="checkbox" id="remember-me" name="remember-me">
-                    Remember me
-                </label>
+                <input class="input" type="password" id="passphrase" name="passphrase" required>
             </div>
         </div>
         <div class="field">
             <div class="control">
-                <input class="button is-link" type="submit" value="Log In"/>
+                <button class="button is-link" type="submit">Register</button>
             </div>
         </div>
     </form>
-    <div class="mt-4 has-text-centered">
-        <a th:href="@{/user/register}">Create a new user</a>
-    </div>
 </main>
 </body>
 </html>
