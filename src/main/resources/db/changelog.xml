@@ -195,4 +195,32 @@
             <column name="imdb_url" type="VARCHAR(255)"/>
         </addColumn>
     </changeSet>
+
+    <changeSet author="bartshoot" id="add movie genres">
+        <createTable tableName="genres">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="genresPK"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="movie_genres">
+            <column name="movie_id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="movie_genresPK"/>
+            </column>
+            <column name="genre_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="movie_genresPK"/>
+            </column>
+        </createTable>
+        <addUniqueConstraint columnNames="name" constraintName="UC_GENRESNAME_COL" tableName="genres"/>
+        <addForeignKeyConstraint baseColumnNames="movie_id" baseTableName="movie_genres"
+                                 constraintName="FK4ak9svw913jblkfgru84h2phd" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="movies"
+                                 validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="genre_id" baseTableName="movie_genres"
+                                 constraintName="FKnfpjuak0xiqpca3gjkwrixiig" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="genres"
+                                 validate="true"/>
+    </changeSet>
 </databaseChangeLog>

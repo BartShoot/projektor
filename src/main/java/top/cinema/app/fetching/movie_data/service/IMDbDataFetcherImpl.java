@@ -1,9 +1,12 @@
 package top.cinema.app.fetching.movie_data.service;
 
 import org.springframework.stereotype.Service;
+import top.cinema.app.entities.core.MovieGenre;
 import top.cinema.app.fetching.movie_data.api.ImdbApiClient;
 import top.cinema.app.fetching.movie_data.dto.IMDbMovieData;
-import top.cinema.app.fetching.movie_data.model.IMDbMovieDetails;
+
+import java.util.Collections;
+import java.util.Set;
 
 @Service
 public class IMDbDataFetcherImpl implements IMDbDataFetcher {
@@ -29,11 +32,11 @@ public class IMDbDataFetcherImpl implements IMDbDataFetcher {
             posterUrl = details.primaryImage().url();
         }
 
-        return new IMDbMovieData(
-                imdbId,
-                details.getImdbUrl(),
-                rating,
-                ratingCount,
-                posterUrl);
+        Set<MovieGenre> genres = Collections.emptySet();
+        if (details.genres() != null) {
+            genres = MovieGenre.fromImdbGenres(details.genres().stream().toList());
+        }
+
+        return new IMDbMovieData(imdbId, details.getImdbUrl(), rating, ratingCount, posterUrl, genres);
     }
 }

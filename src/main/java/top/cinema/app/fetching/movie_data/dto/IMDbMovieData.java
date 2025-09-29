@@ -1,3 +1,8 @@
 package top.cinema.app.fetching.movie_data.dto;
 
-public record IMDbMovieData(String id, String url, Float rating, Integer ratingCount, String posterUrl) {}
+import top.cinema.app.entities.core.MovieGenre;
+
+import java.util.Set;
+
+public record IMDbMovieData(
+        String id, String url, Float rating, Integer ratingCount, String posterUrl, Set<MovieGenre> genres) {}

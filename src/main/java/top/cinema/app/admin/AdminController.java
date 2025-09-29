@@ -120,8 +120,7 @@ public class AdminController {
         } else {
             movies = movieRepository.findMoviesWithFutureShowings();
         }
-        model.addAttribute(
-                "movies", movies.stream().map(Movie::toFront).toList());
+        model.addAttribute("movies", movies.stream().map(Movie::toFront).toList());
         model.addAttribute("showAll", showAll);
         if (hxRequest != null) {
             return "admin/fragments :: movies-table";
@@ -148,23 +147,33 @@ public class AdminController {
 
         MovieFront.ExternalSourceData filmweb = null;
         if (filmwebData != null) {
-            filmweb = new MovieFront.ExternalSourceData(filmwebData.getExternalId(), filmwebData.getUrl(), filmwebData.getRating(), filmwebData.getRatingCount(), filmwebData.getPosterUrl());
+            filmweb = new MovieFront.ExternalSourceData(
+                    filmwebData.getExternalId(),
+                    filmwebData.getUrl(),
+                    filmwebData.getRating(),
+                    filmwebData.getRatingCount(),
+                    filmwebData.getPosterUrl());
         }
 
         MovieFront.ExternalSourceData imdb = null;
         if (imdbData != null) {
-            imdb = new MovieFront.ExternalSourceData(imdbData.getExternalId(), imdbData.getUrl(), imdbData.getRating(), imdbData.getRatingCount(), imdbData.getPosterUrl());
+            imdb = new MovieFront.ExternalSourceData(
+                    imdbData.getExternalId(),
+                    imdbData.getUrl(),
+                    imdbData.getRating(),
+                    imdbData.getRatingCount(),
+                    imdbData.getPosterUrl());
         }
 
         MovieFront movieFront = new MovieFront(
                 movie.getId(),
                 movie.getTitle(),
                 movie.getDurationMinutes(),
-                null, // showings list - not needed for edit page
+                null,
                 movie.getShowingsCount(),
                 filmweb,
-                imdb
-        );
+                imdb,
+                movie.getGenres().stream().map(Genre::getName).collect(java.util.stream.Collectors.toSet()));
 
         model.addAttribute("movie", movieFront);
 
@@ -196,12 +205,22 @@ public class AdminController {
 
         MovieFront.ExternalSourceData filmweb = null;
         if (filmwebData != null) {
-            filmweb = new MovieFront.ExternalSourceData(filmwebData.getExternalId(), filmwebData.getUrl(), filmwebData.getRating(), filmwebData.getRatingCount(), filmwebData.getPosterUrl());
+            filmweb = new MovieFront.ExternalSourceData(
+                    filmwebData.getExternalId(),
+                    filmwebData.getUrl(),
+                    filmwebData.getRating(),
+                    filmwebData.getRatingCount(),
+                    filmwebData.getPosterUrl());
         }
 
         MovieFront.ExternalSourceData imdb = null;
         if (imdbData != null) {
-            imdb = new MovieFront.ExternalSourceData(imdbData.getExternalId(), imdbData.getUrl(), imdbData.getRating(), imdbData.getRatingCount(), imdbData.getPosterUrl());
+            imdb = new MovieFront.ExternalSourceData(
+                    imdbData.getExternalId(),
+                    imdbData.getUrl(),
+                    imdbData.getRating(),
+                    imdbData.getRatingCount(),
+                    imdbData.getPosterUrl());
         }
 
         MovieFront movieFront = new MovieFront(
@@ -211,8 +230,8 @@ public class AdminController {
                 null,
                 movie.getShowingsCount(),
                 filmweb,
-                imdb
-        );
+                imdb,
+                movie.getGenres().stream().map(Genre::getName).collect(java.util.stream.Collectors.toSet()));
 
         model.addAttribute("movie", movieFront);
         return "admin/edit-movie :: edit-movie-container";
@@ -319,7 +338,8 @@ public class AdminController {
         List<FilmwebSearchResultView> filmwebResults = filmwebSearch.searchHits().stream()
                 .filter(it -> it.type().equals("film"))
                 .map(it -> new FilmwebSearchResultView(
-                        it.id(), filmwebApiClient.fetchPreview(it.id().toString()).getBody()))
+                        it.id(),
+                        filmwebApiClient.fetchPreview(it.id().toString()).getBody()))
                 .toList();
         model.addAttribute("filmwebResults", filmwebResults);
         return "admin/edit-movie :: filmweb-search-results";

@@ -28,6 +28,15 @@
                     </div>
                 </div>
 
+                <div class="field" th:if="${movie.genres != null and !movie.genres.isEmpty()}">
+                    <label class="label">Genres</label>
+                    <div class="control">
+                        <div class="tags">
+                            <span class="tag is-info" th:each="genre : ${movie.genres}" th:text="${genre}"></span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- IMDb Data -->
                 <div th:if="${movie.imdb != null}">
                     <div class="field">

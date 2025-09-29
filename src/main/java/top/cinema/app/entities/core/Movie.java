@@ -5,6 +5,8 @@ import org.hibernate.annotations.Formula;
 import top.cinema.app.dto.MovieFront;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "movies")
@@ -21,6 +23,15 @@ public class Movie {
 
     private String originalTitle;
     private Integer durationMinutes;
+
+    @ManyToMany(
+            fetch = FetchType.EAGER,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+            name = "movie_genres",
+            joinColumns = @JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    private Set<Genre> genres;
 
     @Column(unique = true)
     private String cinemaCityId;
@@ -97,7 +108,8 @@ public class Movie {
                                 imdbData.getRating(),
                                 imdbData.getRatingCount(),
                                 imdbData.getPosterUrl())
-                        : null);
+                        : null,
+                genres.stream().map(Genre::getName).collect(Collectors.toSet()));
     }
 
     public MovieFront toFrontWithShowings() {
@@ -122,7 +134,8 @@ public class Movie {
                                 imdbData.getRating(),
                                 imdbData.getRatingCount(),
                                 imdbData.getPosterUrl())
-                        : null);
+                        : null,
+                genres.stream().map(Genre::getName).collect(Collectors.toSet()));
     }
 
     public Integer getId() {
@@ -195,5 +208,13 @@ public class Movie {
 
     public void setImdbData(IMDbData imdbData) {
         this.imdbData = imdbData;
+    }
+
+    public Set<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
     }
 }
