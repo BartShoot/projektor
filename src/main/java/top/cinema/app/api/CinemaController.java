@@ -34,10 +34,10 @@ public class CinemaController {
     @GetMapping("/{id}")
     public ResponseEntity<CinemaFront> getCinemaById(@PathVariable Integer id) {
         Optional<Cinema> cinemaOptional = cinemaRepository.findById(id);
-        return cinemaOptional.map(cinema -> ResponseEntity.ok(
-                cinema.toFrontWithShowing(
-                        showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now())))).orElseGet(
-                () -> ResponseEntity.notFound().build());
+        return cinemaOptional
+                .map(cinema -> ResponseEntity.ok(cinema.toFrontWithShowing(
+                        showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now()))))
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/{id}/showing")
@@ -46,10 +46,11 @@ public class CinemaController {
         if (cinemaOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
-        return cinemaOptional.map(
-                cinema -> ResponseEntity.ok(
-                        showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now()).stream().map(
-                                Showing::toFront).toList())).orElseGet(
-                () -> ResponseEntity.notFound().build());
+        return cinemaOptional
+                .map(cinema -> ResponseEntity.ok(
+                        showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now()).stream()
+                                .map(Showing::toShortFront)
+                                .toList()))
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }

@@ -117,7 +117,7 @@ public class Movie {
                 id,
                 title,
                 durationMinutes,
-                showings.stream().map(Showing::toFront).toList(),
+                showings.stream().map(Showing::toShortFront).toList(),
                 showingsCount,
                 filmwebData != null
                         ? new MovieFront.ExternalSourceData(

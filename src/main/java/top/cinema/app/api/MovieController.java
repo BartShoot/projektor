@@ -59,7 +59,7 @@ public class MovieController {
         }
         return movieOptional
                 .map(movie -> ResponseEntity.ok(
-                        movie.getShowings().stream().map(Showing::toFront).toList()))
+                        movie.getShowings().stream().map(Showing::toShortFront).toList()))
                 .orElseGet((() -> ResponseEntity.notFound().build()));
     }
 }

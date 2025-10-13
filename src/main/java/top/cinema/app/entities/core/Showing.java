@@ -9,8 +9,8 @@ import java.time.LocalDateTime;
 @Table(
         name = "showings",
         indexes = {
-                @Index(name = "idx_showing_cinema_time", columnList = "cinema_id, showingTime"),
-                @Index(name = "idx_showing_movie_time", columnList = "movie_id, showingTime")
+            @Index(name = "idx_showing_cinema_time", columnList = "cinema_id, showingTime"),
+            @Index(name = "idx_showing_movie_time", columnList = "movie_id, showingTime")
         })
 public class Showing {
 
@@ -30,8 +30,7 @@ public class Showing {
 
     private LocalDateTime showingTime;
 
-    public Showing() {
-    }
+    public Showing() {}
 
     public Showing(String externalId, Cinema cinema, Movie movie, LocalDateTime showingTime) {
         this.externalId = externalId;
@@ -40,14 +39,13 @@ public class Showing {
         this.showingTime = showingTime;
     }
 
-    public ShowingFront toFront() {
-        return new ShowingFront(id, movie.toFront(), null, showingTime);
+    public ShowingFront toShortFront() {
+        return new ShowingFront(id, null, null, showingTime);
     }
 
     public ShowingFront toFrontWithCinema() {
         return new ShowingFront(id, movie.toFront(), cinema.toFrontWithCity(), showingTime);
     }
-
 
     public Integer getId() {
         return id;

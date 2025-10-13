@@ -65,7 +65,7 @@ public class Cinema {
 
     public CinemaFront toFrontWithShowing(List<Showing> showings) {
         return new CinemaFront(id, name, location, externalId, cinemaChain, null, null,
-                showings.stream().map(Showing::toFront).toList());
+                showings.stream().map(Showing::toShortFront).toList());
     }
 
     public String getName() {
