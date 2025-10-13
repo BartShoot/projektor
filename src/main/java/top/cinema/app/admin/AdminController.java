@@ -254,7 +254,7 @@ public class AdminController {
                         showingRepository
                                 .findByCinemaAndShowingTimeAfter(cinemaOptional.get(), LocalDateTime.now())
                                 .stream()
-                                .map(Showing::toFront)
+                                .map(Showing::toShortFront)
                                 .toList());
             } else {
                 model.addAttribute("showings", Collections.emptyList());
