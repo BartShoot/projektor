@@ -35,8 +35,7 @@ public class CinemaController {
     public ResponseEntity<CinemaFront> getCinemaById(@PathVariable Integer id) {
         Optional<Cinema> cinemaOptional = cinemaRepository.findById(id);
         return cinemaOptional
-                .map(cinema -> ResponseEntity.ok(cinema.toFrontWithShowing(
-                        showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now()))))
+                .map(cinema -> ResponseEntity.ok(cinema.toFrontWithCity()))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
