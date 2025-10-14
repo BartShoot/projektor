@@ -23,9 +23,7 @@ public class City {
     @Formula("(SELECT COUNT(c.id) FROM cinemas as c WHERE c.city_id = id)")
     private Integer cinemaCount;
 
-    protected City() {
-
-    }
+    protected City() {}
 
     public City(String name) {
         this.name = name;
@@ -37,7 +35,8 @@ public class City {
     }
 
     public CityFront toFrontWithCinemas() {
-        return new CityFront(id, name, cinemaCount, cinemas.stream().map(Cinema::toFrontWithCity).toList());
+        return new CityFront(
+                id, name, cinemaCount, cinemas.stream().map(Cinema::toFront).toList());
     }
 
     public Integer getId() {

@@ -112,30 +112,8 @@ public class Movie {
                 genres.stream().map(Genre::getName).collect(Collectors.toSet()));
     }
 
-    public MovieFront toFrontWithShowings() {
-        return new MovieFront(
-                id,
-                title,
-                durationMinutes,
-                showings.stream().map(Showing::toShortFront).toList(),
-                showingsCount,
-                filmwebData != null
-                        ? new MovieFront.ExternalSourceData(
-                                filmwebData.getExternalId(),
-                                filmwebData.getUrl(),
-                                filmwebData.getRating(),
-                                filmwebData.getRatingCount(),
-                                filmwebData.getPosterUrl())
-                        : null,
-                imdbData != null
-                        ? new MovieFront.ExternalSourceData(
-                                imdbData.getExternalId(),
-                                imdbData.getUrl(),
-                                imdbData.getRating(),
-                                imdbData.getRatingCount(),
-                                imdbData.getPosterUrl())
-                        : null,
-                genres.stream().map(Genre::getName).collect(Collectors.toSet()));
+    public MovieFront toShortFront() {
+        return new MovieFront(id, null, null, null);
     }
 
     public Integer getId() {

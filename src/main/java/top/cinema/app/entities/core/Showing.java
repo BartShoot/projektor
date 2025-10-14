@@ -40,11 +40,11 @@ public class Showing {
     }
 
     public ShowingFront toShortFront() {
-        return new ShowingFront(id, null, null, showingTime);
+        return new ShowingFront(id, movie.toShortFront(), null, showingTime);
     }
 
     public ShowingFront toFrontWithCinema() {
-        return new ShowingFront(id, movie.toFront(), cinema.toFrontWithCity(), showingTime);
+        return new ShowingFront(id, movie.toFront(), cinema.toFront(), showingTime);
     }
 
     public Integer getId() {
