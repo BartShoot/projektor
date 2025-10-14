@@ -1,5 +1,7 @@
 package top.cinema.app.fetching.durable_jobs;
 
+import jakarta.annotation.PostConstruct;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -35,13 +37,28 @@ public class Scheduler {
         this.heliosJobProcessor = heliosJobProcessor;
     }
 
+    @PostConstruct
+    public void resumeRunning() {
+        int page = 0;
+        Page<Job> runningJobsPage;
+        do {
+            runningJobsPage = jobRepository.findByStatus(Job.Status.RUNNING, PageRequest.of(page, 100));
+            runningJobsPage.forEach(job -> {
+                job.setStatus(Job.Status.PENDING);
+                jobRepository.save(job);
+            });
+            page++;
+        } while (runningJobsPage.hasNext());
+    }
+
     @Scheduled(cron = "0 */1 * * * *")
     public void processJobs() {
-        System.out.println("Processing jobs...");
+        var jobCount = 0;
         var pageable = PageRequest.of(0, 5, Sort.by("createDate").ascending());
         Collection<Job> ccJobs = jobRepository
                 .findByStatusAndCinemaChain(Job.Status.PENDING, CinemaChain.CINEMA_CITY, pageable)
                 .getContent();
+        jobCount += ccJobs.size();
         ccJobs.forEach(job -> job.setStatus(Job.Status.RUNNING));
         jobRepository.saveAll(ccJobs);
         ccJobProcessor.process(ccJobs);
@@ -49,9 +66,14 @@ public class Scheduler {
         Collection<Job> heliosJobs = jobRepository
                 .findByStatusAndCinemaChain(Job.Status.PENDING, CinemaChain.HELIOS, pageable)
                 .getContent();
+        jobCount += heliosJobs.size();
         heliosJobs.forEach(job -> job.setStatus(Job.Status.RUNNING));
         jobRepository.saveAll(heliosJobs);
         heliosJobProcessor.process(heliosJobs);
+
+        if (jobCount > 0) {
+            System.out.printf("Processing %d jobs", jobCount);
+        }
     }
 
     @Scheduled(cron = "0 0 */4 * * *")
