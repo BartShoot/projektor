@@ -1,6 +1,5 @@
 package top.cinema.app.entities.core;
 
-
 import jakarta.persistence.*;
 import org.hibernate.annotations.Formula;
 import top.cinema.app.dto.CinemaFront;
@@ -31,11 +30,10 @@ public class Cinema {
     @OneToMany(mappedBy = "cinema", fetch = FetchType.LAZY)
     private List<Showing> showings;
 
-    @Formula("(SELECT COUNT(s.id) FROM showings as s WHERE s.cinema_id = id)")
+    @Formula("(SELECT COUNT(s.id) FROM showings s WHERE s.cinema_id = id AND s.showing_time > NOW())")
     private Integer showingCounts;
 
-    public Cinema() {
-    }
+    public Cinema() {}
 
     public Cinema(String name, String address, String externalId, CinemaChain cinemaChain, City city) {
         this.name = name;
@@ -54,18 +52,11 @@ public class Cinema {
     }
 
     public CinemaFront toFront() {
-        return new CinemaFront(id, name, location, externalId, cinemaChain, null, showingCounts,
-                null);
+        return new CinemaFront(id, name, location, externalId, cinemaChain, null, showingCounts, null);
     }
 
     public CinemaFront toFrontWithCity() {
-        return new CinemaFront(id, name, location, externalId, cinemaChain, city.toFront(), showingCounts,
-                null);
-    }
-
-    public CinemaFront toFrontWithShowing(List<Showing> showings) {
-        return new CinemaFront(id, name, location, externalId, cinemaChain, null, null,
-                showings.stream().map(Showing::toShortFront).toList());
+        return new CinemaFront(id, name, location, externalId, cinemaChain, city.toFront(), showingCounts, null);
     }
 
     public String getName() {
