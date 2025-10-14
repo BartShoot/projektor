@@ -2,7 +2,6 @@ package top.cinema.app.admin;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -34,11 +33,14 @@ public class AdminSecurityConfig {
     }
 
     @Bean
-    @Order(1)
-    public SecurityFilterChain adminFilterChain(HttpSecurity http) throws Exception {
-        http.securityMatcher("/admin/**")
-                .userDetailsService(jpaUserDetailsService)
-                .authorizeHttpRequests(authorize -> authorize.anyRequest().hasRole("ADMIN"))
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/api/**", "/css/**", "/js/**", "/images/**", "/admin/login", "/user/register")
+                        .permitAll()
+                        .requestMatchers("/admin/**")
+                        .hasRole("ADMIN")
+                        .anyRequest()
+                        .authenticated())
                 .formLogin(form -> form.loginPage("/admin/login")
                         .loginProcessingUrl("/admin/login")
                         .defaultSuccessUrl("/admin/dashboard", true)
@@ -46,23 +48,12 @@ public class AdminSecurityConfig {
                 .logout(logout -> logout.logoutUrl("/admin/logout")
                         .logoutSuccessUrl("/admin/login?logout")
                         .permitAll())
-                .rememberMe(rememberMe -> rememberMe.tokenRepository(persistentTokenRepository()));
+                .rememberMe(rememberMe -> rememberMe.tokenRepository(persistentTokenRepository()))
+                .userDetailsService(jpaUserDetailsService)
+                .csrf(csrf -> csrf.ignoringRequestMatchers("/api/**", "/user/register"));
+
         return http.build();
     }
-
-    @Bean
-    @Order(2)
-    public SecurityFilterChain defaultFilterChain(HttpSecurity http) throws Exception {
-        http
-            .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/user/register").permitAll()
-                .anyRequest().permitAll()
-            )
-            .csrf(csrf -> csrf.ignoringRequestMatchers("/user/register"))
-            .logout(logout -> logout.logoutSuccessUrl("/admin/login?logout"));
-        return http.build();
-    }
-
 
     @Bean
     public PersistentTokenRepository persistentTokenRepository() {

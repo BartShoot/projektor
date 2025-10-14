@@ -254,7 +254,7 @@ public class AdminController {
                         showingRepository
                                 .findByCinemaAndShowingTimeAfter(cinemaOptional.get(), LocalDateTime.now())
                                 .stream()
-                                .map(Showing::toShortFront)
+                                .map(Showing::toFrontWithCinema)
                                 .toList());
             } else {
                 model.addAttribute("showings", Collections.emptyList());
@@ -285,16 +285,14 @@ public class AdminController {
         if (status != null && !status.isEmpty()) {
             try {
                 statusEnum = Job.Status.valueOf(status);
-            } catch (IllegalArgumentException e) {
-                // Handle invalid status string
+            } catch (IllegalArgumentException _) {
             }
         }
         CinemaChain cinemaChainEnum = null;
         if (cinemaChain != null && !cinemaChain.isEmpty()) {
             try {
                 cinemaChainEnum = CinemaChain.valueOf(cinemaChain);
-            } catch (IllegalArgumentException e) {
-                // Handle invalid cinemaChain string
+            } catch (IllegalArgumentException _) {
             }
         }
         Page<Job> jobsPage;
