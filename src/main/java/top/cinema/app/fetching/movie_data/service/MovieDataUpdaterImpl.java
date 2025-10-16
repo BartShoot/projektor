@@ -21,7 +21,10 @@ public class MovieDataUpdaterImpl implements MovieDataUpdater {
     private final GenreRepository genreRepository;
 
     public MovieDataUpdaterImpl(
-            FilmwebDataFetcher filmwebDataFetcher, IMDbDataFetcher imDbDataFetcher, MovieRepository movieRepository, GenreRepository genreRepository) {
+            FilmwebDataFetcher filmwebDataFetcher,
+            IMDbDataFetcher imDbDataFetcher,
+            MovieRepository movieRepository,
+            GenreRepository genreRepository) {
         this.filmwebDataFetcher = filmwebDataFetcher;
         this.imDbDataFetcher = imDbDataFetcher;
         this.movieRepository = movieRepository;
@@ -32,7 +35,7 @@ public class MovieDataUpdaterImpl implements MovieDataUpdater {
     public MovieFront updateMovie(Integer movieId, String imdbId, String filmwebId) {
         var movie = movieRepository.findById(movieId).get();
         var movieGenreEnums = new HashSet<MovieGenre>();
-        if (filmwebId != null) {
+        if (filmwebId != null && !filmwebId.isEmpty()) {
             var filmwebData = filmwebDataFetcher.getDataForMovie(filmwebId);
             movieGenreEnums.addAll(filmwebData.genres());
             movie.setFilmwebData(new FilmwebData(
@@ -40,25 +43,18 @@ public class MovieDataUpdaterImpl implements MovieDataUpdater {
                     filmwebData.url(),
                     filmwebData.rating(),
                     filmwebData.ratingCount(),
-                    filmwebData.posterUrl()
-                    ));
+                    filmwebData.posterUrl()));
         }
-        if (imdbId != null) {
+        if (imdbId != null && !imdbId.isEmpty()) {
             var IMDbData = imDbDataFetcher.getDataForMovie(imdbId);
             movieGenreEnums.addAll(IMDbData.genres());
             movie.setImdbData(new IMDbData(
-                    IMDbData.id(),
-                    IMDbData.url(),
-                    IMDbData.rating(),
-                    IMDbData.ratingCount(),
-                    IMDbData.posterUrl()
-                    ));
+                    IMDbData.id(), IMDbData.url(), IMDbData.rating(), IMDbData.ratingCount(), IMDbData.posterUrl()));
         }
 
         Set<Genre> existingGenres = genreRepository.findByNameIn(movieGenreEnums);
-        Set<MovieGenre> existingGenreNames = existingGenres.stream()
-                .map(Genre::getName)
-                .collect(Collectors.toSet());
+        Set<MovieGenre> existingGenreNames =
+                existingGenres.stream().map(Genre::getName).collect(Collectors.toSet());
 
         Set<Genre> newGenres = movieGenreEnums.stream()
                 .filter(name -> !existingGenreNames.contains(name))
