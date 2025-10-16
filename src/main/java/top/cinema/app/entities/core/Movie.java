@@ -3,6 +3,8 @@ package top.cinema.app.entities.core;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Formula;
 import top.cinema.app.dto.MovieFront;
+import top.cinema.app.dto.model.MovieSummaryDto;
+import top.cinema.app.dto.model.MovieWithShowingsDto;
 
 import java.util.List;
 import java.util.Set;
@@ -114,6 +116,57 @@ public class Movie {
 
     public MovieFront toShortFront() {
         return new MovieFront(id, null, null, null);
+    }
+
+    public MovieSummaryDto toSummaryDto() {
+        return new MovieSummaryDto(
+                id,
+                title,
+                durationMinutes,
+                showingsCount,
+                filmwebData != null
+                        ? new MovieFront.ExternalSourceData(
+                                filmwebData.getExternalId(),
+                                filmwebData.getUrl(),
+                                filmwebData.getRating(),
+                                filmwebData.getRatingCount(),
+                                filmwebData.getPosterUrl())
+                        : null,
+                imdbData != null
+                        ? new MovieFront.ExternalSourceData(
+                                imdbData.getExternalId(),
+                                imdbData.getUrl(),
+                                imdbData.getRating(),
+                                imdbData.getRatingCount(),
+                                imdbData.getPosterUrl())
+                        : null,
+                genres.stream().map(it -> it.getName().name()).collect(Collectors.toSet()));
+    }
+
+    public MovieWithShowingsDto toWithShowingsDto(List<Showing> showings) {
+        return new MovieWithShowingsDto(
+                id,
+                title,
+                durationMinutes,
+                showingsCount,
+                filmwebData != null
+                        ? new MovieFront.ExternalSourceData(
+                                filmwebData.getExternalId(),
+                                filmwebData.getUrl(),
+                                filmwebData.getRating(),
+                                filmwebData.getRatingCount(),
+                                filmwebData.getPosterUrl())
+                        : null,
+                imdbData != null
+                        ? new MovieFront.ExternalSourceData(
+                                imdbData.getExternalId(),
+                                imdbData.getUrl(),
+                                imdbData.getRating(),
+                                imdbData.getRatingCount(),
+                                imdbData.getPosterUrl())
+                        : null,
+                genres.stream().map(it -> it.getName().name()).collect(Collectors.toSet()),
+                showings.stream().map(Showing::toShowingSummaryDtoForMovie).collect(Collectors.toList()));
     }
 
     public Integer getId() {

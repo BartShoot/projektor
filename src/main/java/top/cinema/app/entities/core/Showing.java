@@ -2,6 +2,7 @@ package top.cinema.app.entities.core;
 
 import jakarta.persistence.*;
 import top.cinema.app.dto.ShowingFront;
+import top.cinema.app.dto.model.ShowingSummaryDto;
 
 import java.time.LocalDateTime;
 
@@ -45,6 +46,14 @@ public class Showing {
 
     public ShowingFront toFrontWithCinema() {
         return new ShowingFront(id, movie.toFront(), cinema.toFront(), showingTime);
+    }
+
+    public ShowingSummaryDto toShowingSummaryDtoForMovie() {
+        return new ShowingSummaryDto(id, showingTime, cinema.toSummaryDto(), null);
+    }
+
+    public ShowingSummaryDto toShowingSummaryDtoForCinema() {
+        return new ShowingSummaryDto(id, showingTime, null, movie.toSummaryDto());
     }
 
     public Integer getId() {

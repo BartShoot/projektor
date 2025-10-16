@@ -3,9 +3,8 @@ package top.cinema.app.api;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import top.cinema.app.dao.CityRepository;
-import top.cinema.app.dto.CinemaFront;
-import top.cinema.app.dto.CityFront;
-import top.cinema.app.entities.core.Cinema;
+import top.cinema.app.dto.model.CitySummaryDto;
+import top.cinema.app.dto.model.CityWithCinemasDto;
 import top.cinema.app.entities.core.City;
 
 import java.util.List;
@@ -23,25 +22,14 @@ public class CityController {
     }
 
     @GetMapping
-    public ResponseEntity<List<CityFront>> getAllCities() {
-        return ResponseEntity.ok(cityRepository.findAll().stream().map(City::toFront).toList());
+    public ResponseEntity<List<CitySummaryDto>> getAllCities() {
+        return ResponseEntity.ok(cityRepository.findAll().stream().map(City::toSummaryDto).toList());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CityFront> getCityById(@PathVariable Integer id) {
+    public ResponseEntity<CityWithCinemasDto> getCityById(@PathVariable Integer id) {
         Optional<City> cityOptional = cityRepository.findById(id);
-        return cityOptional.map(city -> ResponseEntity.ok(city.toFrontWithCinemas()))
+        return cityOptional.map(city -> ResponseEntity.ok(city.toWithCinemasDto()))
                 .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-    @GetMapping("/{id}/cinema")
-    public ResponseEntity<List<CinemaFront>> getCityCinemas(@PathVariable Integer id) {
-        Optional<City> cityOptional = cityRepository.findById(id);
-        if (cityOptional.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-        return cityOptional.map(
-                ci -> ResponseEntity.ok(ci.getCinemas().stream().map(Cinema::toFront).toList())).orElseGet(
-                () -> ResponseEntity.notFound().build());
     }
 }

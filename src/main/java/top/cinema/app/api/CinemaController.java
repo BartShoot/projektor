@@ -4,16 +4,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import top.cinema.app.dao.CinemaRepository;
 import top.cinema.app.dao.ShowingRepository;
-import top.cinema.app.dto.CinemaFront;
-import top.cinema.app.dto.MovieFront;
-import top.cinema.app.dto.ShowingFront;
+import top.cinema.app.dto.model.CinemaSummaryDto;
+import top.cinema.app.dto.model.CinemaWithShowingsDto;
 import top.cinema.app.entities.core.Cinema;
-import top.cinema.app.entities.core.Movie;
 import top.cinema.app.entities.core.Showing;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/cinema")
@@ -29,45 +28,18 @@ public class CinemaController {
     }
 
     @GetMapping
-    public List<CinemaFront> getCinemas() {
-        return cinemaRepository.findAll().stream().map(Cinema::toFrontWithCity).toList();
+    public List<CinemaSummaryDto> getCinemas() {
+        return cinemaRepository.findAll().stream().map(Cinema::toSummaryDto).toList();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CinemaFront> getCinemaById(@PathVariable Integer id) {
+    public ResponseEntity<CinemaWithShowingsDto> getCinemaById(@PathVariable Integer id) {
         Optional<Cinema> cinemaOptional = cinemaRepository.findById(id);
         return cinemaOptional
-                .map(cinema -> ResponseEntity.ok(cinema.toFrontWithCity()))
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-    @GetMapping("/{id}/showing")
-    public ResponseEntity<List<ShowingFront>> getCinemaShowings(@PathVariable Integer id) {
-        Optional<Cinema> cinemaOptional = cinemaRepository.findById(id);
-        if (cinemaOptional.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-        return cinemaOptional
-                .map(cinema -> ResponseEntity.ok(
-                        showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now()).stream()
-                                .map(Showing::toShortFront)
-                                .toList()))
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-    @GetMapping("/{id}/movie")
-    public ResponseEntity<List<MovieFront>> getCinemaMovies(@PathVariable Integer id) {
-        Optional<Cinema> cinemaOptional = cinemaRepository.findById(id);
-        if (cinemaOptional.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-        return cinemaOptional
-                .map(cinema -> ResponseEntity.ok(
-                        showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now()).stream()
-                                .map(Showing::getMovie)
-                                .distinct()
-                                .map(Movie::toFront)
-                                .toList()))
+                .map(cinema -> {
+                    List<Showing> showings = showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now());
+                    return ResponseEntity.ok(cinema.toWithShowingsDto(showings));
+                })
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }

@@ -3,9 +3,12 @@ package top.cinema.app.entities.core;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Formula;
 import top.cinema.app.dto.CinemaFront;
+import top.cinema.app.dto.model.CinemaSummaryDto;
+import top.cinema.app.dto.model.CinemaWithShowingsDto;
 import top.cinema.app.model.CinemaChain;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "cinemas")
@@ -57,6 +60,21 @@ public class Cinema {
 
     public CinemaFront toFrontWithCity() {
         return new CinemaFront(id, name, location, externalId, cinemaChain, city.toFront(), showingCounts, null);
+    }
+
+    public CinemaSummaryDto toSummaryDto() {
+        return new CinemaSummaryDto(id, name, location, showingCounts);
+    }
+
+    public CinemaWithShowingsDto toWithShowingsDto(List<Showing> showings) {
+        return new CinemaWithShowingsDto(
+                id,
+                name,
+                location,
+                cinemaChain,
+                city.toSummaryDto(),
+                showingCounts,
+                showings.stream().map(Showing::toShowingSummaryDtoForCinema).collect(Collectors.toList()));
     }
 
     public String getName() {
