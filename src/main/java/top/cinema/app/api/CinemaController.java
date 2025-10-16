@@ -5,8 +5,10 @@ import org.springframework.web.bind.annotation.*;
 import top.cinema.app.dao.CinemaRepository;
 import top.cinema.app.dao.ShowingRepository;
 import top.cinema.app.dto.CinemaFront;
+import top.cinema.app.dto.MovieFront;
 import top.cinema.app.dto.ShowingFront;
 import top.cinema.app.entities.core.Cinema;
+import top.cinema.app.entities.core.Movie;
 import top.cinema.app.entities.core.Showing;
 
 import java.time.LocalDateTime;
@@ -49,6 +51,22 @@ public class CinemaController {
                 .map(cinema -> ResponseEntity.ok(
                         showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now()).stream()
                                 .map(Showing::toShortFront)
+                                .toList()))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/{id}/movie")
+    public ResponseEntity<List<MovieFront>> getCinemaMovies(@PathVariable Integer id) {
+        Optional<Cinema> cinemaOptional = cinemaRepository.findById(id);
+        if (cinemaOptional.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return cinemaOptional
+                .map(cinema -> ResponseEntity.ok(
+                        showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now()).stream()
+                                .map(Showing::getMovie)
+                                .distinct()
+                                .map(Movie::toFront)
                                 .toList()))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
