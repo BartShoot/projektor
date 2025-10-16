@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.JdkClientHttpRequestFactory;
@@ -23,20 +24,31 @@ import java.time.format.DateTimeFormatter;
 
 @Configuration
 public class ClientConfiguration {
-    private static final String CINEMA_CITY_BASE_URL = "https://www.cinema-city.pl/pl/data-api-service";
-    private static final String HELIOS_BASE_URL = "https://api.helios.pl/api";
-    private static final String MULTIKINO_BASE_URL = "https://multikino.pl/api";
-    private static final String FILMWEB_API_URL = "https://www.filmweb.pl/api";
-    private static final String IMDB_API_URL = "https://api.imdbapi.dev/";
+
+    @Value("${cinema-city.base-url}")
+    private String cinemaCityBaseUrl;
+
+    @Value("${helios.base-url}")
+    private String heliosBaseUrl;
+
+    @Value("${multikino.base-url}")
+    private String multikinoBaseUrl;
+
+    @Value("${filmweb.api.url}")
+    private String filmwebApiUrl;
+
+    @Value("${imdb.api.url}")
+    private String imdbApiUrl;
 
     @Bean
     CinemaCityApiClient cinemaCityApiClient() {
         RestClient restClient = RestClient.builder()
-                .baseUrl(CINEMA_CITY_BASE_URL)
+                .baseUrl(cinemaCityBaseUrl)
                 .defaultHeader("content-type", "application/json")
                 .build();
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
-        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
+        HttpServiceProxyFactory factory =
+                HttpServiceProxyFactory.builderFor(adapter).build();
         return factory.createClient(CinemaCityApiClient.class);
     }
 
@@ -50,12 +62,13 @@ public class ClientConfiguration {
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         var messageConverter = new MappingJackson2HttpMessageConverter(objectMapper);
         RestClient restClient = RestClient.builder()
-                .baseUrl(HELIOS_BASE_URL)
+                .baseUrl(heliosBaseUrl)
                 .defaultHeader("content-type", "application/json")
                 .messageConverters(converters -> converters.addFirst(messageConverter))
                 .build();
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
-        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
+        HttpServiceProxyFactory factory =
+                HttpServiceProxyFactory.builderFor(adapter).build();
         return factory.createClient(HeliosApiClient.class);
     }
 
@@ -71,38 +84,41 @@ public class ClientConfiguration {
         JdkClientHttpRequestFactory requestFactory = new JdkClientHttpRequestFactory(httpClient);
         RestClient restClient = RestClient.builder()
                 .requestFactory(requestFactory)
-//                .requestInterceptor((req, reqBody, ex) -> {
-//                    ClientHttpResponse response = ex.execute(req, reqBody);
-//                    if (!response.getStatusCode().is2xxSuccessful()) {
-//                        log.info("Request body: \n===========\n{}\n===========",
-//                                req.getURI() + " " + new String(reqBody, StandardCharsets.UTF_8));
-//                        log.info("Response body:\n===========\n{}\n===========", new String(
-//                                response.getBody().readAllBytes(), StandardCharsets.UTF_8));
-//                    }
-//                    return response;
-//                })
-                .baseUrl(MULTIKINO_BASE_URL)
+                //                .requestInterceptor((req, reqBody, ex) -> {
+                //                    ClientHttpResponse response = ex.execute(req, reqBody);
+                //                    if (!response.getStatusCode().is2xxSuccessful()) {
+                //                        log.info("Request body: \n===========\n{}\n===========",
+                //                                req.getURI() + " " + new String(reqBody, StandardCharsets.UTF_8));
+                //                        log.info("Response body:\n===========\n{}\n===========", new String(
+                //                                response.getBody().readAllBytes(), StandardCharsets.UTF_8));
+                //                    }
+                //                    return response;
+                //                })
+                .baseUrl(multikinoBaseUrl)
                 .defaultHeader("content-type", "application/json")
                 .messageConverters(converters -> converters.addFirst(messageConverter))
                 .build();
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
-        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
+        HttpServiceProxyFactory factory =
+                HttpServiceProxyFactory.builderFor(adapter).build();
         return factory.createClient(MultikinoApiClient.class);
     }
 
     @Bean
     FilmwebApiClient filmwebApiClient() {
-        RestClient restClient = RestClient.builder().baseUrl(FILMWEB_API_URL).build();
+        RestClient restClient = RestClient.builder().baseUrl(filmwebApiUrl).build();
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
-        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
+        HttpServiceProxyFactory factory =
+                HttpServiceProxyFactory.builderFor(adapter).build();
         return factory.createClient(FilmwebApiClient.class);
     }
 
     @Bean
     ImdbApiClient imdbApiClient() {
-        RestClient restClient = RestClient.builder().baseUrl(IMDB_API_URL).build();
+        RestClient restClient = RestClient.builder().baseUrl(imdbApiUrl).build();
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
-        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
+        HttpServiceProxyFactory factory =
+                HttpServiceProxyFactory.builderFor(adapter).build();
         return factory.createClient(ImdbApiClient.class);
     }
 }
