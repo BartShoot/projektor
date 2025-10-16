@@ -6,10 +6,11 @@ import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.core.Relation;
 import top.cinema.app.dto.MovieFront;
 
+import java.util.Objects;
 import java.util.Set;
 
 @Relation(collectionRelation = "movies", itemRelation = "movie")
-public class MovieSummaryDto extends RepresentationModel<MovieSummaryDto> {
+public class MovieDto extends RepresentationModel<MovieDto> {
     private final Integer id;
     private final String title;
     private final Integer durationMinutes;
@@ -19,7 +20,7 @@ public class MovieSummaryDto extends RepresentationModel<MovieSummaryDto> {
     private final Set<String> genres;
 
     @JsonCreator
-    public MovieSummaryDto(
+    public MovieDto(
             @JsonProperty("id") Integer id,
             @JsonProperty("title") String title,
             @JsonProperty("durationMinutes") Integer durationMinutes,
@@ -63,4 +64,5 @@ public class MovieSummaryDto extends RepresentationModel<MovieSummaryDto> {
     public Set<String> getGenres() {
         return genres;
     }
+
 }

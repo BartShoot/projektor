@@ -3,8 +3,8 @@ package top.cinema.app.entities.core;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Formula;
 import top.cinema.app.dto.MovieFront;
+import top.cinema.app.dto.model.MovieDto;
 import top.cinema.app.dto.model.MovieSummaryDto;
-import top.cinema.app.dto.model.MovieWithShowingsDto;
 
 import java.util.List;
 import java.util.Set;
@@ -143,8 +143,8 @@ public class Movie {
                 genres.stream().map(it -> it.getName().name()).collect(Collectors.toSet()));
     }
 
-    public MovieWithShowingsDto toWithShowingsDto(List<Showing> showings) {
-        return new MovieWithShowingsDto(
+    public MovieDto toDto() {
+        return new MovieDto(
                 id,
                 title,
                 durationMinutes,
@@ -165,8 +165,7 @@ public class Movie {
                                 imdbData.getRatingCount(),
                                 imdbData.getPosterUrl())
                         : null,
-                genres.stream().map(it -> it.getName().name()).collect(Collectors.toSet()),
-                showings.stream().map(Showing::toShowingSummaryDtoForMovie).collect(Collectors.toList()));
+                genres.stream().map(it -> it.getName().name()).collect(Collectors.toSet()));
     }
 
     public Integer getId() {

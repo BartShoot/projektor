@@ -3,6 +3,7 @@ package top.cinema.app.admin;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -118,7 +119,9 @@ public class AdminController {
         if (showAll) {
             movies = movieRepository.findAll();
         } else {
-            movies = movieRepository.findMoviesWithFutureShowings();
+            movies = movieRepository
+                    .findMoviesWithFutureShowings(Pageable.unpaged())
+                    .getContent();
         }
         model.addAttribute("movies", movies.stream().map(Movie::toFront).toList());
         model.addAttribute("showAll", showAll);
@@ -252,7 +255,8 @@ public class AdminController {
                 model.addAttribute(
                         "showings",
                         showingRepository
-                                .findByCinemaAndShowingTimeAfter(cinemaOptional.get(), LocalDateTime.now())
+                                .findByCinemaAndShowingTimeAfter(
+                                        cinemaOptional.get(), LocalDateTime.now(), Pageable.unpaged())
                                 .stream()
                                 .map(Showing::toFrontWithCinema)
                                 .toList());
