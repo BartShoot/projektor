@@ -2,6 +2,7 @@ package top.cinema.app.api;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import top.cinema.app.api.assembler.CityWithCinemasDtoAssembler;
 import top.cinema.app.dao.CityRepository;
 import top.cinema.app.dto.model.CitySummaryDto;
 import top.cinema.app.dto.model.CityWithCinemasDto;
@@ -16,20 +17,24 @@ import java.util.Optional;
 public class CityController {
 
     private final CityRepository cityRepository;
+    private final CityWithCinemasDtoAssembler cityWithCinemasDtoAssembler;
 
-    public CityController(CityRepository cityRepository) {
+    public CityController(CityRepository cityRepository, CityWithCinemasDtoAssembler cityWithCinemasDtoAssembler) {
         this.cityRepository = cityRepository;
+        this.cityWithCinemasDtoAssembler = cityWithCinemasDtoAssembler;
     }
 
     @GetMapping
     public ResponseEntity<List<CitySummaryDto>> getAllCities() {
-        return ResponseEntity.ok(cityRepository.findAll().stream().map(City::toSummaryDto).toList());
+        return ResponseEntity.ok(
+                cityRepository.findAll().stream().map(City::toSummaryDto).toList());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<CityWithCinemasDto> getCityById(@PathVariable Integer id) {
         Optional<City> cityOptional = cityRepository.findById(id);
-        return cityOptional.map(city -> ResponseEntity.ok(city.toWithCinemasDto()))
+        return cityOptional
+                .map(city -> ResponseEntity.ok(cityWithCinemasDtoAssembler.toModel(city)))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }

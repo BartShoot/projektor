@@ -4,11 +4,9 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.Formula;
 import top.cinema.app.dto.CityFront;
 import top.cinema.app.dto.model.CitySummaryDto;
-import top.cinema.app.dto.model.CityWithCinemasDto;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "cities")
@@ -44,13 +42,6 @@ public class City {
 
     public CitySummaryDto toSummaryDto() {
         return new CitySummaryDto(id, name, cinemaCount);
-    }
-
-    public CityWithCinemasDto toWithCinemasDto() {
-        return new CityWithCinemasDto(
-                id,
-                name,
-                cinemas.stream().map(Cinema::toSummaryDto).collect(Collectors.toList()));
     }
 
     public Integer getId() {

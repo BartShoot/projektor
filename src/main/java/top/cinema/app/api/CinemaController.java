@@ -1,5 +1,6 @@
 package top.cinema.app.api;
 
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PagedResourcesAssembler;
@@ -49,7 +50,7 @@ public class CinemaController {
     }
 
     @GetMapping
-    public PagedModel<CinemaSummaryDto> getCinemas(Pageable pageable) {
+    public PagedModel<CinemaSummaryDto> getCinemas(@ParameterObject Pageable pageable) {
         Page<Cinema> cinemaPage = cinemaRepository.findAll(pageable);
         return cinemaPagedResourcesAssembler.toModel(cinemaPage, cinemaSummaryDtoAssembler);
     }
@@ -70,7 +71,8 @@ public class CinemaController {
     }
 
     @GetMapping("/{id}/showings")
-    public PagedModel<ShowingSummaryDto> getCinemaShowings(@PathVariable Integer id, Pageable pageable) {
+    public PagedModel<ShowingSummaryDto> getCinemaShowings(
+            @PathVariable Integer id, @ParameterObject Pageable pageable) {
         Cinema cinema = cinemaRepository.findById(id).orElseThrow(() -> new RuntimeException("Cinema not found"));
         Page<Showing> showingsPage =
                 showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now(), pageable);
