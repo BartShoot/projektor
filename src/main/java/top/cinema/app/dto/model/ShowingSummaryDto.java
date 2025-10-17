@@ -14,18 +14,18 @@ public class ShowingSummaryDto extends RepresentationModel<ShowingSummaryDto> {
     private final Integer id;
     private final LocalDateTime showingTime;
     private final CinemaSummaryDto cinema;
-    private final MovieSummaryDto movie;
+    private final Integer movieId;
 
     @JsonCreator
     public ShowingSummaryDto(
             @JsonProperty("id") Integer id,
             @JsonProperty("showingTime") LocalDateTime showingTime,
             @JsonProperty("cinema") CinemaSummaryDto cinema,
-            @JsonProperty("movie") MovieSummaryDto movie) {
+            @JsonProperty("movieId") Integer movieId) {
         this.id = id;
         this.showingTime = showingTime;
         this.cinema = cinema;
-        this.movie = movie;
+        this.movieId = movieId;
     }
 
     public Integer getId() {
@@ -40,7 +40,7 @@ public class ShowingSummaryDto extends RepresentationModel<ShowingSummaryDto> {
         return cinema;
     }
 
-    public MovieSummaryDto getMovie() {
-        return movie;
+    public Integer getMovieId() {
+        return movieId;
     }
 }

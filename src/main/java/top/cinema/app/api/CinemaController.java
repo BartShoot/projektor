@@ -8,13 +8,17 @@ import org.springframework.hateoas.PagedModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import top.cinema.app.api.assembler.CinemaSummaryDtoAssembler;
+import top.cinema.app.api.assembler.MovieSummaryDtoAssembler;
 import top.cinema.app.api.assembler.ShowingSummaryDtoAssembler;
 import top.cinema.app.dao.CinemaRepository;
+import top.cinema.app.dao.MovieRepository;
 import top.cinema.app.dao.ShowingRepository;
 import top.cinema.app.dto.model.CinemaDto;
 import top.cinema.app.dto.model.CinemaSummaryDto;
+import top.cinema.app.dto.model.MovieSummaryDto;
 import top.cinema.app.dto.model.ShowingSummaryDto;
 import top.cinema.app.entities.core.Cinema;
+import top.cinema.app.entities.core.Movie;
 import top.cinema.app.entities.core.Showing;
 
 import java.time.LocalDateTime;
@@ -29,24 +33,33 @@ public class CinemaController {
 
     private final CinemaRepository cinemaRepository;
     private final ShowingRepository showingRepository;
+    private final MovieRepository movieRepository;
     private final CinemaSummaryDtoAssembler cinemaSummaryDtoAssembler;
     private final ShowingSummaryDtoAssembler showingSummaryDtoAssembler;
+    private final MovieSummaryDtoAssembler movieSummaryDtoAssembler;
     private final PagedResourcesAssembler<Cinema> cinemaPagedResourcesAssembler;
     private final PagedResourcesAssembler<Showing> showingPagedResourcesAssembler;
+    private final PagedResourcesAssembler<Movie> moviePagedResourcesAssembler;
 
     public CinemaController(
             CinemaRepository cinemaRepository,
             ShowingRepository showingRepository,
+            MovieRepository movieRepository,
             CinemaSummaryDtoAssembler cinemaSummaryDtoAssembler,
             ShowingSummaryDtoAssembler showingSummaryDtoAssembler,
+            MovieSummaryDtoAssembler movieSummaryDtoAssembler,
             PagedResourcesAssembler<Cinema> cinemaPagedResourcesAssembler,
-            PagedResourcesAssembler<Showing> showingPagedResourcesAssembler) {
+            PagedResourcesAssembler<Showing> showingPagedResourcesAssembler,
+            PagedResourcesAssembler<Movie> moviePagedResourcesAssembler){
         this.cinemaRepository = cinemaRepository;
         this.showingRepository = showingRepository;
+        this.movieRepository = movieRepository;
         this.cinemaSummaryDtoAssembler = cinemaSummaryDtoAssembler;
         this.showingSummaryDtoAssembler = showingSummaryDtoAssembler;
+        this.movieSummaryDtoAssembler = movieSummaryDtoAssembler;
         this.cinemaPagedResourcesAssembler = cinemaPagedResourcesAssembler;
         this.showingPagedResourcesAssembler = showingPagedResourcesAssembler;
+        this.moviePagedResourcesAssembler = moviePagedResourcesAssembler;
     }
 
     @GetMapping
@@ -77,5 +90,11 @@ public class CinemaController {
         Page<Showing> showingsPage =
                 showingRepository.findByCinemaAndShowingTimeAfter(cinema, LocalDateTime.now(), pageable);
         return showingPagedResourcesAssembler.toModel(showingsPage, showingSummaryDtoAssembler);
+    }
+
+    @GetMapping("/{id}/movies")
+    public PagedModel<MovieSummaryDto> getCinemaMovies(@PathVariable Integer id, @ParameterObject Pageable pageable) {
+        Page<Movie> moviesPage = movieRepository.findMoviesByCinemaAndShowingsAfter(id, LocalDateTime.now(), pageable);
+        return moviePagedResourcesAssembler.toModel(moviesPage, movieSummaryDtoAssembler);
     }
 }

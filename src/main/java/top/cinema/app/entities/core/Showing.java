@@ -52,10 +52,9 @@ public class Showing {
         return new ShowingSummaryDto(id, showingTime, cinema.toSummaryDto(), null);
     }
 
-    public ShowingSummaryDto toShowingSummaryDtoForCinema() {
-        return new ShowingSummaryDto(id, showingTime, null, movie.toSummaryDto());
-    }
-
+            public ShowingSummaryDto toShowingSummaryDtoForCinema() {
+                return new ShowingSummaryDto(id, showingTime, null, movie.getId());
+            }
     public Integer getId() {
         return id;
     }
