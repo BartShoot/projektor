@@ -28,7 +28,6 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping("/api/cinema")
-@CrossOrigin(origins = "http://localhost:3000")
 public class CinemaController {
 
     private final CinemaRepository cinemaRepository;

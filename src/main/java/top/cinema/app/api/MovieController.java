@@ -24,7 +24,6 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping("/api/movie")
-@CrossOrigin(origins = "*")
 public class MovieController {
 
     private final MovieRepository movieRepository;
