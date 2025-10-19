@@ -21,8 +21,6 @@ import top.cinema.app.user.JpaUserDetailsService;
 import javax.sql.DataSource;
 import java.util.List;
 
-import static org.springframework.security.config.Customizer.withDefaults;
-
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -44,7 +42,7 @@ public class AdminSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.addFilterBefore(new ForwardedHeaderFilter(), WebAsyncManagerIntegrationFilter.class);
-        http.cors(withDefaults())
+        http.cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .securityMatcher("/**")
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
