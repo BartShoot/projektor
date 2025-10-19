@@ -6,9 +6,9 @@ import top.cinema.app.fetching.helios.model.CinemasRootDto;
 import top.cinema.app.fetching.helios.model.ShowingsRootDto;
 
 public interface HeliosApiClient {
-    @GetExchange("/cinemas")
+    @GetExchange("/v1/cinemas")
     CinemasRootDto fetchCinemas();
 
-    @GetExchange("/cinemas/{cinemaId}/screenings")
+    @GetExchange("/v1/cinemas/{cinemaId}/screenings")
     ShowingsRootDto fetchShowings(@PathVariable Integer cinemaId);
 }

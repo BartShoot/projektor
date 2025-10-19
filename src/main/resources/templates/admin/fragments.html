@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- Cities Table Fragment -->
+<div th:fragment="cities-table">
+    <h3 class="title">Cities</h3>
+    <table class="table is-stripped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="city : ${cities}">
+            <td th:text="${city.id}"></td>
+            <td th:text="${city.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Cinemas Table Fragment -->
+<div th:fragment="cinemas-table">
+    <h3 class="title">Cinemas</h3>
+    <table class="table is-stripped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cinema : ${cinemas}">
+            <td th:text="${cinema.id}"></td>
+            <td th:text="${cinema.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Movies Table Fragment -->
+<div th:fragment="movies-table" id="movies-table">
+    <h3 class="title">Movies</h3>
+
+    <form hx-get="/admin/movies" hx-target="#movies-table" hx-swap="outerHTML">
+        <div class="field">
+            <div class="control">
+                <label class="checkbox">
+                    <input type="checkbox" name="showAll" value="true" th:checked="${showAll}" onchange="this.form.requestSubmit()">
+                    Show all movies
+                </label>
+            </div>
+        </div>
+    </form>
+
+    <table class="table is-stripped is-hoverable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Showings</th>
+            <th>Filmweb</th>
+            <th>IMDb</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="movie : ${movies}">
+            <td th:text="${movie.id}"></td>
+            <td th:text="${movie.title}"></td>
+            <td th:text="${movie.showingsCount}"></td>
+            <td>
+                <a th:if="${movie.filmweb != null && movie.filmweb.url != null}" th:href="${movie.filmweb.url}" th:text="${movie.title}"
+                   target="_blank"></a>
+                <span th:unless="${movie.filmweb != null && movie.filmweb.url != null}">-</span>
+            </td>
+            <td>
+                <a th:if="${movie.imdb != null && movie.imdb.url != null}" th:href="${movie.imdb.url}" th:text="${movie.title}" target="_blank"></a>
+                <span th:unless="${movie.imdb != null && movie.imdb.url != null}">-</span>
+            </td>
+            <td>
+                <a th:attr="hx-get=@{/admin/movie/{id}/edit(id=${movie.id})}" hx-target="#content" hx-swap="innerHTML" hx-push-url="true"
+                   class="btn btn-secondary btn-sm">Edit</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Showings View Fragment -->
+<div class="block" id="showings-view" th:fragment="showings-view">
+    <h3 class="title">Showings</h3>
+
+    <form hx-get="/admin/showings" hx-target="#showings-view" hx-swap="outerHTML">
+        <div class="field">
+            <label class="label" for="cinema-select">Select a Cinema:</label>
+            <div class="control select">
+                <select id="cinema-select" name="cinemaId" onchange="this.form.requestSubmit()">
+                    <option value="">-- Please choose a cinema --</option>
+                    <option th:each="cinema : ${cinemas}"
+                            th:value="${cinema.id}"
+                            th:text="${cinema.name}"
+                            th:selected="${param.cinemaId != null && #strings.equals(param.cinemaId[0], cinema.id.toString())}"></option>
+                </select>
+            </div>
+        </div>
+    </form>
+
+    <div id="showings-table-container">
+        <div class="block" th:if="${not #lists.isEmpty(showings)}">
+            <h4 class="block">Showings for selected cinema</h4>
+            <table class="table is-stripped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Movie</th>
+                    <th>Start Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="showing : ${showings}">
+                    <td th:text="${showing.id}"></td>
+                    <td th:text="${showing.movie.title}"></td>
+                    <td th:text="${showing.showingTime}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div th:if="${#lists.isEmpty(showings) and param.cinemaId != null}">
+            <p>No showings found for the selected cinema.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Jobs Table Fragment -->
+<div th:fragment="jobs-table" id="jobs-table">
+    <h3 class="title">Jobs</h3>
+
+    <form hx-get="/admin/jobs" hx-target="#jobs-table" hx-swap="innerHTML">
+        <div class="field is-grouped">
+            <div class="control">
+                <label class="label" for="status-select">Status:</label>
+                <div class="select">
+                    <select id="status-select" name="status" onchange="this.form.requestSubmit()">
+                        <option value="">All</option>
+                        <option th:each="statusValue : ${T(top.cinema.app.fetching.durable_jobs.Job.Status).values()}"
+                                th:value="${statusValue}"
+                                th:text="${statusValue}"
+                                th:selected="${statusValue.name() == status}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="control">
+                <label class="label" for="cinema-chain-select">Cinema Chain:</label>
+                <div class="select">
+                    <select id="cinema-chain-select" name="cinemaChain" onchange="this.form.requestSubmit()">
+                        <option value="">All</option>
+                        <option th:each="chainValue : ${T(top.cinema.app.model.CinemaChain).values()}"
+                                th:value="${chainValue}"
+                                th:text="${chainValue}"
+                                th:selected="${chainValue.name() == cinemaChain}"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <table class="table is-stripped is-hoverable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Cinema Chain</th>
+            <th>City ID</th>
+            <th>Cinema ID</th>
+            <th>Movie ID</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="job : ${jobs.content}">
+            <td th:text="${job.id}"></td>
+            <td>
+                <div th:switch="${job.type}">
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Type).CINEMAS}" class="tag is-primary" th:text="${job.type}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Type).MOVIES}" class="tag is-link" th:text="${job.type}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Type).SHOWINGS}" class="tag is-info" th:text="${job.type}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Type).MOVIES_SHOWINGS}" class="tag is-success" th:text="${job.type}"></span>
+                    <span th:case="*" class="tag" th:text="${job.type}"></span>
+                </div>
+            </td>
+            <td>
+                <div th:switch="${job.status}">
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Status).PENDING}" class="tag is-warning" th:text="${job.status}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Status).RUNNING}" class="tag is-info" th:text="${job.status}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Status).SUCCESS}" class="tag is-success" th:text="${job.status}"></span>
+                    <span th:case="${T(top.cinema.app.fetching.durable_jobs.Job.Status).FAILED}" class="tag is-danger" th:text="${job.status}"></span>
+                    <span th:case="*" class="tag" th:text="${job.status}"></span>
+                </div>
+            </td>
+            <td>
+                <div th:switch="${job.cinemaChain}">
+                    <span th:case="${T(top.cinema.app.model.CinemaChain).MULTIKINO}" class="tag is-dark" th:text="${job.cinemaChain}"></span>
+                    <span th:case="${T(top.cinema.app.model.CinemaChain).HELIOS}" class="tag is-light" th:text="${job.cinemaChain}"></span>
+                    <span th:case="*" class="tag" th:text="${job.cinemaChain}"></span>
+                </div>
+            </td>
+            <td th:text="${job.cityId}"></td>
+            <td th:text="${job.cinemaId}"></td>
+            <td th:text="${job.movieId}"></td>
+            <td th:text="${#temporals.format(job.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+            <td th:text="${#temporals.format(job.lastUpdateDate, 'yyyy-MM-dd HH:mm')}"></td>
+            <td th:text="${job.result}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination" th:if="${jobs.totalPages > 0}">
+        <ul class="pagination-list">
+            <li th:each="i : ${#numbers.sequence(0, jobs.totalPages - 1)}">
+                <a th:attr="hx-get=@{/admin/jobs(page=${i}, size=${jobs.size}, status=${status}, cinemaChain=${cinemaChain})}"
+                   hx-target="#jobs-table" hx-swap="innerHTML"
+                   th:class="${i == jobs.number} ? 'pagination-link is-current' : 'pagination-link'"
+                   th:text="${i + 1}">
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+</body>
+</html>

@@ -2,6 +2,7 @@ package top.cinema.app.entities.core;
 
 import jakarta.persistence.*;
 import top.cinema.app.dto.ShowingFront;
+import top.cinema.app.dto.model.ShowingSummaryDto;
 
 import java.time.LocalDateTime;
 
@@ -9,8 +10,8 @@ import java.time.LocalDateTime;
 @Table(
         name = "showings",
         indexes = {
-                @Index(name = "idx_showing_cinema_time", columnList = "cinema_id, showingTime"),
-                @Index(name = "idx_showing_movie_time", columnList = "movie_id, showingTime")
+            @Index(name = "idx_showing_cinema_time", columnList = "cinema_id, showingTime"),
+            @Index(name = "idx_showing_movie_time", columnList = "movie_id, showingTime")
         })
 public class Showing {
 
@@ -30,8 +31,7 @@ public class Showing {
 
     private LocalDateTime showingTime;
 
-    public Showing() {
-    }
+    public Showing() {}
 
     public Showing(String externalId, Cinema cinema, Movie movie, LocalDateTime showingTime) {
         this.externalId = externalId;
@@ -40,15 +40,21 @@ public class Showing {
         this.showingTime = showingTime;
     }
 
-    public ShowingFront toFront() {
-        return new ShowingFront(id, movie.toFront(), null, showingTime);
+    public ShowingFront toShortFront() {
+        return new ShowingFront(id, movie.toShortFront(), null, showingTime);
     }
 
     public ShowingFront toFrontWithCinema() {
-        return new ShowingFront(id, movie.toFront(), cinema.toFrontWithCity(), showingTime);
+        return new ShowingFront(id, movie.toFront(), cinema.toFront(), showingTime);
     }
 
+    public ShowingSummaryDto toShowingSummaryDtoForMovie() {
+        return new ShowingSummaryDto(id, showingTime, cinema.toSummaryDto(), null);
+    }
 
+            public ShowingSummaryDto toShowingSummaryDtoForCinema() {
+                return new ShowingSummaryDto(id, showingTime, null, movie.getId());
+            }
     public Integer getId() {
         return id;
     }

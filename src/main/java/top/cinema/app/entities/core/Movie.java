@@ -3,8 +3,12 @@ package top.cinema.app.entities.core;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Formula;
 import top.cinema.app.dto.MovieFront;
+import top.cinema.app.dto.model.MovieDto;
+import top.cinema.app.dto.model.MovieSummaryDto;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "movies")
@@ -13,17 +17,52 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
+
     private String title;
+
     @Column(unique = true)
     private String normalizedTitle;
+
     private String originalTitle;
     private Integer durationMinutes;
+
+    @ManyToMany(
+            fetch = FetchType.EAGER,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+            name = "movie_genres",
+            joinColumns = @JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    private Set<Genre> genres;
+
     @Column(unique = true)
     private String cinemaCityId;
+
     @Column(unique = true)
     private Integer heliosId;
+
     @Column(unique = true)
     private String multikinoId;
+
+    @Embedded
+    @AttributeOverrides({
+        @AttributeOverride(name = "externalId", column = @Column(name = "filmweb_id")),
+        @AttributeOverride(name = "url", column = @Column(name = "filmweb_url")),
+        @AttributeOverride(name = "rating", column = @Column(name = "filmweb_rating")),
+        @AttributeOverride(name = "ratingCount", column = @Column(name = "filmweb_rating_count")),
+        @AttributeOverride(name = "posterUrl", column = @Column(name = "filmweb_poster_url", length = 511))
+    })
+    private FilmwebData filmwebData;
+
+    @Embedded
+    @AttributeOverrides({
+        @AttributeOverride(name = "externalId", column = @Column(name = "imdb_id")),
+        @AttributeOverride(name = "url", column = @Column(name = "imdb_url")),
+        @AttributeOverride(name = "rating", column = @Column(name = "imdb_rating")),
+        @AttributeOverride(name = "ratingCount", column = @Column(name = "imdb_rating_count")),
+        @AttributeOverride(name = "posterUrl", column = @Column(name = "imdb_poster_url", length = 511))
+    })
+    private IMDbData imdbData;
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
     private List<Showing> showings;
@@ -33,9 +72,7 @@ public class Movie {
     @Formula("(SELECT COUNT(s.id) FROM showings as s WHERE s.movie_id = id)")
     private Integer showingsCount;
 
-    public Movie() {
-
-    }
+    public Movie() {}
 
     public Movie(String name, String normalizedTitle, Integer durationMinutes) {
         this.title = name;
@@ -52,11 +89,83 @@ public class Movie {
     }
 
     public MovieFront toFront() {
-        return new MovieFront(id, title, durationMinutes);
+        return new MovieFront(
+                id,
+                title,
+                durationMinutes,
+                null,
+                showingsCount,
+                filmwebData != null
+                        ? new MovieFront.ExternalSourceData(
+                                filmwebData.getExternalId(),
+                                filmwebData.getUrl(),
+                                filmwebData.getRating(),
+                                filmwebData.getRatingCount(),
+                                filmwebData.getPosterUrl())
+                        : null,
+                imdbData != null
+                        ? new MovieFront.ExternalSourceData(
+                                imdbData.getExternalId(),
+                                imdbData.getUrl(),
+                                imdbData.getRating(),
+                                imdbData.getRatingCount(),
+                                imdbData.getPosterUrl())
+                        : null,
+                genres.stream().map(Genre::getName).collect(Collectors.toSet()));
     }
 
-    public MovieFront toFrontWithShowings() {
-        return new MovieFront(id, title, durationMinutes, showings.stream().map(Showing::toFront).toList());
+    public MovieFront toShortFront() {
+        return new MovieFront(id, null, null, null);
+    }
+
+    public MovieSummaryDto toSummaryDto() {
+        return new MovieSummaryDto(
+                id,
+                title,
+                durationMinutes,
+                showingsCount,
+                filmwebData != null
+                        ? new MovieFront.ExternalSourceData(
+                                filmwebData.getExternalId(),
+                                filmwebData.getUrl(),
+                                filmwebData.getRating(),
+                                filmwebData.getRatingCount(),
+                                filmwebData.getPosterUrl())
+                        : null,
+                imdbData != null
+                        ? new MovieFront.ExternalSourceData(
+                                imdbData.getExternalId(),
+                                imdbData.getUrl(),
+                                imdbData.getRating(),
+                                imdbData.getRatingCount(),
+                                imdbData.getPosterUrl())
+                        : null,
+                genres.stream().map(it -> it.getName().name()).collect(Collectors.toSet()));
+    }
+
+    public MovieDto toDto() {
+        return new MovieDto(
+                id,
+                title,
+                durationMinutes,
+                showingsCount,
+                filmwebData != null
+                        ? new MovieFront.ExternalSourceData(
+                                filmwebData.getExternalId(),
+                                filmwebData.getUrl(),
+                                filmwebData.getRating(),
+                                filmwebData.getRatingCount(),
+                                filmwebData.getPosterUrl())
+                        : null,
+                imdbData != null
+                        ? new MovieFront.ExternalSourceData(
+                                imdbData.getExternalId(),
+                                imdbData.getUrl(),
+                                imdbData.getRating(),
+                                imdbData.getRatingCount(),
+                                imdbData.getPosterUrl())
+                        : null,
+                genres.stream().map(it -> it.getName().name()).collect(Collectors.toSet()));
     }
 
     public Integer getId() {
@@ -109,5 +218,33 @@ public class Movie {
 
     public void setNormalizedTitle(String normalizedTitle) {
         this.normalizedTitle = normalizedTitle;
+    }
+
+    public Integer getShowingsCount() {
+        return showingsCount;
+    }
+
+    public FilmwebData getFilmwebData() {
+        return filmwebData;
+    }
+
+    public void setFilmwebData(FilmwebData filmwebData) {
+        this.filmwebData = filmwebData;
+    }
+
+    public IMDbData getImdbData() {
+        return imdbData;
+    }
+
+    public void setImdbData(IMDbData imdbData) {
+        this.imdbData = imdbData;
+    }
+
+    public Set<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
     }
 }

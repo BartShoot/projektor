@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="edit-movie-container" class="container">
+
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">Edit Movie</p>
+        </header>
+        <div class="card-content">
+            <form th:hx-post="@{/admin/movie/{id}/update(id=${movie.id})}" hx-target="#content" hx-swap="innerHTML">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                <input type="hidden" id="imdbId" name="imdbId" th:value="${movie.imdb?.externalId}"/>
+                <input type="hidden" id="filmwebId" name="filmwebId" th:value="${movie.filmweb?.externalId}"/>
+
+                <div class="field">
+                    <label class="label">ID</label>
+                    <div class="control">
+                        <input class="input" type="text" th:value="${movie.id}" readonly>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Title</label>
+                    <div class="control">
+                        <input class="input" type="text" th:value="${movie.title}" readonly>
+                    </div>
+                </div>
+
+                <div class="field" th:if="${movie.genres != null and !movie.genres.isEmpty()}">
+                    <label class="label">Genres</label>
+                    <div class="control">
+                        <div class="tags">
+                            <span class="tag is-info" th:each="genre : ${movie.genres}" th:text="${genre}"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMDb Data -->
+                <div th:if="${movie.imdb != null}">
+                    <div class="field">
+                        <label class="label">IMDb URL</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.imdb.url}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">IMDb Rating</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.imdb.rating}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">IMDb Rating Count</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.imdb.ratingCount}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">IMDb Poster URL</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.imdb.posterUrl}" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filmweb Data -->
+                <div th:if="${movie.filmweb != null}">
+                    <div class="field">
+                        <label class="label">Filmweb URL</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.filmweb.url}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Filmweb Rating</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.filmweb.rating}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Filmweb Rating Count</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.filmweb.ratingCount}" readonly>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Filmweb Poster URL</label>
+                        <div class="control">
+                            <input class="input" type="text" th:value="${movie.filmweb.posterUrl}" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Selected IMDb ID</label>
+                    <div class="control">
+                        <input class="input" type="text" id="selected-imdb-id" th:value="${movie.imdb?.externalId}" oninput="document.getElementById('imdbId').value = this.value">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Selected Filmweb ID</label>
+                    <div class="control">
+                        <input class="input" type="text" id="selected-filmweb-id" th:value="${movie.filmweb?.externalId}" oninput="document.getElementById('filmwebId').value = this.value">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" type="submit">Update Movie</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="columns">
+        <!-- Filmweb Search -->
+        <div class="column">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">Filmweb Search</p>
+                </header>
+                <div class="card-content">
+                    <form hx-get="/admin/search/filmweb" hx-target="#filmweb-results" hx-swap="innerHTML">
+                        <input type="hidden" name="movieId" th:value="${movie.id}"/>
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" name="query" placeholder="Override search query">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-info" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="filmweb-results" th:attr="hx-get=@{/admin/search/filmweb(movieId=${movie.id})}" hx-trigger="load" hx-swap="innerHTML">
+                        <p>Loading Filmweb results...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMDb Search -->
+        <div class="column">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">IMDb Search</p>
+                </header>
+                <div class="card-content">
+                    <form hx-get="/admin/search/imdb" hx-target="#imdb-results" hx-swap="innerHTML">
+                        <input type="hidden" name="movieId" th:value="${movie.id}"/>
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" name="query" placeholder="Override search query">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-info" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="imdb-results" th:attr="hx-get=@{/admin/search/imdb(movieId=${movie.id})}" hx-trigger="load" hx-swap="innerHTML">
+                        <p>Loading IMDb results...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filmweb Search Results Fragment -->
+<div th:fragment="filmweb-search-results">
+    <div th:if="${filmwebResults}" class="flex-switch">
+        <div th:each="result : ${filmwebResults}" class="box">
+            <img th:if="${result.preview.poster != null}" th:src="${result.preview.getPosterUrl()}" alt="Poster"/>
+            <span th:unless="${result.preview.poster != null}">No poster</span>
+            <div>
+                <a th:href="${result.preview.getHtmlUrl(result.id)}"
+                   th:text="${result.preview.title != null ? result.preview.title.title : result.preview.originalTitle.title}"
+                   target="_blank"></a>
+            </div>
+            <div th:text="${result.preview.year}"></div>
+            <button class="button is-small is-light" th:data-id="${result.id}" onclick="selectFilmweb(this)">Select</button>
+        </div>
+    </div>
+</div>
+
+<!-- IMDb Search Results Fragment -->
+<div th:fragment="imdb-search-results">
+    <div th:if="${imdbResults}" class="flex-switch">
+        <div th:each="result : ${imdbResults.titles}" class="box">
+            <img th:if="${result.primaryImage != null && result.primaryImage.url != null}"
+                 th:src="${result.primaryImage.url}" alt="Poster"/>
+            <span th:unless="${result.primaryImage != null && result.primaryImage.url != null}">No poster</span>
+            <div>
+                <a th:href="@{'https://www.imdb.com/title/' + ${result.id}}" th:text="${result.primaryTitle}"
+                   target="_blank"></a>
+            </div>
+            <div th:text="${result.startYear}"></div>
+            <button class="button is-small is-light" th:data-id="${result.id}" onclick="selectImdb(this)">Select</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

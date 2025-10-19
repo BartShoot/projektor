@@ -1,7 +1,11 @@
 package top.cinema.app.dao;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import java.time.LocalDateTime;
 import top.cinema.app.entities.core.Movie;
 
 import java.util.Optional;
@@ -18,4 +22,10 @@ public interface MovieRepository extends JpaRepository<Movie, Integer> {
     Optional<Movie> findByHeliosId(int id);
 
     Optional<Movie> findByMultikinoId(String id);
+
+    @Query("SELECT m FROM Movie m JOIN m.showings s WHERE s.showingTime > CURRENT_TIMESTAMP GROUP BY m")
+    Page<Movie> findMoviesWithFutureShowings(Pageable pageable);
+
+    @Query("SELECT m FROM Movie m JOIN m.showings s WHERE s.cinema.id = :cinemaId AND s.showingTime > :showingTime GROUP BY m")
+    Page<Movie> findMoviesByCinemaAndShowingsAfter(Integer cinemaId, LocalDateTime showingTime, Pageable pageable);
 }
