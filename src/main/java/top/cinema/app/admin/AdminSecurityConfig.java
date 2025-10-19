@@ -34,8 +34,16 @@ public class AdminSecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/api/**", "/css/**", "/js/**", "/images/**", "/admin/login", "/user/register")
+        http.securityMatcher("/**")
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers(
+                                "/api/**",
+                                "/styles/**",
+                                "/css/**",
+                                "/js/**",
+                                "/images/**",
+                                "/admin/login",
+                                "/user/register")
                         .permitAll()
                         .requestMatchers("/admin/**")
                         .hasRole("ADMIN")
